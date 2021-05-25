@@ -1,12 +1,21 @@
 #include "Mapa.h"
 #include <random>
+#include <windows.h>
 #include <iostream>
+
+using namespace std;
 
 void Mapa::grafika()
 {
+	HANDLE hOut;
+	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hOut, 15);
+
 	constexpr size_t dlug = 25;
 	constexpr size_t szer = 50;
 
+	//Wartosc 0-neutralna(szara), 1-jedna strona(czerwona), 2-druga strona(niebieska) etc.//
+	int strona[dlug][szer];
 	char mapa[dlug][szer];
 
 	for (int i = 0; i < dlug; i++)
@@ -17,31 +26,48 @@ void Mapa::grafika()
 		for (int j = 10; j < 15; j++)
 			mapa[i][j] = 'X';
 
-	std::random_device seed;
-	std::mt19937 gen(seed());
-	std::uniform_int_distribution<size_t> losuj_dlug{ 10, dlug - 1 };
-	std::uniform_int_distribution<size_t> losuj_szer{ 20, szer - 1 };
+	random_device seed;
+	mt19937 gen(seed());
+	uniform_int_distribution<size_t> losuj_dlug{ 10, dlug - 1 };
+	uniform_int_distribution<size_t> losuj_szer{ 20, szer - 1 };
+	uniform_int_distribution<int> strony{ 0, 2 };
 
 	for (int i = 0; i < 5; i++)
 		mapa[losuj_dlug(gen)][losuj_szer(gen)] = '#';
 
-	std::cout << "|";
+	cout << "|";
 	for (int i = 0; i < szer; i++)
-		std::cout << "=";
-	std::cout << "|" << std::endl;
+		cout << "=";
+	cout << "|" << endl;
 
 	for (int i = 0; i < dlug; i++)
 	{
-		std::cout << "|";
+		cout << "|";
 		for (int j = 0; j < szer; j++)
 		{
-			std::cout << mapa[i][j];
+			strona[i][j] = strony(gen);
+			switch (strona[i][j])
+			{
+			case 0:
+				SetConsoleTextAttribute(hOut, BACKGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+				break;
+			case 1:
+				SetConsoleTextAttribute(hOut, BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+				break;
+			case 2:
+				SetConsoleTextAttribute(hOut, BACKGROUND_BLUE | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+				break;
+			default:
+				break;
+			}
+			cout << mapa[i][j];
 		}
-		std::cout << "|" << std::endl;
+		SetConsoleTextAttribute(hOut, 15);
+		cout << "|" << endl;
 	}
 
-	std::cout << "|";
+	cout << "|";
 	for (int i = 0; i < szer; i++)
-		std::cout << "=";
-	std::cout << "|";
+		cout << "=";
+	cout << "|";
 }
