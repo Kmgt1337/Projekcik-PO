@@ -143,6 +143,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mapa.cpp" />
     <ClCompile Include="Operator_bitwy.cpp" />
+    <ClCompile Include="Prowincja.cpp" />
     <ClCompile Include="Strona_konfliktu.cpp" />
     <ClCompile Include="Zegar.cpp" />
     <ClCompile Include="Zwiad.cpp" />

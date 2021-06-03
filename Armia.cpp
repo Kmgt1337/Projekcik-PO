@@ -30,21 +30,25 @@ void Armia::ruch()
 	{
 		// ruch w gore
 		case 1:
+			if (pozycjaX == 0) break;
 			--pozycjaX;
 			break;
 
 		//ruch w lewo
 		case 2:
+			if (pozycjaY == 0) break;
 			--pozycjaY;
 			break;
 
 		//ruch w dol
 		case 3:
+			if (pozycjaX == 29) break;
 			++pozycjaX;
 			break;
 		
 		//ruch w prawo
 		case 4:
+			if (pozycjaY == 59) break;
 			++pozycjaY;
 			break;
 	}

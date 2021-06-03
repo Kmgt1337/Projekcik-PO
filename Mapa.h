@@ -2,6 +2,7 @@
 #define MAPA_H
 
 #include "Armia.h"
+#include "Prowincja.h"
 #include <vector>
 #include <Windows.h>
 
@@ -9,7 +10,8 @@ class Mapa
 {
 public:
 	static void grafika();
-	static void rysujArmie(const std::vector<Armia>& armie); // wysylamy do funkcji wszystkie istniejace armie
+	static void inicjalizujMape();
+	static void rysuj(const std::vector<Armia>& armie, const std::vector<Prowincja>& prowincje);
 
 private:
 	static constexpr size_t dlug = 30;

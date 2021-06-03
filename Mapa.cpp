@@ -1,6 +1,5 @@
 #include "Mapa.h"
 #include <random>
-#include <windows.h>
 #include <iostream>
 
 using namespace std;
@@ -74,13 +73,44 @@ void Mapa::grafika()
 
 char Mapa::mapa[Mapa::dlug][Mapa::szer];
 
-void Mapa::rysujArmie(const std::vector<Armia>& armie)
+void Mapa::inicjalizujMape()
 {
 	for (size_t i = 0; i < dlug; i++)
 	{
 		for (size_t j = 0; j < szer; j++)
 		{
 			mapa[i][j] = ' ';
+		}
+	}
+}
+
+void Mapa::rysuj(const std::vector<Armia>& armie, const std::vector<Prowincja>& prowincje)
+{
+	for (size_t i = 0; i < dlug; i++)
+	{
+		for (size_t j = 0; j < szer; j++)
+		{
+			for (auto prowincja : prowincje)
+			{
+				if (prowincja.dajSymbol() != mapa[i][j])
+				{
+					mapa[i][j] = ' ';
+				}
+			}
+		}
+	}
+
+	for (auto prowincja : prowincje)
+	{
+		std::vector<size_t> pomX = prowincja.dajWspolrzedneX();
+		std::vector<size_t> pomY = prowincja.dajWspolrzedneY();
+
+		for (size_t i = 0; i < pomX.size(); i++)
+		{
+			for (size_t j = 0; j < pomY.size(); j++)
+			{
+				mapa[pomX.at(i)][pomY.at(j)] = prowincja.dajSymbol();
+			}
 		}
 	}
 	for (auto armia : armie)
@@ -114,3 +144,4 @@ void Mapa::rysujArmie(const std::vector<Armia>& armie)
 	// szybko przeprowadzila, bo rysowanie zajmuje duzo czasu
 	for (int i = 0; i < 10000000; i++);
 }
+
