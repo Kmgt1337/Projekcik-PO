@@ -12,6 +12,7 @@ private:
 	int przychod;
 public:
 	int przynaleznosc;
+	char symbol;
 };
 #endif
 

@@ -39,6 +39,6 @@ int main()
 			armia.ruch();
 		}
 		Mapa::rysuj(armie,hOut);
-		Sleep(500);
+		Sleep(500); //oczekiwanie przez 500 milisekund Windows.h sie klania :P
 	}
 }
