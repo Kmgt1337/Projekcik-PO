@@ -1,9 +1,10 @@
 #include "Armia.h"
 #include <random>
+#include <iomanip>
 
 using namespace std;
 
-Armia::Armia(size_t x, size_t y, char symbol, int przynaleznosc)
+Armia::Armia(size_t x, size_t y, char symbol, int przynaleznosc, std::string nazwa)
 {
 	random_device device;
 	mt19937 gen(device());
@@ -19,6 +20,7 @@ Armia::Armia(size_t x, size_t y, char symbol, int przynaleznosc)
 	pozycjaY = y;
 
 	this->symbol = symbol;
+	nazwaArmii = nazwa;
 }
 
 void Armia::ruch()
@@ -55,4 +57,5 @@ void Armia::ruch()
 			break;
 	}
 }
+
 

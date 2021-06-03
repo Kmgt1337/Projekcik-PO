@@ -157,6 +157,7 @@
     <ClInclude Include="Operator_bitwy.h" />
     <ClInclude Include="Prowincja.h" />
     <ClInclude Include="Strona_konfliktu.h" />
+    <ClInclude Include="ZapisDoPliku.h" />
     <ClInclude Include="Zegar.h" />
     <ClInclude Include="Zwiad.h" />
   </ItemGroup>
