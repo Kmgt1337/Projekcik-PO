@@ -12,5 +12,24 @@
 
 int main()
 {
-	Mapa::grafika();
+	Armia armia1{ 10, 10, '#' };
+	Armia armia2{ 20, 20, '@' };
+	Armia armie3{ 5, 5, 'X' };
+	std::vector<Armia> armie;
+
+	armie.push_back(armia1);
+	armie.push_back(armia2);
+
+	Mapa::rysujArmie(armie);
+
+	while (true)
+	{
+		for (auto& armia : armie)
+		{
+			armia.ruch();
+		}
+		Mapa::rysujArmie(armie);
+	}
+
+	//Mapa::grafika();
 }

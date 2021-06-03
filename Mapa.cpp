@@ -71,3 +71,46 @@ void Mapa::grafika()
 		cout << "=";
 	cout << "|";
 }
+
+char Mapa::mapa[Mapa::dlug][Mapa::szer];
+
+void Mapa::rysujArmie(const std::vector<Armia>& armie)
+{
+	for (size_t i = 0; i < dlug; i++)
+	{
+		for (size_t j = 0; j < szer; j++)
+		{
+			mapa[i][j] = ' ';
+		}
+	}
+	for (auto armia : armie)
+	{
+		mapa[armia.dajPozycjeX()][armia.dajPozycjeY()] = armia.dajSymbol();
+	}
+
+	clrscr();
+
+	cout << "|";
+	for (int i = 0; i < szer; i++)
+		cout << "=";
+	cout << "|" << endl;
+
+	for (size_t i = 0; i < dlug; i++)
+	{
+		cout << "|";
+		for (size_t j = 0; j < szer; j++)
+		{
+			cout << mapa[i][j];
+		}
+		cout << "|" << endl;
+	}
+
+	cout << "|";
+	for (int i = 0; i < szer; i++)
+		cout << "=";
+	cout << "|";
+
+	// opoznienie w rysowaniu, to sie doda do tej klasy "zegar" czy cos, albo w ogole sie z tego zrezygnuje aby symulacja sie
+	// szybko przeprowadzila, bo rysowanie zajmuje duzo czasu
+	for (int i = 0; i < 10000000; i++);
+}
