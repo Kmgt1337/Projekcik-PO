@@ -1,5 +1,4 @@
 #include "Mapa.h"
-#include "random"
 
 using namespace std;
 

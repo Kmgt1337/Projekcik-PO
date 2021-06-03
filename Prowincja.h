@@ -13,6 +13,11 @@ private:
 public:
 	int przynaleznosc;
 	char symbol;
+	Prowincja()
+	{
+		przynaleznosc = 0;
+		symbol = ' ';
+	}
 };
 #endif
 

@@ -13,12 +13,11 @@ class Mapa
 public:
 	static constexpr size_t dlug = 30;
 	static constexpr size_t szer = 60;
+	static Prowincja mapa[dlug][szer];
 	static void grafika();
 	static void rysuj(const std::vector<Armia>& armie, HANDLE hOut);
 
 private:
-
-	static Prowincja mapa[dlug][szer];
 
 	static void clrscr() //nie ogarniam jak to dziala, ale ladnie czysci ekran, lepiej niz system("cls")
 	{
