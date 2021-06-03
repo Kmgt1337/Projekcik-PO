@@ -79,8 +79,6 @@ void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
 		mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].przynaleznosc = armia.dajPrzyna();
 	}
 
-	clrscr();
-
 	cout << "|";
 	for (int i = 0; i < szer; i++)
 		cout << "=";
@@ -124,6 +122,7 @@ void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
 	for (int i = 0; i < szer; i++)
 		cout << "=";
 	cout << "|";
+	clrscr();
 
 	// opoznienie w rysowaniu, to sie doda do tej klasy "zegar" czy cos, albo w ogole sie z tego zrezygnuje aby symulacja sie
 	// szybko przeprowadzila, bo rysowanie zajmuje duzo czasu
