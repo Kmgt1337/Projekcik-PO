@@ -15,10 +15,11 @@
 #include <Windows.h>
 #include <random>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
-void start()
+bool start()
 {
 	size_t x, y;
 	std::cout << "Podaj rozmiar mapy [x, y]: ";
@@ -29,6 +30,20 @@ void start()
 	Armia::inicjalizuj(x, y);
 	Mapa::clrscr();
 	system("cls");
+
+	fstream plik;
+	if (plik.is_open()) plik.close();
+
+	plik.open("baza.txt", ios::out | ios::trunc);
+	plik.clear();
+	if (plik.good())
+	{
+		plik << "";
+		plik.flush();
+		plik.close();
+		return true;
+	}
+	return false;
 }
 
 int main()
@@ -54,7 +69,7 @@ int main()
 	ZapisDoPliku* zapisywacz;
 	zapisywacz = &zegar;
 
-	start();
+	if(!start()) return -1;
 	
 	while (true)
 	{
