@@ -11,14 +11,13 @@
 class Mapa
 {
 public:
-	static constexpr size_t dlug = 30;
-	static constexpr size_t szer = 60;
-	static Prowincja mapa[dlug][szer];
-	static void grafika();
+	static std::vector<std::vector<Prowincja>> mapa;
+	static  size_t dlug;
+	static  size_t szer;
+
+	//static Prowincja mapa[dlug][szer];
 	static void rysuj(const std::vector<Armia>& armie, HANDLE hOut);
-
-private:
-
+	static void inicjalizuj(size_t, size_t);
 	static void clrscr() //nie ogarniam jak to dziala, ale ladnie czysci ekran, lepiej niz system("cls")
 	{
 		HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);

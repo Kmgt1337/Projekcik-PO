@@ -18,6 +18,8 @@ public:
 	std::string dajNazwe() { return nazwaArmii; }
 	size_t dajLiczebnosc() { return liczebnosc; }
 
+	static void inicjalizuj(size_t, size_t);
+
 private:
 	int przejmowanieS;
 	int przynaleznosc;
@@ -29,6 +31,8 @@ private:
 
 	std::string nazwaArmii;
 	char symbol;
+
+	static size_t x, y;
 };
 
 #endif

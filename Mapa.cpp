@@ -2,74 +2,21 @@
 
 using namespace std;
 
-void Mapa::grafika()
+std::vector<std::vector<Prowincja>> Mapa::mapa;
+size_t Mapa::dlug;
+size_t Mapa::szer;
+
+void Mapa::inicjalizuj(size_t x, size_t y)
 {
-	HANDLE hOut;
-	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hOut, 15);
+	dlug = y;
+	szer = x;
 
-	constexpr size_t dlug = 25;
-	constexpr size_t szer = 50;
-
-	//Wartosc 0-neutralna(szara), 1-jedna strona(czerwona), 2-druga strona(niebieska) etc.//
-	int strona[dlug][szer];
-	char mapa[dlug][szer];
-
-	for (int i = 0; i < dlug; i++)
-		for (int j = 0; j < szer; j++)
-			mapa[i][j] = ' ';
-
-	for (int i = 10; i < 15; i++)
-		for (int j = 10; j < 15; j++)
-			mapa[i][j] = 'X';
-
-	random_device seed;
-	mt19937 gen(seed());
-	uniform_int_distribution<size_t> losuj_dlug{ 10, dlug - 1 };
-	uniform_int_distribution<size_t> losuj_szer{ 20, szer - 1 };
-	uniform_int_distribution<int> strony{ 0, 2 };
-
-	for (int i = 0; i < 5; i++)
-		mapa[losuj_dlug(gen)][losuj_szer(gen)] = '#';
-
-	cout << "|";
-	for (int i = 0; i < szer; i++)
-		cout << "=";
-	cout << "|" << endl;
-
-	for (int i = 0; i < dlug; i++)
+	mapa.resize(dlug);
+	for (size_t i = 0; i < mapa.size(); i++)
 	{
-		cout << "|";
-		for (int j = 0; j < szer; j++)
-		{
-			strona[i][j] = strony(gen);
-			switch (strona[i][j])
-			{
-			case 0:
-				SetConsoleTextAttribute(hOut, BACKGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
-				break;
-			case 1:
-				SetConsoleTextAttribute(hOut, BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
-				break;
-			case 2:
-				SetConsoleTextAttribute(hOut, BACKGROUND_BLUE | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
-				break;
-			default:
-				break;
-			}
-			cout << mapa[i][j];
-		}
-		SetConsoleTextAttribute(hOut, 15);
-		cout << "|" << endl;
+		mapa[i].resize(szer);
 	}
-
-	cout << "|";
-	for (int i = 0; i < szer; i++)
-		cout << "=";
-	cout << "|";
 }
-
-Prowincja Mapa::mapa[Mapa::dlug][Mapa::szer];
 
 void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
 {
@@ -84,10 +31,10 @@ void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
 		cout << "=";
 	cout << "|" << endl;
 
-	for (size_t i = 0; i < dlug; i++)
+	for (size_t i = 0; i < mapa.size(); i++)
 	{
 		cout << "|";
-		for (size_t j = 0; j < szer; j++)
+		for (size_t j = 0; j < mapa[i].size(); j++)
 		{
 			switch (mapa[i][j].przynaleznosc)
 			{
@@ -128,4 +75,3 @@ void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
 	// szybko przeprowadzila, bo rysowanie zajmuje duzo czasu
 	//for (int i = 0; i < 10000000; i++);
 }
-

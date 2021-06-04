@@ -25,6 +25,15 @@ Armia::Armia(size_t x, size_t y, char symbol, int przynaleznosc, std::string naz
 	nazwaArmii = nazwa;
 }
 
+size_t Armia::x;
+size_t Armia::y;
+
+void Armia::inicjalizuj(size_t a, size_t b)
+{
+	x = a;
+	y = b;
+}
+
 void Armia::ruch()
 {
 	random_device device;
@@ -35,29 +44,27 @@ void Armia::ruch()
 	switch (pom)
 	{
 		// ruch w gore
-		case 1:
-			if (pozycjaX == 0) break;
-			--pozycjaX;
-			break;
+	case 1:
+		if (pozycjaX == 0) break;
+		--pozycjaX;
+		break;
 
 		//ruch w lewo
-		case 2:
-			if (pozycjaY == 0) break;
-			--pozycjaY;
-			break;
+	case 2:
+		if (pozycjaY == 0) break;
+		--pozycjaY;
+		break;
 
 		//ruch w dol
-		case 3:
-			if (pozycjaX == 29) break;
-			++pozycjaX;
-			break;
-		
+	case 3:
+		if (pozycjaX == x - 1) break;
+		++pozycjaX;
+		break;
+
 		//ruch w prawo
-		case 4:
-			if (pozycjaY == 59) break;
-			++pozycjaY;
-			break;
+	case 4:
+		if (pozycjaY == y - 1) break;
+		++pozycjaY;
+		break;
 	}
 }
-
-

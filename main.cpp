@@ -9,12 +9,27 @@
 #include "Strona_konfliktu.h"
 #include "Zegar.h"
 #include "Zwiad.h"
+
 #include <vector>
 #include <iostream>
 #include <Windows.h>
 #include <random>
+#include <string>
 
 using namespace std;
+
+void start()
+{
+	size_t x, y;
+	std::cout << "Podaj rozmiar mapy [x, y]: ";
+	std::cin >> x >> y;
+
+	Zegar::start();
+	Mapa::inicjalizuj(x, y);
+	Armia::inicjalizuj(x, y);
+	Mapa::clrscr();
+	system("cls");
+}
 
 int main()
 {
@@ -23,7 +38,7 @@ int main()
 	SetConsoleTextAttribute(hOut, 15);
 
 	Armia armia1{ 10, 10, 'X', 1, "Armia1" };
-	Armia armia2{ 20, 20, 'X', 2, "Armia2" };
+	Armia armia2{ 15, 15, 'X', 2, "Armia2" };
 	Armia armia3{ 5, 5, 'X', 3, "Armia3" };
 
 	std::vector<Armia> armie;
@@ -39,7 +54,8 @@ int main()
 	ZapisDoPliku* zapisywacz;
 	zapisywacz = &zegar;
 
-	Zegar::start();
+	start();
+	
 	while (true)
 	{
 		Zegar::nowaTura();
