@@ -126,6 +126,6 @@ void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
 
 	// opoznienie w rysowaniu, to sie doda do tej klasy "zegar" czy cos, albo w ogole sie z tego zrezygnuje aby symulacja sie
 	// szybko przeprowadzila, bo rysowanie zajmuje duzo czasu
-	for (int i = 0; i < 10000000; i++);
+	//for (int i = 0; i < 10000000; i++);
 }
 

@@ -12,11 +12,15 @@ bool Zegar::zapis(const std::vector<Armia>& armie)
 	plik.open("baza.txt", ios::app);
 	if (plik.fail()) return false;
 
+	plik << " Tura nr " << Zegar::dajObecnaTure() << "\t";
 	for (auto armia : armie)
 	{
-		plik << setw(10) << armia.dajNazwe() << ":[" << armia.dajPozycjeX() << "," << armia.dajPozycjeY() << "]\t";
+		plik << setw(10) << armia.dajNazwe() << ":["
+			<< armia.dajPozycjeX() << ","
+			<< armia.dajPozycjeY() << ","
+			<< armia.dajLiczebnosc() << ","
+			<< armia.dajPrzyna() << "]\t";
 	}
-	plik << setw(10) << "<------ tura nr " << Zegar::dajObecnaTure();
 	plik << endl;
 	plik.close();
 	return true;

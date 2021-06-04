@@ -22,14 +22,18 @@ int main()
 	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hOut, 15);
 
-	Armia armia1{ 10, 10, '#', 1, "Armia1" };
-	Armia armia2{ 20, 20, '@', 2, "Armia2" };
+	Armia armia1{ 10, 10, 'X', 1, "Armia1" };
+	Armia armia2{ 20, 20, 'X', 2, "Armia2" };
 	Armia armia3{ 5, 5, 'X', 3, "Armia3" };
 
 	std::vector<Armia> armie;
-	armie.push_back(armia1);
-	armie.push_back(armia2);
-	armie.push_back(armia3);
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		armie.push_back(armia1);
+		armie.push_back(armia2);
+		armie.push_back(armia3);
+	}
 
 	Zegar zegar;
 	ZapisDoPliku* zapisywacz;
@@ -44,8 +48,9 @@ int main()
 			armia.ruch();
 		}
 		Mapa::rysuj(armie,hOut);
-		Sleep(500); //oczekiwanie przez 500 milisekund Windows.h sie klania :P
+		//Sleep(500); //oczekiwanie przez 500 milisekund Windows.h sie klania :P
+		// to w komentarzu zeby szybciej sie symulacja skonczyla
 
-		zapisywacz->zapis(armie);
+		if(!zapisywacz->zapis(armie)) return -1;
 	}
 }

@@ -16,6 +16,7 @@ public:
 	int dajPrzyna() { return przynaleznosc; }
 	char dajSymbol() { return symbol; }
 	std::string dajNazwe() { return nazwaArmii; }
+	size_t dajLiczebnosc() { return liczebnosc; }
 
 private:
 	int przejmowanieS;
