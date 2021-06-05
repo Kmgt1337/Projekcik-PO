@@ -22,7 +22,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 	while (cin.fail() || x < minimum || x > maksimumX)
 	{
 		cin.clear();
-		cin.ignore();
+		cin.ignore(INT_MAX, '\n');
 		cout << "Wprowadziles zle dane wejsciowe, wprowadz jeszcze raz: ";
 		cin >> x;
 	}
@@ -32,7 +32,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 	while (cin.fail() || y < minimum || y > maksimumY)
 	{
 		cin.clear();
-		cin.ignore();
+		cin.ignore(INT_MAX, '\n');
 		cout << "Wprowadziles zle dane wejsciowe, wprowadz jeszcze raz: ";
 		cin >> y;
 	}
@@ -68,7 +68,8 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 		cin >> pomX;
 		while (cin.fail() || pomX < 0 || pomX >= x)
 		{
-			cin.ignore(std::numeric_limits < streamsize >::max(), '\n');
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
 			cout << "Wprowadziles zle dane wejsciowe, wprowadz jeszcze raz: ";
 			cin >> pomX;
 		}
@@ -81,11 +82,12 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 			cin >> pomY;
 		}
 
-		cout << "Podaj liczbe zolnierzy w armii [maksymalnie 100000]: ";
+		cout << "Podaj liczbe zolnierzy w armii [minimalne 1000, maksymalnie 100000]: ";
 		cin >> liczebnosc;
-		while (cin.fail() || liczebnosc <= 0 || liczebnosc > 100000)
+		while (cin.fail() || liczebnosc < 1000 || liczebnosc > 100000)
 		{
-			cin.ignore(std::numeric_limits < streamsize >::max(), '\n');
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
 			cout << "Wprowadziles zle dane wejsciowe, wprowadz jeszcze raz: ";
 			cin >> liczebnosc;
 		}
@@ -98,10 +100,11 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 
 		if (i >= 2)
 		{
-			size_t pom;
-			cout << "\nCzy chcesz dodac kolejna armie? [tak - wpisz 1, nie - wpisz 0]: ";
-			cin >> pom;
-			if (pom == 0) break;
+			cout << "\nCzy chcesz dodac kolejna armie? [tak - nacisnij dowolny klawisz, nie - nacisnij 'enter']: ";
+			if (_getch() == 13)
+			{
+				break;
+			}
 		}
 	}
 
