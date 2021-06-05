@@ -10,6 +10,7 @@ private:
 	static size_t tura;
 	int tura_koncowa;
 	void odliczanie();
+
 public:
 	bool koniec;
 	static void start() { tura = 0; }
@@ -18,7 +19,13 @@ public:
 	static void nowaTura() { ++tura; }
 	static size_t dajObecnaTure() { return tura; }
 
-	bool zapis(const std::vector<Armia>& armie);
+	static bool sprawdzCzySymulacjaSieZakonczyla(const std::vector<Armia>&);
+	static Armia pokazArmieZwycieska(const std::vector<Armia>&);
+
+	virtual bool zapis(const std::vector<Armia>& armie);
+	virtual bool zapisPrzedBitwa(Armia, Armia);
+	virtual bool zapisBitwy(Armia, Armia, std::vector<size_t>);
+	virtual bool ostatniZapis(Armia);
 };
 #endif
 

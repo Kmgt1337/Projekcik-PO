@@ -5,6 +5,11 @@
 
 using namespace std;
 
+Armia::Armia()
+{
+
+}
+
 Armia::Armia(int id, size_t x, size_t y, char symbol, int przynaleznosc, std::string nazwa, size_t liczebnosc)
 {
 	random_device device;
