@@ -1,10 +1,11 @@
 #include "Armia.h"
 #include <random>
 #include <iomanip>
+#include "Mapa.h"
 
 using namespace std;
 
-Armia::Armia(size_t x, size_t y, char symbol, int przynaleznosc, std::string nazwa)
+Armia::Armia(int id, size_t x, size_t y, char symbol, int przynaleznosc, std::string nazwa, size_t liczebnosc)
 {
 	random_device device;
 	mt19937 gen(device());
@@ -12,11 +13,13 @@ Armia::Armia(size_t x, size_t y, char symbol, int przynaleznosc, std::string naz
 	uniform_int_distribution<size_t> losujPrzejmowanieS{ 0, 5 };
 	uniform_int_distribution<size_t> losujX{ 0, 59 };
 	uniform_int_distribution<size_t> losujY{ 0, 29 };
+	aktywna = 1;
 
-	liczebnosc = losujLiczebnoscArmii(gen);
+	this->liczebnosc = liczebnosc;
 	przejmowanieS = losujPrzejmowanieS(gen);
 	this->przynaleznosc = przynaleznosc;
 	szybkosc = 1;
+	this->id = id;
 
 	pozycjaX = x;
 	pozycjaY = y;
@@ -34,12 +37,19 @@ void Armia::inicjalizuj(size_t a, size_t b)
 	y = b;
 }
 
-void Armia::ruch()
+int Armia::ruch()
 {
+	if (aktywna == 0)
+	{
+		return 0;
+	}
+
 	random_device device;
 	mt19937 gen(device());
 	uniform_int_distribution<size_t> kierunek{ 1, 4 };
 	size_t pom = kierunek(gen);
+
+	Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
 
 	switch (pom)
 	{
@@ -67,4 +77,21 @@ void Armia::ruch()
 		++pozycjaY;
 		break;
 	}
+
+	Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;
+
+	if (Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji != 0)
+	{
+		int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji;
+		Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
+		return armia_do_kasacji;
+	}
+
+	Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
+
+	if (Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc != przynaleznosc)
+	{
+		Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc = przynaleznosc;
+	}
+	return 0;
 }

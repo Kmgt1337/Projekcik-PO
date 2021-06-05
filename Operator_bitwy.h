@@ -4,7 +4,8 @@
 class Operator_bitwy
 {
 public:
-	bool wynik();
+
+	static bool wynik(int, int);
 	int straty();
 };
 #endif

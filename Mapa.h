@@ -8,26 +8,28 @@
 #include <Windows.h>
 #include <random>
 
+using namespace std;
+
 class Mapa
 {
 public:
-	static std::vector<std::vector<Prowincja>> mapa;
+	static  vector<vector<Prowincja>> mapa;
 	static  size_t dlug;
 	static  size_t szer;
 
 	//static Prowincja mapa[dlug][szer];
-	static void rysuj(const std::vector<Armia>& armie, HANDLE hOut);
+	static void rysuj(vector<Armia> armie, HANDLE hOut);
 	static void inicjalizuj(size_t, size_t);
 	static void clrscr() //nie ogarniam jak to dziala, ale ladnie czysci ekran, lepiej niz system("cls")
 	{
 		HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
 		COORD coord = { 0, 0 };
 		SetConsoleCursorPosition(hCon, coord);
-		::HANDLE hConsoleOut = ::GetStdHandle(STD_OUTPUT_HANDLE);
-		::CONSOLE_CURSOR_INFO hCCI;
-		::GetConsoleCursorInfo(hConsoleOut, &hCCI);
+		HANDLE hConsoleOut = GetStdHandle(STD_OUTPUT_HANDLE);
+		CONSOLE_CURSOR_INFO hCCI;
+		GetConsoleCursorInfo(hConsoleOut, &hCCI);
 		hCCI.bVisible = FALSE;
-		::SetConsoleCursorInfo(hConsoleOut, &hCCI);
+		SetConsoleCursorInfo(hConsoleOut, &hCCI);
 	}
 };
 

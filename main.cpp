@@ -52,18 +52,15 @@ int main()
 	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hOut, 15);
 
-	Armia armia1{ 10, 10, 'X', 1, "Armia1" };
-	Armia armia2{ 15, 15, 'X', 2, "Armia2" };
-	Armia armia3{ 5, 5, 'X', 3, "Armia3" };
+	Armia armia1 {1, 10, 10, 'X', 1, "Armia1",5000 };
+	Armia armia2 {2, 15, 15, 'X', 2, "Armia2",10000 };
+	Armia armia3 {3, 5, 5, 'X', 3, "Armia3",70000 };
 
-	std::vector<Armia> armie;
+	vector<Armia> armie;
 
-	for (size_t i = 0; i < 10; i++)
-	{
 		armie.push_back(armia1);
 		armie.push_back(armia2);
 		armie.push_back(armia3);
-	}
 
 	Zegar zegar;
 	ZapisDoPliku* zapisywacz;
@@ -76,9 +73,22 @@ int main()
 		Zegar::nowaTura();
 		for (auto& armia : armie)
 		{
-			armia.ruch();
+			int id2 = armia.ruch();
+			if (id2 != 0)
+			{
+				bool wynik = Operator_bitwy::wynik(armia.liczebnosc, armie[id2 - 1].liczebnosc);
+				if (wynik == 0)
+				{
+					armie[id2 - 1].aktywna = 0;
+				}
+				else
+				{
+					armia.aktywna = 0;
+				}
+			}
+			id2 = 0;
 		}
-		Mapa::rysuj(armie,hOut);
+		Mapa::rysuj(armie, hOut);
 		//Sleep(500); //oczekiwanie przez 500 milisekund Windows.h sie klania :P
 		// to w komentarzu zeby szybciej sie symulacja skonczyla
 

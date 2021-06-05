@@ -5,11 +5,16 @@
 
 class Armia
 {
+
 public:
-	Armia(size_t, size_t, char, int, std::string);
-	void ruch();
+	Armia(int, size_t, size_t, char, int, std::string, size_t);
+	int ruch();
 	void bitwa();
 	void przejecie();
+	bool aktywna;
+	char symbol;
+	int id;
+	size_t liczebnosc;
 
 	size_t dajPozycjeX() { return pozycjaX; }
 	size_t dajPozycjeY() { return pozycjaY; }
@@ -24,13 +29,11 @@ private:
 	int przejmowanieS;
 	int przynaleznosc;
 
-	size_t liczebnosc;
 	size_t pozycjaX;
 	size_t pozycjaY;
 	float szybkosc;
 
 	std::string nazwaArmii;
-	char symbol;
 
 	static size_t x, y;
 };

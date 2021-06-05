@@ -2,7 +2,7 @@
 
 using namespace std;
 
-std::vector<std::vector<Prowincja>> Mapa::mapa;
+vector<vector<Prowincja>> Mapa::mapa;
 size_t Mapa::dlug;
 size_t Mapa::szer;
 
@@ -18,13 +18,8 @@ void Mapa::inicjalizuj(size_t x, size_t y)
 	}
 }
 
-void Mapa::rysuj(const std::vector<Armia>& armie, HANDLE hOut)
+void Mapa::rysuj(const vector<Armia> armie, HANDLE hOut)
 {
-	for (auto armia : armie)
-	{
-		mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].symbol = armia.dajSymbol();
-		mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].przynaleznosc = armia.dajPrzyna();
-	}
 
 	cout << "|";
 	for (int i = 0; i < szer; i++)
