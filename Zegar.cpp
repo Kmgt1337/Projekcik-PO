@@ -1,4 +1,5 @@
 #include "Zegar.h"
+#include "Mapa.h"
 #include <fstream>
 #include <iomanip>
 #include "Operator_bitwy.h"
@@ -6,6 +7,8 @@
 using namespace std;
 
 size_t Zegar::tura = 0;
+DWORD Zegar::czasStartu;
+DWORD Zegar::czasKonca;
 
 bool Zegar::sprawdzCzySymulacjaSieZakonczyla(const vector<Armia>& armie)
 {
@@ -38,6 +41,29 @@ Armia Zegar::pokazArmieZwycieska(const vector<Armia>& armie)
 
 bool Zegar::zapis(const std::vector<Armia>& armie)
 {
+	vector<size_t> iloscProwincji(armie.size());
+	for (size_t i = 0; i < Mapa::dlug; i++)
+	{
+		for (size_t j = 0; j < Mapa::szer; j++)
+		{
+			switch (Mapa::mapa[i][j].przynaleznosc)
+			{
+			case 1:
+				iloscProwincji.at(0)++;
+				break;
+			case 2:
+				iloscProwincji.at(1)++;
+				break;
+			case 3:
+				iloscProwincji.at(2)++;
+				break;
+			case 4:
+				//iloscProwincji.at(3)++;
+				break;
+			}
+		}
+	}
+
 	fstream plik;
 	plik.open("baza.txt", ios::app);
 	if (plik.fail()) return false;
@@ -51,7 +77,25 @@ bool Zegar::zapis(const std::vector<Armia>& armie)
 				<< armia.dajPozycjeX() << ","
 				<< armia.dajPozycjeY() << ","
 				<< armia.dajLiczebnosc() << ","
-				<< armia.dajPrzyna() << "]\t";
+				<< armia.dajPrzyna() << ",";
+
+			switch(armia.dajPrzyna())
+			{
+			case 1:
+				plik << iloscProwincji.at(0);
+				break;
+			case 2:
+				plik << iloscProwincji.at(1);
+				break;
+			case 3:
+				plik << iloscProwincji.at(2);
+				break;
+			case 4:
+				//plik << iloscProwincji.at(3);
+				break;
+			}
+
+			plik << "]\t";
 		}
 		else
 		{
@@ -85,11 +129,11 @@ bool Zegar::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmianaHP)
 
 	if (zmianaHP.at(2) == 1)
 	{
-		plik << "Wygrala armia " << armia1.dajNazwe() << endl;
+		plik << "Wygrala " << armia1.dajNazwe() << endl;
 	}
 	if (zmianaHP.at(2) == 2)
 	{
-		plik << "Wygrala armia " << armia2.dajNazwe() << endl;
+		plik << "Wygrala " << armia2.dajNazwe() << endl;
 	}
 	plik << armia1.dajNazwe() << " stracila " << zmianaHP.at(0) << " zolnierzy" << endl;
 	plik << armia2.dajNazwe() << " stracila " << zmianaHP.at(1) << " zolnierzy" << endl;
@@ -98,7 +142,7 @@ bool Zegar::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmianaHP)
 	return true;
 }
 
-bool Zegar::ostatniZapis(Armia armia)
+bool Zegar::ostatniZapis(Armia armia, DWORD czas)
 {
 	fstream plik;
 	plik.open("baza.txt", ios::app);
@@ -106,8 +150,30 @@ bool Zegar::ostatniZapis(Armia armia)
 
 	plik << endl << endl;
 	plik << setw(50) << setfill('=') << endl;
-	plik << "WYGRALA ARMIA " << armia.dajNazwe() << endl;
-	plik << "HP armii: " << armia.dajLiczebnosc() << endl;
+	plik << "WYGRALA " << armia.dajNazwe() << endl;
+	plik << setw(50) << setfill('=') << endl;
+	plik << "Czas trwania symulacji: " << czas << " milisekund" << endl;
+	plik.close();
+	return true;
+}
+
+bool Zegar::zapisPrzedSymulacja(const std::vector<Armia>& armie)
+{
+	fstream plik;
+	plik.open("baza.txt", ios::app);
+	if (plik.fail()) return false;
+	
+	plik << "=====PROGRAM SYMULACYJNY: WOJNY====" << endl << endl;
+	plik << "Parametry przed rozpoczêciem symulacji: ";
+	for (auto armia : armie)
+	{
+		plik << setw(10) << armia.dajNazwe() << ":["
+			<< armia.dajPozycjeX() << ","
+			<< armia.dajPozycjeY() << ","
+			<< armia.dajLiczebnosc() << ","
+			<< armia.dajPrzyna() << "]\t";
+	}
+	plik << endl << endl;
 	plik.close();
 	return true;
 }

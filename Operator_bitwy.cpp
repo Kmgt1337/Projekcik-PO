@@ -4,7 +4,7 @@
 #include <random>
 using namespace std;
 
-size_t Operator_bitwy::licznikBitw = 0;
+size_t Operator_bitwy::licznikBitw = 1;
 
 bool Operator_bitwy::wynik(int licz1, int licz2)
 {

@@ -20,6 +20,7 @@ public:
 	//static Prowincja mapa[dlug][szer];
 	static void rysuj(vector<Armia> armie, HANDLE hOut);
 	static void inicjalizuj(size_t, size_t);
+	static void reset();
 	static void clrscr() //nie ogarniam jak to dziala, ale ladnie czysci ekran, lepiej niz system("cls")
 	{
 		HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);

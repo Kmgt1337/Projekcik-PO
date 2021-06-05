@@ -17,8 +17,8 @@ public:
 	int id;
 	int liczebnosc;
 
-	size_t dajPozycjeX() { return pozycjaX; }
-	size_t dajPozycjeY() { return pozycjaY; }
+	size_t dajPozycjeX() { return pozycjaY; }
+	size_t dajPozycjeY() { return pozycjaX; }
 	int dajPrzyna() { return przynaleznosc; }
 	char dajSymbol() { return symbol; }
 	std::string dajNazwe() { return nazwaArmii; }

@@ -18,6 +18,18 @@ void Mapa::inicjalizuj(size_t x, size_t y)
 	}
 }
 
+void Mapa::reset()
+{
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		for (size_t j = 0; j < mapa.at(i).size(); j++)
+		{
+			mapa[i][j].przynaleznosc = 0;
+			mapa[i][j].symbol = ' ';
+		}
+	}
+}
+
 void Mapa::rysuj(const vector<Armia> armie, HANDLE hOut)
 {
 

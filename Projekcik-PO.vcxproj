@@ -142,6 +142,7 @@
     <ClCompile Include="Armia.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mapa.cpp" />
+    <ClCompile Include="OperatorSymulacji.cpp" />
     <ClCompile Include="Operator_bitwy.cpp" />
     <ClCompile Include="Strona_konfliktu.cpp" />
     <ClCompile Include="Zegar.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Kawaleria.h" />
     <ClInclude Include="Mapa.h" />
     <ClInclude Include="Oddzial.h" />
+    <ClInclude Include="OperatorSymulacji.h" />
     <ClInclude Include="Operator_bitwy.h" />
     <ClInclude Include="Prowincja.h" />
     <ClInclude Include="Strona_konfliktu.h" />

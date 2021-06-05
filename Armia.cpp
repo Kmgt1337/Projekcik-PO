@@ -26,8 +26,8 @@ Armia::Armia(int id, size_t x, size_t y, char symbol, int przynaleznosc, std::st
 	szybkosc = 1;
 	this->id = id;
 
-	pozycjaX = x;
-	pozycjaY = y;
+	pozycjaY = x;
+	pozycjaX = y;
 
 	this->symbol = symbol;
 	nazwaArmii = nazwa;
@@ -38,8 +38,8 @@ size_t Armia::y;
 
 void Armia::inicjalizuj(size_t a, size_t b)
 {
-	x = a;
-	y = b;
+	x = b;
+	y = a;
 }
 
 int Armia::ruch()
