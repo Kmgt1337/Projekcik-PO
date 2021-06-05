@@ -30,7 +30,7 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
 
     if (!(wynik(armia1.dajLiczebnosc(), armia2.dajLiczebnosc())))
     {
-        if (strataArmiiZwycieskiej > armia1.dajLiczebnosc())
+        if (strataArmiiZwycieskiej >= armia1.dajLiczebnosc())
         {
             strataArmiiZwycieskiej = armia1.dajLiczebnosc();
             armia1.liczebnosc = 0;
@@ -40,7 +40,7 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
             armia1.liczebnosc -= strataArmiiZwycieskiej;
         }
 
-        if (strataArmiiPokonanej > armia2.dajLiczebnosc())
+        if (strataArmiiPokonanej >= armia2.dajLiczebnosc())
         {
             strataArmiiPokonanej = armia2.dajLiczebnosc();
             armia2.liczebnosc = 0;

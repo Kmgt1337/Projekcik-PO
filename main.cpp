@@ -95,9 +95,29 @@ int main()
 				{
 					armia.aktywna = 0;
 				}*/
-				if (armia.dajLiczebnosc() < 0)
+				if (armia.dajLiczebnosc() == 0)
 				{
 					armia.aktywna = 0;
+					for (size_t i = 0; i < Mapa::dlug; i++)
+					{
+						for (size_t j = 0; j < Mapa::szer; j++)
+							if (Mapa::mapa[i][j].przynaleznosc == armia.dajPrzyna())
+							{
+								Mapa::mapa[i][j].przynaleznosc = 0;
+							}
+					}
+				}
+				if (armie[id2 - 1].dajLiczebnosc() == 0)
+				{
+					armia.aktywna = 0;
+					for (size_t i = 0; i < Mapa::dlug; i++)
+					{
+						for (size_t j = 0; j < Mapa::szer; j++)
+							if (Mapa::mapa[i][j].przynaleznosc == armie[id2 - 1].dajPrzyna())
+							{
+								Mapa::mapa[i][j].przynaleznosc = 0;
+							}
+					}
 				}
 				if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
 				{
