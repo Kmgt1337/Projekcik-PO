@@ -55,19 +55,18 @@ void Mapa::rysuj(const vector<Armia> armie, HANDLE hOut)
 		cout << "|";
 		for (size_t j = 0; j < mapa[i].size(); j++)
 		{
-			switch (mapa[i][j].przynaleznosc)
-			{
+			switch (mapa[i][j].przynaleznosc) {
 			case 0:
 				SetConsoleTextAttribute(hOut, 128);
 				break;
-			case 1:
-				SetConsoleTextAttribute(hOut, BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+			case 7:
+				SetConsoleTextAttribute(hOut, 191);
 				break;
-			case 2:
-				SetConsoleTextAttribute(hOut, BACKGROUND_BLUE | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+			case 8:
+				SetConsoleTextAttribute(hOut, 207);
 				break;
-			case 3:
-				SetConsoleTextAttribute(hOut, BACKGROUND_BLUE | BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+			default:
+				SetConsoleTextAttribute(hOut, 15 + 16 * mapa[i][j].przynaleznosc);
 				break;
 			}
 			cout << mapa[i][j].symbol;

@@ -56,7 +56,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 		return false;
 	}
 
-	for (int i = 1; i < 4; i++)
+	for (int i = 1; i <= 10; i++)
 	{
 		size_t pomX, pomY;
 		string nazwa;
@@ -98,7 +98,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 
 		armie.push_back({ i, pomX, pomY, 'X', i, nazwa, liczebnosc });
 
-		if (i >= 2)
+		if (i >= 2 && i < 10)
 		{
 			cout << "\nCzy chcesz dodac kolejna armie? [tak - nacisnij dowolny klawisz, nie - nacisnij 'enter']: ";
 			if (_getch() == 13)
