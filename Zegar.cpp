@@ -165,9 +165,11 @@ bool Zegar::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 	
 	plik << "=====PROGRAM SYMULACYJNY: WOJNY====" << endl << endl;
 	plik << "Parametry przed rozpoczêciem symulacji: ";
+	plik << "Rozmiar mapy:[" << Mapa::szer << " x " << Mapa::dlug << "]";
 	for (auto armia : armie)
 	{
-		plik << setw(10) << armia.dajNazwe() << ":["
+		plik << setw(10) 
+			<< armia.dajNazwe() << ":["
 			<< armia.dajPozycjeX() << ","
 			<< armia.dajPozycjeY() << ","
 			<< armia.dajLiczebnosc() << ","

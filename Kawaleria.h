@@ -5,7 +5,7 @@
 
 class Kawaleria : public Oddzial
 {
-private:
+public:
 	float modruch;
 };
 

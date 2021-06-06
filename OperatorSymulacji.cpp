@@ -126,11 +126,17 @@ int OperatorSymulacji::prowadzSymulacje()
 		if (_kbhit())
 		{
 			znak = _getch();
-			if (znak == 'r' || znak == 'R')
+			switch (znak)
 			{
+			case 'r':
 				Mapa::clrscr();
 				system("cls");
 				return 1;
+
+			case 'p':
+				while (!_kbhit());
+				czasTrwaniaPrzerwy = Zegar::dajCzasWykonaniaSymulacjiMiliSekundy();
+				break;
 			}
 		}
 		if (Zegar::sprawdzCzySymulacjaSieZakonczyla(armie))
@@ -183,7 +189,15 @@ int OperatorSymulacji::prowadzSymulacje()
 		if (!zapisywacz->zapis(armie)) return -3;
 	}
 
-	czasTrwaniaSymulacji = Zegar::dajCzasWykonaniaSymulacjiMiliSekundy();
+	if (!czasTrwaniaPrzerwy)
+	{
+		czasTrwaniaSymulacji = Zegar::dajCzasWykonaniaSymulacjiMiliSekundy();
+	}
+	else
+	{
+		czasTrwaniaSymulacji = Zegar::dajCzasWykonaniaSymulacjiMiliSekundy();
+		czasTrwaniaSymulacji -= czasTrwaniaPrzerwy;
+	}
 	if (!zapisywacz->ostatniZapis(armiaZwycieska, czasTrwaniaSymulacji)) return -3;
 
 	system("cls");

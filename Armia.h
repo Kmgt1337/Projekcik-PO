@@ -2,6 +2,7 @@
 #define ARMIA_H
 
 #include <string>
+#include "General.h"
 
 class Armia
 {
@@ -10,8 +11,6 @@ public:
 	Armia(int, size_t, size_t, char, int, std::string, size_t);
 	Armia();
 	int ruch();
-	void bitwa();
-	void przejecie();
 	bool aktywna;
 	char symbol;
 	int id;
@@ -23,6 +22,7 @@ public:
 	char dajSymbol() { return symbol; }
 	std::string dajNazwe() { return nazwaArmii; }
 	int dajLiczebnosc() { return liczebnosc; }
+	size_t dajModObrazenia() { return general.modObrazenia; }
 
 	static void inicjalizuj(size_t, size_t);
 
@@ -36,6 +36,7 @@ private:
 
 	std::string nazwaArmii;
 
+	General general;
 	static size_t x, y;
 };
 

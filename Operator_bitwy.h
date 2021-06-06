@@ -11,7 +11,7 @@ class Operator_bitwy
 public:
 	static size_t dajLiczbeBitw() { return licznikBitw; }
 
-	static bool wynik(int, int);
+	static bool wynik();
 	static std::vector<size_t> bitwa(Armia&, Armia&);
 };
 #endif

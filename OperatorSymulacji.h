@@ -23,6 +23,7 @@ private:
 	ZapisDoPliku* zapisywacz = &zegar;
 
 	DWORD czasTrwaniaSymulacji;
+	DWORD czasTrwaniaPrzerwy;
 	HANDLE hOut;
 
 	const size_t minimum = 10;

@@ -16,8 +16,6 @@ Armia::Armia(int id, size_t x, size_t y, char symbol, int przynaleznosc, std::st
 	mt19937 gen(device());
 	uniform_int_distribution<size_t> losujLiczebnoscArmii{ 10000, 12000 };
 	uniform_int_distribution<size_t> losujPrzejmowanieS{ 0, 5 };
-	uniform_int_distribution<size_t> losujX{ 0, 59 };
-	uniform_int_distribution<size_t> losujY{ 0, 29 };
 	aktywna = 1;
 
 	this->liczebnosc = liczebnosc;

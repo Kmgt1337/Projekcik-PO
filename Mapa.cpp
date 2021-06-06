@@ -1,4 +1,5 @@
 #include "Mapa.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -32,6 +33,17 @@ void Mapa::reset()
 
 void Mapa::rysuj(const vector<Armia> armie, HANDLE hOut)
 {
+
+	cout << "|";
+	for (int i = 0; i < szer; i++)
+		cout << "=";
+	cout << "|" << endl;
+
+	cout << "|";
+	cout << "r - reset" << setw(szer - 8) << "|" << endl;
+	
+	cout << "|";
+	cout << "p - pauza" << setw(szer - 8) << "|" << endl;
 
 	cout << "|";
 	for (int i = 0; i < szer; i++)
