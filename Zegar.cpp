@@ -41,29 +41,6 @@ Armia Zegar::pokazArmieZwycieska(const vector<Armia>& armie)
 
 bool Zegar::zapis(const std::vector<Armia>& armie)
 {
-	vector<size_t> iloscProwincji(armie.size());
-	for (size_t i = 0; i < Mapa::dlug; i++)
-	{
-		for (size_t j = 0; j < Mapa::szer; j++)
-		{
-			switch (Mapa::mapa[i][j].przynaleznosc)
-			{
-			case 1:
-				iloscProwincji.at(0)++;
-				break;
-			case 2:
-				iloscProwincji.at(1)++;
-				break;
-			case 3:
-				iloscProwincji.at(2)++;
-				break;
-			case 4:
-				//iloscProwincji.at(3)++;
-				break;
-			}
-		}
-	}
-
 	fstream plik;
 	plik.open("baza.txt", ios::app);
 	if (plik.fail()) return false;
@@ -79,22 +56,7 @@ bool Zegar::zapis(const std::vector<Armia>& armie)
 				<< armia.dajLiczebnosc() << ","
 				<< armia.dajPrzyna() << ",";
 
-			switch(armia.dajPrzyna())
-			{
-			case 1:
-				plik << iloscProwincji.at(0);
-				break;
-			case 2:
-				plik << iloscProwincji.at(1);
-				break;
-			case 3:
-				plik << iloscProwincji.at(2);
-				break;
-			case 4:
-				//plik << iloscProwincji.at(3);
-				break;
-			}
-
+			plik << Mapa::dajLiczbeProwincjiArmii(armia);
 			plik << "]\t";
 		}
 		else
@@ -121,7 +83,7 @@ bool Zegar::zapisPrzedBitwa(Armia armia1, Armia armia2)
 	return true;
 }
 
-bool Zegar::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmianaHP)
+bool Zegar::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmianaHP, vector<float> procentoweStraty)
 {
 	fstream plik;
 	plik.open("baza.txt", ios::app);
@@ -137,7 +99,10 @@ bool Zegar::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmianaHP)
 	}
 	plik << armia1.dajNazwe() << " stracila " << zmianaHP.at(0) << " zolnierzy" << endl;
 	plik << armia2.dajNazwe() << " stracila " << zmianaHP.at(1) << " zolnierzy" << endl;
-	plik << "===============================" << endl;
+	plik << endl;
+	plik << "Procenowa strata " << armia1.dajNazwe() << ": " << procentoweStraty.at(0) << endl;
+	plik << "Procenowa strata " << armia2.dajNazwe() << ": " << procentoweStraty.at(1) << endl;
+	plik << "===============================" << endl << endl;
 	plik.close();
 	return true;
 }
@@ -163,7 +128,8 @@ bool Zegar::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 	plik.open("baza.txt", ios::app);
 	if (plik.fail()) return false;
 	
-	plik << "=====PROGRAM SYMULACYJNY: WOJNY====" << endl << endl;
+	plik << "=====PROGRAM SYMULACYJNY: WOJNY====" << endl;
+	plik << "Autorzy: Kamil Gawlik, Sebastian Dorabiala" << endl << endl;
 	plik << "Parametry przed rozpoczêciem symulacji: ";
 	plik << "Rozmiar mapy:[" << Mapa::szer << " x " << Mapa::dlug << "]";
 	for (auto armia : armie)

@@ -30,7 +30,7 @@ public:
 	virtual bool zapis(const std::vector<Armia>& armie);
 	virtual bool zapisPrzedSymulacja(const std::vector<Armia>&);
 	virtual bool zapisPrzedBitwa(Armia, Armia);
-	virtual bool zapisBitwy(Armia, Armia, std::vector<size_t>);
+	virtual bool zapisBitwy(Armia, Armia, std::vector<size_t>, std::vector<float>);
 	virtual bool ostatniZapis(Armia, DWORD);
 };
 #endif

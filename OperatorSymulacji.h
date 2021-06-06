@@ -1,10 +1,12 @@
-#pragma once
+#ifndef OPERATORSYMULACJI_H
+#define OPERATORSYMULACJI_H
 
 #include "Armia.h"
 #include "Zegar.h"
 #include "Mapa.h"
 #include "Operator_bitwy.h"
 #include <vector>
+#include <conio.h>
 
 class OperatorSymulacji
 {
@@ -30,4 +32,6 @@ private:
 	const size_t maksimumX = 40;
 	const size_t maksimumY = 40;
 };
+
+#endif
 

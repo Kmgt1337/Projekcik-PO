@@ -58,27 +58,35 @@ int Armia::ruch()
 	{
 		// ruch w gore
 	case 1:
-		if (pozycjaX == 0) break;
-		--pozycjaX;
-		break;
+		if (pozycjaX != 0)
+		{
+			--pozycjaX;
+			break;
+		}
 
 		//ruch w lewo
 	case 2:
-		if (pozycjaY == 0) break;
-		--pozycjaY;
-		break;
+		if (pozycjaY != 0)
+		{
+			--pozycjaY;
+			break;
+		}
 
 		//ruch w dol
 	case 3:
-		if (pozycjaX == x - 1) break;
-		++pozycjaX;
-		break;
+		if (pozycjaX != x - 1)
+		{
+			++pozycjaX;
+			break;
+		}
 
 		//ruch w prawo
 	case 4:
-		if (pozycjaY == y - 1) break;
-		++pozycjaY;
-		break;
+		if (pozycjaY != y - 1)
+		{
+			++pozycjaY;
+			break;
+		}
 	}
 
 	Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;

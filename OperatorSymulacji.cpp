@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 #include <limits>
-#include <conio.h>
 #undef max
 
 using namespace std;
@@ -56,7 +55,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 		return false;
 	}
 
-	for (int i = 1; i < 4; i++)
+	for (int i = 1; i <= 10; i++)
 	{
 		size_t pomX, pomY;
 		string nazwa;
@@ -98,7 +97,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 
 		armie.push_back({ i, pomX, pomY, 'X', i, nazwa, liczebnosc });
 
-		if (i >= 2)
+		if (i >= 2 && i < 10)
 		{
 			cout << "\nCzy chcesz dodac kolejna armie? [tak - nacisnij dowolny klawisz, nie - nacisnij 'enter']: ";
 			if (_getch() == 13)
@@ -116,17 +115,18 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 
 int OperatorSymulacji::prowadzSymulacje()
 {
-	char znak;
+	size_t pom = 0;
 
 	if(!zapisywacz->zapisPrzedSymulacja(armie)) return -3;
 	Zegar::zacznijOdmierzacCzas();
 
 	while (czySymulacjaJestAktywna)
 	{
+		pom = 0;
+
 		if (_kbhit())
 		{
-			znak = _getch();
-			switch (znak)
+			switch (_getch())
 			{
 			case 'r':
 				Mapa::clrscr();
@@ -166,7 +166,8 @@ int OperatorSymulacji::prowadzSymulacje()
 				}
 				if (armie[id2 - 1].dajLiczebnosc() == 0)
 				{
-					armia.aktywna = 0;
+					// armia.aktywna = 0; <--- zle, powodowalo blad ktory uniemozliwial zakonczenie symulacji
+					armie[id2 - 1].aktywna = 0; // ma byc tak
 					for (size_t i = 0; i < Mapa::dlug; i++)
 					{
 						for (size_t j = 0; j < Mapa::szer; j++)
@@ -176,11 +177,31 @@ int OperatorSymulacji::prowadzSymulacje()
 							}
 					}
 				}
-				if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
+				for (size_t i = 0; i < armie.size(); i++)
 				{
-					if (!zapisywacz->zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
-					zmianaLiczebnosci = Operator_bitwy::bitwa(armia, armie[id2 - 1]);
-					if (!zapisywacz->zapisBitwy(armia, armie[id2 - 1], zmianaLiczebnosci)) return -3;
+					if (armie.at(i).dajLiczebnosc() > 0)
+					{
+						pom++;
+					}
+				}
+
+				if (pom == 2)
+				{
+					if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
+					{
+						if (!zapisywacz->zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
+						zmianaLiczebnosci = Operator_bitwy::ostatniaBitwa(armia, armie[id2 - 1]);
+						if (!zapisywacz->zapisBitwy(armia, armie[id2 - 1], zmianaLiczebnosci, Operator_bitwy::dajStratyProcentoweArmii())) return -3;
+					}
+				}
+				else
+				{
+					if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
+					{
+						if (!zapisywacz->zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
+						zmianaLiczebnosci = Operator_bitwy::bitwa(armia, armie[id2 - 1]);
+						if (!zapisywacz->zapisBitwy(armia, armie[id2 - 1], zmianaLiczebnosci, Operator_bitwy::dajStratyProcentoweArmii())) return -3;
+					}
 				}
 			}
 			id2 = 0;
@@ -201,7 +222,8 @@ int OperatorSymulacji::prowadzSymulacje()
 	if (!zapisywacz->ostatniZapis(armiaZwycieska, czasTrwaniaSymulacji)) return -3;
 
 	system("cls");
-	std::cout << "Armia zwycieska to: " << armiaZwycieska.dajNazwe() << endl;
+	cout << "Armia zwycieska to: " << armiaZwycieska.dajNazwe() << endl;
+	cout << "Symulacja zakonczona pomyslnie" << endl;
 
 	return 0;
 }
