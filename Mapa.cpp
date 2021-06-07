@@ -7,6 +7,18 @@ vector<vector<Prowincja>> Mapa::mapa;
 size_t Mapa::dlug;
 size_t Mapa::szer;
 
+void Mapa::clrscr() 
+{
+	HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord = { 0, 0 };
+	SetConsoleCursorPosition(hCon, coord);
+	HANDLE hConsoleOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO hCCI;
+	GetConsoleCursorInfo(hConsoleOut, &hCCI);
+	hCCI.bVisible = FALSE;
+	SetConsoleCursorInfo(hConsoleOut, &hCCI);
+}
+
 void Mapa::inicjalizuj(size_t x, size_t y)
 {
 	dlug = y;
@@ -19,11 +31,11 @@ void Mapa::inicjalizuj(size_t x, size_t y)
 	}
 }
 
-vector<size_t> Mapa::dajLiczbeProwincjiKazdejArmii(Armia armia1, Armia armia2) 
-{ 
-	std::vector<size_t> pom; 
-	size_t larmia1 = 0; 
-	size_t larmia2 = 0; 
+vector<size_t> Mapa::dajLiczbeProwincjiKazdejArmii(Armia armia1, Armia armia2)
+{
+	std::vector<size_t> pom;
+	size_t larmia1 = 0;
+	size_t larmia2 = 0;
 
 	for (size_t i = 0; i < mapa.size(); i++)
 	{
@@ -40,8 +52,8 @@ vector<size_t> Mapa::dajLiczbeProwincjiKazdejArmii(Armia armia1, Armia armia2)
 		}
 	}
 	pom.push_back(larmia1);
-	pom.push_back(larmia2); 
-	return pom; 
+	pom.push_back(larmia2);
+	return pom;
 }
 
 size_t Mapa::dajLiczbeProwincjiArmii(Armia armia)
@@ -77,7 +89,7 @@ void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 {
 
 	cout << "|";
-	for (int i = 0; i < szer; i++)
+	for (size_t i = 0; i < szer; i++)
 		cout << "=";
 	cout << "|" << endl;
 
@@ -88,7 +100,7 @@ void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 	cout << "p - pauza" << setw(szer - 8) << "|" << endl;
 
 	cout << "|";
-	for (int i = 0; i < szer; i++)
+	for (size_t i = 0; i < szer; i++)
 		cout << "=";
 	cout << "|" << endl;
 
@@ -126,7 +138,7 @@ void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 	}
 
 	cout << "|";
-	for (int i = 0; i < szer; i++)
+	for (size_t i = 0; i < szer; i++)
 		cout << "=";
 	cout << "|";
 	clrscr();

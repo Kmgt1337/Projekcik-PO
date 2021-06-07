@@ -1,7 +1,8 @@
 #include "Armia.h"
+#include "Mapa.h"
+#include "Zwiad.h"
 #include <random>
 #include <iomanip>
-#include "Mapa.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ Armia::Armia(int id, size_t x, size_t y, char symbol, int przynaleznosc, std::st
 	aktywna = 1;
 
 	this->liczebnosc = liczebnosc;
-	przejmowanieS = losujPrzejmowanieS(gen);
+	//przejmowanieS = losujPrzejmowanieS(gen);
 	this->przynaleznosc = przynaleznosc;
 	szybkosc = 1;
 	this->id = id;
@@ -89,6 +90,7 @@ int Armia::ruch()
 		}
 	}
 
+	zwiad.raport();
 	Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;
 
 	if (Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji != 0)

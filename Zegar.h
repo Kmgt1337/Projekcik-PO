@@ -2,36 +2,34 @@
 #define ZEGAR_H
 
 #include "Armia.h"
-#include "ZapisDoPliku.h"
 #include <Windows.h>
+#include <ctime>
 
-class Zegar : public ZapisDoPliku
+// klasa odpowiedzialna za mierzenie up³ywu czasu i tur
+class Zegar
 {
-private:
-	static size_t tura;
-	static DWORD czasStartu, czasKonca;
 public:
-	bool koniec;
-	static void start() { tura = 0; }
+	// statyczna funkcja sk³adowa klasy ustawiaj¹ca turê na 0
+	static void start();
 
-	static void nowaTura() { ++tura; }
-	static size_t dajObecnaTure() { return tura; }
+	// statyczna funkcja sk³adowa klasy zwiêkszaj¹ca turê o 1
+	static void nowaTura();
 
-	static void zacznijOdmierzacCzas() { czasStartu = GetTickCount(); }
-	static DWORD dajCzasWykonaniaSymulacjiMiliSekundy()
-	{
-		czasKonca = GetTickCount();
-		return (czasKonca - czasStartu);
-	}
+	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê tur
+	static size_t dajObecnaTure();
 
-	static bool sprawdzCzySymulacjaSieZakonczyla(const std::vector<Armia>&);
-	static Armia pokazArmieZwycieska(const std::vector<Armia>&);
+	// statyczna funkcja sk³adowa klasy zaczynaj¹ca mierzyæ czas rzeczywisty
+	static void zacznijOdmierzacCzas();
 
-	virtual bool zapis(const std::vector<Armia>& armie);
-	virtual bool zapisPrzedSymulacja(const std::vector<Armia>&);
-	virtual bool zapisPrzedBitwa(Armia, Armia);
-	virtual bool zapisBitwy(Armia, Armia, std::vector<size_t>, std::vector<float>);
-	virtual bool ostatniZapis(Armia, DWORD);
+	// statyczna funkcja sk³adowa klasy, która zwraca czas pomiêdzy jej wywo³aniem a wywo³aniem funkcji zacznijOdmierzacCzas()
+	static DWORD dajCzasWykonaniaSymulacjiMiliSekundy();
+
+private:
+	// statyczny sk³adnik klasy przechowuj¹cy liczbê tur
+	static size_t tura;
+
+	// statyczne sk³adniki klasy przechowuj¹ce czas startu symulacji i czas jej zakoñczenia
+	static DWORD czasStartu, czasKonca;
 };
-#endif
 
+#endif

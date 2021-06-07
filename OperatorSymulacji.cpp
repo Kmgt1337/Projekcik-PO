@@ -1,4 +1,5 @@
 #include "OperatorSymulacji.h"
+#include "OperatorZakonczenia.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,8 +15,20 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 
 	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hOut, 15);
-	size_t x, y;
 
+	size_t maxtura;
+	cout << "Podaj maksymalna liczbe tur w symulacji [minimum 1000, maksimum 10000]: ";
+	cin >> maxtura;
+	while (cin.fail() || maxtura < 1000 || maxtura > 10000)
+	{
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout << "Wprowadziles zle dane wejsciowe, wprowadz jeszcze raz: ";
+		cin >> maxtura;
+	}
+	OperatorZakonczenia::ustawMaksymalnyLimitTur(maxtura);
+	
+	size_t x, y;
 	cout << "Podaj rozmiar x mapy [minimum " << minimum << ", maksymalnie " << maksimumX << "]: ";
 	cin >> x;
 	while (cin.fail() || x < minimum || x > maksimumX)
@@ -116,8 +129,9 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 int OperatorSymulacji::prowadzSymulacje()
 {
 	size_t pom = 0;
+	bool operZakonczenia = false;
 
-	if(!zapisywacz->zapisPrzedSymulacja(armie)) return -3;
+	if(!OperatorPliku::zapisPrzedSymulacja(armie)) return -3;
 	Zegar::zacznijOdmierzacCzas();
 
 	while (czySymulacjaJestAktywna)
@@ -139,9 +153,19 @@ int OperatorSymulacji::prowadzSymulacje()
 				break;
 			}
 		}
-		if (Zegar::sprawdzCzySymulacjaSieZakonczyla(armie))
+		if (OperatorZakonczenia::sprawdzCzySymulacjaSieZakonczylaArmie(armie))
 		{
-			armiaZwycieska = Zegar::pokazArmieZwycieska(armie);
+			armiaZwycieska = OperatorZakonczenia::pokazArmieZwycieska(armie);
+
+			operZakonczenia = false;
+			czySymulacjaJestAktywna = false;
+			break;
+		}
+		if (OperatorZakonczenia::sprawdzCzySymulacjaSieZakonczylaTury())
+		{
+			armiaZwycieska = OperatorZakonczenia::pokazArmieZwycieska(armie);
+
+			operZakonczenia = true;
 			czySymulacjaJestAktywna = false;
 			break;
 		}
@@ -177,37 +201,18 @@ int OperatorSymulacji::prowadzSymulacje()
 							}
 					}
 				}
-				for (size_t i = 0; i < armie.size(); i++)
+				
+				if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
 				{
-					if (armie.at(i).dajLiczebnosc() > 0)
-					{
-						pom++;
-					}
-				}
-
-				if (pom == 2)
-				{
-					if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
-					{
-						if (!zapisywacz->zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
-						zmianaLiczebnosci = Operator_bitwy::ostatniaBitwa(armia, armie[id2 - 1]);
-						if (!zapisywacz->zapisBitwy(armia, armie[id2 - 1], zmianaLiczebnosci, Operator_bitwy::dajStratyProcentoweArmii())) return -3;
-					}
-				}
-				else
-				{
-					if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
-					{
-						if (!zapisywacz->zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
-						zmianaLiczebnosci = Operator_bitwy::bitwa(armia, armie[id2 - 1]);
-						if (!zapisywacz->zapisBitwy(armia, armie[id2 - 1], zmianaLiczebnosci, Operator_bitwy::dajStratyProcentoweArmii())) return -3;
-					}
+					if (!OperatorPliku::zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
+					zmianaLiczebnosci = Operator_bitwy::bitwa(armia, armie[id2 - 1]);
+					if (!OperatorPliku::zapisBitwy(armia, armie[id2 - 1], zmianaLiczebnosci, Operator_bitwy::dajStratyProcentoweArmii())) return -3;
 				}
 			}
 			id2 = 0;
 		}
 		Mapa::rysuj(armie, hOut);
-		if (!zapisywacz->zapis(armie)) return -3;
+		if (!OperatorPliku::zapis(armie)) return -3;
 	}
 
 	if (!czasTrwaniaPrzerwy)
@@ -219,11 +224,19 @@ int OperatorSymulacji::prowadzSymulacje()
 		czasTrwaniaSymulacji = Zegar::dajCzasWykonaniaSymulacjiMiliSekundy();
 		czasTrwaniaSymulacji -= czasTrwaniaPrzerwy;
 	}
-	if (!zapisywacz->ostatniZapis(armiaZwycieska, czasTrwaniaSymulacji)) return -3;
+
+	if (operZakonczenia)
+	{
+		if (!OperatorPliku::ostatniZapisTury(armie, armiaZwycieska, czasTrwaniaSymulacji)) return -3;
+	}
+	else
+	{
+		if (!OperatorPliku::ostatniZapis(armiaZwycieska, czasTrwaniaSymulacji)) return -3;
+	}
 
 	system("cls");
-	cout << "Armia zwycieska to: " << armiaZwycieska.dajNazwe() << endl;
 	cout << "Symulacja zakonczona pomyslnie" << endl;
+	cout << "Pomyslnie zapisano parametry symulacji do pliku tekstowego" << endl;
 
 	return 0;
 }

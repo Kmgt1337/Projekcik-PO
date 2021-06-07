@@ -8,33 +8,36 @@
 #include <Windows.h>
 #include <random>
 
-using namespace std;
-
+// klasa odpowiadaj¹ca za mapê i jej rysowanie na ekranie konsoli
 class Mapa
 {
 public:
-	static  vector<vector<Prowincja>> mapa;
+	// statyczny sk³adnik klasy - tablica dwuwymiarowa prowincji, ka¿de pole w tej tablicy to unikalna prowincja
+	static  std::vector<std::vector<Prowincja>> mapa;
+
+	// statyczny sk³adnik klasy przechowuj¹cy wielkoœæ y mapy
 	static  size_t dlug;
+
+	// statyczny sk³adnik klasy przechowuj¹cy wielkoœæ x mapy
 	static  size_t szer;
 
+	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê prowincji przejêtych dla dwóch armii
 	static std::vector<size_t> dajLiczbeProwincjiKazdejArmii(Armia, Armia);
+
+	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê prowincji jednej armii
 	static size_t dajLiczbeProwincjiArmii(Armia);
 
-	//static Prowincja mapa[dlug][szer];
-	static void rysuj(const vector<Armia>& armie, HANDLE hOut);
+	// statyczna funkcja sk³adowa klasy odpowiedzialna za wyœwietlenie prowincji oraz armii w konsoli
+	static void rysuj(const std::vector<Armia>& armie, HANDLE hOut);
+
+	// statyczna funkcja sk³adowa klasy, która ustawia po¿¹dany rozmiar tablicy dwywymiarowej
 	static void inicjalizuj(size_t, size_t);
+
+	// statyczna funkcja sk³adowa klasy, która resetuje wszystkie prowincje w tablicy dwuwymiarowej
 	static void reset();
-	static void clrscr() //nie ogarniam jak to dziala, ale ladnie czysci ekran, lepiej niz system("cls")
-	{
-		HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
-		COORD coord = { 0, 0 };
-		SetConsoleCursorPosition(hCon, coord);
-		HANDLE hConsoleOut = GetStdHandle(STD_OUTPUT_HANDLE);
-		CONSOLE_CURSOR_INFO hCCI;
-		GetConsoleCursorInfo(hConsoleOut, &hCCI);
-		hCCI.bVisible = FALSE;
-		SetConsoleCursorInfo(hConsoleOut, &hCCI);
-	}
+
+	// statyzcna funkcja sk³adowa klasy, która czyœci ekran konsoli po ka¿dej turze
+	static void clrscr();
 };
 
 #endif

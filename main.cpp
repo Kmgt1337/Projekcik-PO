@@ -13,14 +13,10 @@ int main()
 		switch (decyzja = symulacjaTest->prowadzSymulacje())
 		{
 		case -3: // wystapil gdzies problem z zapisem do pliku
-			cout << "\nNacisnij dowolny klawisz aby kontyunowac...\n";
-			if (_getch())
-			{
-				return -3;
-			}
+			return -3;
 
 		case 0: // symulacja zostala przeprowadzona do konca prawidlowo
-			cout << "\nNacisnij dowolny klawisz aby kontyunowac...\n";
+			std::cout << "\nNacisnij dowolny klawisz aby kontyunowac...\n";
 			if (_getch())
 			{
 				return 0;
