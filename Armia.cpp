@@ -2,6 +2,7 @@
 #include <random>
 #include <iomanip>
 #include "Mapa.h"
+#include <windows.h>
 
 using namespace std;
 
@@ -47,62 +48,171 @@ int Armia::ruch()
 		return 0;
 	}
 
+	int roz = 0;
 	random_device device;
 	mt19937 gen(device());
-	uniform_int_distribution<size_t> kierunek{ 1, 4 };
-	size_t pom = kierunek(gen);
-
-	Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
-
-	switch (pom)
+	size_t pom;
+	vector<Prowincja> prowincje_do_wyboru;
+	vector<Prowincja> cel;
+	if (pozycjaX != 0)
 	{
-		// ruch w gore
-	case 1:
-		if (pozycjaX != 0)
+		if (Mapa::mapa[pozycjaX-1][pozycjaY].armia_w_prowincji != 0)
 		{
-			--pozycjaX;
-			break;
-		}
+			Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
 
-		//ruch w lewo
-	case 2:
-		if (pozycjaY != 0)
-		{
-			--pozycjaY;
-			break;
-		}
+			Mapa::mapa[pozycjaX-1][pozycjaY].symbol = symbol;
 
-		//ruch w dol
-	case 3:
-		if (pozycjaX != x - 1)
-		{
-			++pozycjaX;
-			break;
+			if (Mapa::mapa[pozycjaX-1][pozycjaY].armia_w_prowincji != 0)
+			{
+				int armia_do_kasacji = Mapa::mapa[pozycjaX-1][pozycjaY].armia_w_prowincji;
+				Mapa::mapa[pozycjaX-1][pozycjaY].armia_w_prowincji = id;
+				return armia_do_kasacji;
+			}
 		}
-
-		//ruch w prawo
-	case 4:
-		if (pozycjaY != y - 1)
+		else if (Mapa::mapa[pozycjaX - 1][pozycjaY].przynaleznosc != przynaleznosc)
 		{
-			++pozycjaY;
-			break;
+			cel.push_back(Mapa::mapa[pozycjaX - 1][pozycjaY]);
+			roz++;
+		}
+	}
+	if (pozycjaY != 0)
+	{
+		if (Mapa::mapa[pozycjaX][pozycjaY - 1].armia_w_prowincji != 0)
+		{
+			Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
+
+			Mapa::mapa[pozycjaX][pozycjaY - 1].symbol = symbol;
+
+			if (Mapa::mapa[pozycjaX][pozycjaY - 1].armia_w_prowincji != 0)
+			{
+				int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY - 1].armia_w_prowincji;
+				Mapa::mapa[pozycjaX][pozycjaY - 1].armia_w_prowincji = id;
+				return armia_do_kasacji;
+			}
+		}
+		else if (Mapa::mapa[pozycjaX][pozycjaY - 1].przynaleznosc != przynaleznosc)
+		{
+			cel.push_back(Mapa::mapa[pozycjaX][pozycjaY - 1]);
+			roz++;
+		}
+	}
+	if (pozycjaX != x - 1)
+	{
+		if (Mapa::mapa[pozycjaX + 1][pozycjaY].armia_w_prowincji != 0)
+		{
+			Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
+
+			Mapa::mapa[pozycjaX + 1][pozycjaY].symbol = symbol;
+
+			if (Mapa::mapa[pozycjaX + 1][pozycjaY].armia_w_prowincji != 0)
+			{
+				int armia_do_kasacji = Mapa::mapa[pozycjaX + 1][pozycjaY].armia_w_prowincji;
+				Mapa::mapa[pozycjaX + 1][pozycjaY].armia_w_prowincji = id;
+				return armia_do_kasacji;
+			}
+		}
+		else if (Mapa::mapa[pozycjaX + 1][pozycjaY].przynaleznosc != przynaleznosc)
+		{
+			cel.push_back(Mapa::mapa[pozycjaX + 1][pozycjaY]);
+			roz++;
+		}
+	}
+	if (pozycjaY != y - 1)
+	{
+		if (Mapa::mapa[pozycjaX][pozycjaY + 1].armia_w_prowincji != 0)
+		{
+			Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
+
+			Mapa::mapa[pozycjaX][pozycjaY + 1].symbol = symbol;
+
+			if (Mapa::mapa[pozycjaX][pozycjaY + 1].armia_w_prowincji != 0)
+			{
+				int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY + 1].armia_w_prowincji;
+				Mapa::mapa[pozycjaX][pozycjaY + 1].armia_w_prowincji = id;
+				return armia_do_kasacji;
+			}
+		}
+		else if (Mapa::mapa[pozycjaX][pozycjaY + 1].przynaleznosc != przynaleznosc)
+		{
+			cel.push_back(Mapa::mapa[pozycjaX][pozycjaY + 1]);
+			roz++;
 		}
 	}
 
-	Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;
-
-	if (Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji != 0)
+	if(roz == 0)
 	{
-		int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji;
+		uniform_int_distribution<size_t> kierunek{ 1, 4 };
+		pom = kierunek(gen);
+		Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
+		switch (pom)
+		{
+			// ruch w gore
+		case 1:
+			if (pozycjaX != 0)
+			{
+				--pozycjaX;
+				break;
+			}
+
+			//ruch w lewo
+		case 2:
+			if (pozycjaY != 0)
+			{
+				--pozycjaY;
+				break;
+			}
+
+			//ruch w dol
+		case 3:
+			if (pozycjaX != x - 1)
+			{
+				++pozycjaX;
+				break;
+			}
+
+			//ruch w prawo
+		case 4:
+			if (pozycjaY != y - 1)
+			{
+				++pozycjaY;
+				break;
+			}
+		}
+
+
+		Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;
+
+		if (Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji != 0)
+		{
+			int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji;
+			Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
+			return armia_do_kasacji;
+		}
+
 		Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
-		return armia_do_kasacji;
+
+		if (Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc != przynaleznosc)
+		{
+			Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc = przynaleznosc;
+		}
 	}
-
-	Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
-
-	if (Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc != przynaleznosc)
+	else
 	{
-		Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc = przynaleznosc;
+		uniform_int_distribution<size_t> kierunek{ 0, static_cast<size_t>(roz)-1 };
+		pom = kierunek(gen);
+		Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
+		pozycjaX = cel[pom].wspolrzednax;
+		pozycjaY = cel[pom].wspolrzednay;
+
+
+		Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;
+
+		Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
+
+		if (Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc != przynaleznosc)
+		{
+			Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc = przynaleznosc;
+		}
 	}
 	return 0;
 }

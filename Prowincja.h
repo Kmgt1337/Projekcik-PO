@@ -8,10 +8,11 @@ class Prowincja
 {
 private:
 	std::string nazwa;
-	int wspolrzedne;
 	int wielkosc;
 	int przychod;
 public:
+	int wspolrzednax;
+	int wspolrzednay;
 	int przynaleznosc;
 	char symbol;
 	int armia_w_prowincji;

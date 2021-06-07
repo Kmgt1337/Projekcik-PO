@@ -1,0 +1,79 @@
+=====PROGRAM SYMULACYJNY: WOJNY====
+Autorzy: Kamil Gawlik, Sebastian Dorabiala
+
+Parametry przed rozpoczêciem symulacji: Rozmiar mapy:[16 x 16]         1:[2,2,1000,1]	         2:[15,15,1000,2]	         3:[10,10,1000,3]	
+
+ Tura nr 1	         1:[2,3,1000,1,1]	         2:[15,14,1000,2,1]	         3:[10,9,1000,3,1]	
+ Tura nr 2	         1:[3,3,1000,1,2]	         2:[15,13,1000,2,2]	         3:[11,9,1000,3,2]	
+ Tura nr 3	         1:[3,4,1000,1,3]	         2:[15,12,1000,2,3]	         3:[11,10,1000,3,3]	
+ Tura nr 4	         1:[4,4,1000,1,4]	         2:[14,12,1000,2,4]	         3:[11,11,1000,3,4]	
+ Tura nr 5	         1:[4,5,1000,1,5]	         2:[14,13,1000,2,5]	         3:[12,11,1000,3,5]	
+ Tura nr 6	         1:[4,6,1000,1,6]	         2:[14,14,1000,2,6]	         3:[12,12,1000,3,6]	
+ Tura nr 7	         1:[5,6,1000,1,7]	         2:[13,14,1000,2,7]	         3:[11,12,1000,3,7]	
+ Tura nr 8	         1:[5,5,1000,1,8]	         2:[12,14,1000,2,8]	         3:[10,12,1000,3,8]	
+ Tura nr 9	         1:[5,4,1000,1,9]	         2:[12,13,1000,2,9]	         3:[10,11,1000,3,9]	
+ Tura nr 10	         1:[5,3,1000,1,10]	         2:[13,13,1000,2,10]	         3:[9,11,1000,3,10]	
+ Tura nr 11	         1:[6,3,1000,1,11]	         2:[13,12,1000,2,11]	         3:[9,12,1000,3,11]	
+ Tura nr 12	         1:[7,3,1000,1,12]	         2:[12,12,1000,2,12]	         3:[9,13,1000,3,11]	
+ Tura nr 13	         1:[7,4,1000,1,13]	         2:[11,12,1000,2,13]	         3:[8,13,1000,3,11]	
+ Tura nr 14	         1:[7,5,1000,1,14]	         2:[11,11,1000,2,14]	         3:[8,12,1000,3,11]	
+ Tura nr 15	         1:[7,6,1000,1,15]	         2:[11,10,1000,2,15]	         3:[8,11,1000,3,11]	
+ Tura nr 16	         1:[8,6,1000,1,16]	         2:[11,9,1000,2,16]	         3:[8,10,1000,3,11]	
+ Tura nr 17	         1:[9,6,1000,1,17]	         2:[12,9,1000,2,17]	         3:[8,9,1000,3,12]	
+ Tura nr 18	         1:[9,7,1000,1,18]	         2:[13,9,1000,2,18]	         3:[8,8,1000,3,13]	
+
+=============================== BITWA nr 1, pomiedzy 3 a 1
+Wygrala 3
+3 stracila 470 zolnierzy
+1 stracila 1000 zolnierzy
+
+Procenowa strata 3: 47
+Procenowa strata 1: 100
+===============================
+
+ Tura nr 19	         1:[armia wyeliminowana]	         2:[13,10,1000,2,19]	         3:[8,8,530,3,13]	
+ Tura nr 20	         1:[armia wyeliminowana]	         2:[13,11,1000,2,20]	         3:[7,8,530,3,13]	
+ Tura nr 21	         1:[armia wyeliminowana]	         2:[14,11,1000,2,21]	         3:[7,7,530,3,14]	
+ Tura nr 22	         1:[armia wyeliminowana]	         2:[14,10,1000,2,22]	         3:[8,7,530,3,15]	
+ Tura nr 23	         1:[armia wyeliminowana]	         2:[15,10,1000,2,23]	         3:[9,7,530,3,16]	
+ Tura nr 24	         1:[armia wyeliminowana]	         2:[15,11,1000,2,24]	         3:[10,7,530,3,17]	
+ Tura nr 25	         1:[armia wyeliminowana]	         2:[14,11,1000,2,24]	         3:[10,6,530,3,18]	
+ Tura nr 26	         1:[armia wyeliminowana]	         2:[14,10,1000,2,24]	         3:[9,6,530,3,19]	
+ Tura nr 27	         1:[armia wyeliminowana]	         2:[14,9,1000,2,25]	         3:[9,5,530,3,20]	
+ Tura nr 28	         1:[armia wyeliminowana]	         2:[14,8,1000,2,26]	         3:[9,4,530,3,21]	
+ Tura nr 29	         1:[armia wyeliminowana]	         2:[13,8,1000,2,27]	         3:[9,3,530,3,22]	
+ Tura nr 30	         1:[armia wyeliminowana]	         2:[13,7,1000,2,28]	         3:[9,2,530,3,23]	
+ Tura nr 31	         1:[armia wyeliminowana]	         2:[14,7,1000,2,29]	         3:[8,2,530,3,24]	
+ Tura nr 32	         1:[armia wyeliminowana]	         2:[15,7,1000,2,30]	         3:[7,2,530,3,25]	
+ Tura nr 33	         1:[armia wyeliminowana]	         2:[15,8,1000,2,31]	         3:[7,1,530,3,26]	
+ Tura nr 34	         1:[armia wyeliminowana]	         2:[15,9,1000,2,32]	         3:[7,0,530,3,27]	
+ Tura nr 35	         1:[armia wyeliminowana]	         2:[15,10,1000,2,32]	         3:[8,0,530,3,28]	
+ Tura nr 36	         1:[armia wyeliminowana]	         2:[15,9,1000,2,32]	         3:[9,0,530,3,29]	
+ Tura nr 37	         1:[armia wyeliminowana]	         2:[15,9,1000,2,32]	         3:[9,1,530,3,30]	
+ Tura nr 38	         1:[armia wyeliminowana]	         2:[15,9,1000,2,32]	         3:[10,1,530,3,31]	
+ Tura nr 39	         1:[armia wyeliminowana]	         2:[15,8,1000,2,32]	         3:[11,1,530,3,32]	
+ Tura nr 40	         1:[armia wyeliminowana]	         2:[14,8,1000,2,32]	         3:[11,0,530,3,33]	
+ Tura nr 41	         1:[armia wyeliminowana]	         2:[13,8,1000,2,32]	         3:[12,0,530,3,34]	
+ Tura nr 42	         1:[armia wyeliminowana]	         2:[12,8,1000,2,33]	         3:[13,0,530,3,35]	
+ Tura nr 43	         1:[armia wyeliminowana]	         2:[12,7,1000,2,34]	         3:[13,1,530,3,36]	
+ Tura nr 44	         1:[armia wyeliminowana]	         2:[12,6,1000,2,35]	         3:[12,1,530,3,37]	
+ Tura nr 45	         1:[armia wyeliminowana]	         2:[11,6,1000,2,36]	         3:[12,2,530,3,38]	
+ Tura nr 46	         1:[armia wyeliminowana]	         2:[11,5,1000,2,37]	         3:[11,2,530,3,39]	
+ Tura nr 47	         1:[armia wyeliminowana]	         2:[11,4,1000,2,38]	         3:[11,3,530,3,40]	
+
+=============================== BITWA nr 2, pomiedzy 2 a 3
+Wygrala 2
+2 stracila 800 zolnierzy
+3 stracila 530 zolnierzy
+
+Procenowa strata 2: 80
+Procenowa strata 3: 100
+===============================
+
+ Tura nr 48	         1:[armia wyeliminowana]	         2:[11,4,200,2,37]	         3:[armia wyeliminowana]	
+
+
+
+==========================================WYGRALA 2
+
+==========================Czas trwania symulacji: 0 milisekund

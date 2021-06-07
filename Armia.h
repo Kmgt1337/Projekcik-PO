@@ -2,6 +2,7 @@
 #define ARMIA_H
 
 #include <string>
+#include <vector>
 #include "General.h"
 
 class Armia

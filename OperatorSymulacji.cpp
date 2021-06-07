@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <limits>
+#include <conio.h>
 #undef max
 
 using namespace std;
