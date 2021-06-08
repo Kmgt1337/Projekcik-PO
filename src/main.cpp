@@ -22,7 +22,11 @@ int main()
 		switch (decyzja = symulacjaTest->prowadzSymulacje())
 		{
 		case -3: // wyst¹pi³ gdzieœ problem z zapisem do pliku
-			return -3;
+			std::cout << "\nNacisnij dowolny klawisz aby kontyunowac...\n";
+			if (_getch())
+			{
+				return -3;
+			}
 
 		case 0: // symulacja zosta³a przeprowadzona do koñca prawid³owo
 			std::cout << "\nNacisnij dowolny klawisz aby kontyunowac...\n";

@@ -1,0 +1,666 @@
+=====PROGRAM SYMULACYJNY: WOJNY====
+Autorzy: Kamil Gawlik, Sebastian Dorabia³a
+
+Parametry przed rozpoczêciem symulacji: 
+
+Data i czas uruchomienia symulacji: Wed Jun  9 01:28:27 2021
+
+Rozmiar mapy:[10 x 10]
+
+armia1:[1,1,100000,1,0]    <---- gdzie: [pozycja X armii, pozycja Y armii, liczba ¿o³nierzy, przynale¿noœæ armii, liczba przejêtych prowincji]
+armia2:[2,2,100000,2,0]    <---- gdzie: [pozycja X armii, pozycja Y armii, liczba ¿o³nierzy, przynale¿noœæ armii, liczba przejêtych prowincji]
+armia3:[9,9,100000,3,0]    <---- gdzie: [pozycja X armii, pozycja Y armii, liczba ¿o³nierzy, przynale¿noœæ armii, liczba przejêtych prowincji]
+
+
+=========================================SYMULACJA
+
+ Tura nr 1	    armia1:[0,1,100000,1,1]	    armia2:[1,2,100000,2,1]	    armia3:[8,9,100000,3,1]	
+
+=============================== armia2 zebra³a zasób - zwiêkszenie liczebnoœci o 15%
+
+
+ Tura nr 2	    armia1:[0,0,100000,1,2]	    armia2:[1,3,114999,2,2]	    armia3:[8,8,100000,3,2]	
+ Tura nr 3	    armia1:[1,0,100000,1,3]	    armia2:[1,4,114999,2,3]	    armia3:[9,8,100000,3,3]	
+
+=============================== armia2 zebra³a zasób - zwiêkszenie liczebnoœci o 10%
+
+
+ Tura nr 4	    armia1:[2,0,100000,1,4]	    armia2:[1,5,126498,2,4]	    armia3:[9,9,100000,3,4]	
+ Tura nr 5	    armia1:[1,0,100000,1,4]	    armia2:[0,5,126498,2,5]	    armia3:[9,9,100000,3,4]	
+
+=============================== armia2 zebra³a zasób - zwiêkszenie obra¿eñ o 5%
+
+
+ Tura nr 6	    armia1:[0,0,100000,1,4]	    armia2:[0,6,126498,2,6]	    armia3:[9,9,100000,3,4]	
+
+=============================== armia2 zebra³a zasób - zwiêkszenie liczebnoœci o 15%
+
+
+ Tura nr 7	    armia1:[0,1,100000,1,4]	    armia2:[0,7,145472,2,7]	    armia3:[9,9,100000,3,4]	
+ Tura nr 8	    armia1:[1,1,100000,1,5]	    armia2:[0,6,145472,2,7]	    armia3:[8,9,100000,3,4]	
+ Tura nr 9	    armia1:[1,0,100000,1,5]	    armia2:[0,5,145472,2,7]	    armia3:[8,9,100000,3,4]	
+ Tura nr 10	    armia1:[2,0,100000,1,5]	    armia2:[0,6,145472,2,7]	    armia3:[8,8,100000,3,4]	
+ Tura nr 11	    armia1:[3,0,100000,1,6]	    armia2:[0,5,145472,2,7]	    armia3:[8,9,100000,3,4]	
+ Tura nr 12	    armia1:[4,0,100000,1,7]	    armia2:[0,4,145472,2,8]	    armia3:[8,9,100000,3,4]	
+ Tura nr 13	    armia1:[5,0,100000,1,8]	    armia2:[0,3,145472,2,9]	    armia3:[9,9,100000,3,4]	
+ Tura nr 14	    armia1:[5,1,100000,1,9]	    armia2:[0,2,145472,2,10]	    armia3:[9,8,100000,3,4]	
+ Tura nr 15	    armia1:[4,1,100000,1,10]	    armia2:[0,3,145472,2,10]	    armia3:[9,9,100000,3,4]	
+ Tura nr 16	    armia1:[3,1,100000,1,11]	    armia2:[0,4,145472,2,10]	    armia3:[8,9,100000,3,4]	
+ Tura nr 17	    armia1:[2,1,100000,1,12]	    armia2:[1,4,145472,2,10]	    armia3:[8,8,100000,3,4]	
+ Tura nr 18	    armia1:[3,1,100000,1,12]	    armia2:[0,4,145472,2,10]	    armia3:[8,9,100000,3,4]	
+ Tura nr 19	    armia1:[3,0,100000,1,12]	    armia2:[0,3,145472,2,10]	    armia3:[8,9,100000,3,4]	
+ Tura nr 20	    armia1:[3,1,100000,1,12]	    armia2:[0,4,145472,2,10]	    armia3:[9,9,100000,3,4]	
+ Tura nr 21	    armia1:[3,2,100000,1,13]	    armia2:[0,3,145472,2,10]	    armia3:[9,9,100000,3,4]	
+ Tura nr 22	    armia1:[3,3,100000,1,14]	    armia2:[0,2,145472,2,10]	    armia3:[9,9,100000,3,4]	
+ Tura nr 23	    armia1:[3,4,100000,1,14]	    armia2:[0,1,145472,2,11]	    armia3:[9,9,100000,3,4]	
+ Tura nr 24	    armia1:[2,4,100000,1,15]	    armia2:[0,2,145472,2,11]	    armia3:[9,9,100000,3,4]	
+ Tura nr 25	    armia1:[1,4,100000,1,16]	    armia2:[0,1,145472,2,10]	    armia3:[9,8,100000,3,4]	
+
+=============================== armia3 zebra³a zasób - zwiêkszenie liczebnoœci o 5%
+
+
+ Tura nr 26	    armia1:[0,4,100000,1,16]	    armia2:[1,1,145472,2,10]	    armia3:[9,7,105000,3,5]	
+ Tura nr 27	    armia1:[1,4,100000,1,16]	    armia2:[1,2,145472,2,10]	    armia3:[9,8,105000,3,5]	
+ Tura nr 28	    armia1:[0,4,100000,1,16]	    armia2:[1,1,145472,2,10]	    armia3:[8,8,105000,3,5]	
+ Tura nr 29	    armia1:[0,5,100000,1,16]	    armia2:[1,0,145472,2,10]	    armia3:[8,7,105000,3,6]	
+ Tura nr 30	    armia1:[0,4,100000,1,15]	    armia2:[2,0,145472,2,11]	    armia3:[8,8,105000,3,6]	
+ Tura nr 31	    armia1:[0,3,100000,1,15]	    armia2:[2,1,145472,2,11]	    armia3:[8,9,105000,3,6]	
+ Tura nr 32	    armia1:[1,3,100000,1,16]	    armia2:[1,1,145472,2,10]	    armia3:[8,9,105000,3,6]	
+ Tura nr 33	    armia1:[0,3,100000,1,16]	    armia2:[2,1,145472,2,10]	    armia3:[8,9,105000,3,6]	
+ Tura nr 34	    armia1:[0,4,100000,1,15]	    armia2:[3,1,145472,2,11]	    armia3:[7,9,105000,3,7]	
+ Tura nr 35	    armia1:[1,4,100000,1,14]	    armia2:[4,1,145472,2,12]	    armia3:[7,8,105000,3,8]	
+ Tura nr 36	    armia1:[2,4,100000,1,13]	    armia2:[4,0,145472,2,13]	    armia3:[6,8,105000,3,9]	
+ Tura nr 37	    armia1:[3,4,100000,1,12]	    armia2:[3,0,145472,2,14]	    armia3:[5,8,105000,3,10]	
+ Tura nr 38	    armia1:[3,5,100000,1,13]	    armia2:[2,0,145472,2,14]	    armia3:[5,7,105000,3,11]	
+
+=============================== armia1 zebra³a zasób - zwiêkszenie liczebnoœci o 5%
+
+
+
+=============================== armia3 zebra³a zasób - zwiêkszenie liczebnoœci o 10%
+
+
+ Tura nr 39	    armia1:[2,5,105000,1,14]	    armia2:[3,0,145472,2,14]	    armia3:[5,6,115500,3,12]	
+ Tura nr 40	    armia1:[3,5,105000,1,14]	    armia2:[3,1,145472,2,14]	    armia3:[5,7,115500,3,12]	
+ Tura nr 41	    armia1:[3,6,105000,1,15]	    armia2:[2,1,145472,2,14]	    armia3:[4,7,115500,3,13]	
+
+=============================== armia1 zebra³a zasób - zwiêkszenie liczebnoœci o 15%
+
+
+
+=============================== armia3 zebra³a zasób - zwiêkszenie obra¿eñ o 15%
+
+
+ Tura nr 42	    armia1:[3,7,120749,1,16]	    armia2:[3,1,145472,2,14]	    armia3:[4,8,115500,3,14]	
+ Tura nr 43	    armia1:[3,6,120749,1,15]	    armia2:[3,2,145472,2,15]	    armia3:[3,8,115500,3,15]	
+ Tura nr 44	    armia1:[3,5,120749,1,15]	    armia2:[2,2,145472,2,16]	    armia3:[4,8,115500,3,15]	
+
+=============================== armia1 zebra³a zasób - zwiêkszenie obra¿eñ o 10%
+
+
+ Tura nr 45	    armia1:[4,5,120749,1,16]	    armia2:[2,1,145472,2,16]	    armia3:[4,7,115500,3,15]	
+ Tura nr 46	    armia1:[5,5,120749,1,16]	    armia2:[1,1,145472,2,16]	    armia3:[3,7,115500,3,16]	
+ Tura nr 47	    armia1:[6,5,120749,1,17]	    armia2:[0,1,145472,2,16]	    armia3:[3,8,115500,3,16]	
+ Tura nr 48	    armia1:[6,6,120749,1,17]	    armia2:[0,0,145472,2,17]	    armia3:[2,8,115500,3,17]	
+ Tura nr 49	    armia1:[6,7,120749,1,18]	    armia2:[0,1,145472,2,17]	    armia3:[1,8,115500,3,18]	
+ Tura nr 50	    armia1:[6,6,120749,1,18]	    armia2:[0,2,145472,2,17]	    armia3:[2,8,115500,3,18]	
+ Tura nr 51	    armia1:[5,6,120749,1,19]	    armia2:[1,2,145472,2,17]	    armia3:[2,9,115500,3,18]	
+ Tura nr 52	    armia1:[4,6,120749,1,20]	    armia2:[0,2,145472,2,17]	    armia3:[2,8,115500,3,18]	
+ Tura nr 53	    armia1:[5,6,120749,1,20]	    armia2:[0,1,145472,2,17]	    armia3:[2,9,115500,3,18]	
+ Tura nr 54	    armia1:[5,5,120749,1,20]	    armia2:[1,1,145472,2,17]	    armia3:[2,9,115500,3,18]	
+ Tura nr 55	    armia1:[4,5,120749,1,20]	    armia2:[0,1,145472,2,17]	    armia3:[2,8,115500,3,18]	
+ Tura nr 56	    armia1:[5,5,120749,1,20]	    armia2:[0,2,145472,2,17]	    armia3:[1,8,115500,3,18]	
+ Tura nr 57	    armia1:[4,5,120749,1,20]	    armia2:[0,1,145472,2,17]	    armia3:[2,8,115500,3,18]	
+ Tura nr 58	    armia1:[4,6,120749,1,20]	    armia2:[0,0,145472,2,17]	    armia3:[3,8,115500,3,18]	
+ Tura nr 59	    armia1:[4,7,120749,1,21]	    armia2:[1,0,145472,2,17]	    armia3:[4,8,115500,3,17]	
+ Tura nr 60	    armia1:[4,6,120749,1,20]	    armia2:[1,1,145472,2,17]	    armia3:[4,7,115500,3,18]	
+ Tura nr 61	    armia1:[5,6,120749,1,20]	    armia2:[0,1,145472,2,17]	    armia3:[3,7,115500,3,18]	
+ Tura nr 62	    armia1:[6,6,120749,1,20]	    armia2:[0,0,145472,2,17]	    armia3:[4,7,115500,3,18]	
+ Tura nr 63	    armia1:[7,6,120749,1,20]	    armia2:[0,1,145472,2,17]	    armia3:[4,6,115500,3,19]	
+ Tura nr 64	    armia1:[7,7,120749,1,20]	    armia2:[0,0,145472,2,17]	    armia3:[3,6,115500,3,20]	
+ Tura nr 65	    armia1:[7,6,120749,1,20]	    armia2:[1,0,145472,2,17]	    armia3:[2,6,115500,3,21]	
+
+=============================== armia1 zebra³a zasób - zwiêkszenie liczebnoœci o 10%
+
+
+ Tura nr 66	    armia1:[7,5,132823,1,21]	    armia2:[2,0,145472,2,17]	    armia3:[1,6,115500,3,22]	
+ Tura nr 67	    armia1:[8,5,132823,1,22]	    armia2:[3,0,145472,2,16]	    armia3:[1,5,115500,3,23]	
+ Tura nr 68	    armia1:[8,6,132823,1,22]	    armia2:[4,0,145472,2,16]	    armia3:[1,4,115500,3,24]	
+ Tura nr 69	    armia1:[7,6,132823,1,21]	    armia2:[4,1,145472,2,16]	    armia3:[2,4,115500,3,25]	
+ Tura nr 70	    armia1:[7,7,132823,1,21]	    armia2:[4,2,145472,2,17]	    armia3:[1,4,115500,3,25]	
+ Tura nr 71	    armia1:[8,7,132823,1,22]	    armia2:[4,1,145472,2,17]	    armia3:[2,4,115500,3,24]	
+ Tura nr 72	    armia1:[7,7,132823,1,22]	    armia2:[4,0,145472,2,17]	    armia3:[2,3,115500,3,25]	
+ Tura nr 73	    armia1:[7,6,132823,1,21]	    armia2:[5,0,145472,2,17]	    armia3:[2,2,115500,3,26]	
+ Tura nr 74	    armia1:[7,5,132823,1,20]	    armia2:[5,1,145472,2,17]	    armia3:[1,2,115500,3,27]	
+ Tura nr 75	    armia1:[8,5,132823,1,20]	    armia2:[6,1,145472,2,17]	    armia3:[0,2,115500,3,28]	
+ Tura nr 76	    armia1:[8,4,132823,1,21]	    armia2:[7,1,145472,2,17]	    armia3:[0,1,115500,3,29]	
+ Tura nr 77	    armia1:[9,4,132823,1,22]	    armia2:[6,1,145472,2,16]	    armia3:[0,0,115500,3,30]	
+
+=============================== armia2 zebra³a zasób - zwiêkszenie liczebnoœci o 15%
+
+
+ Tura nr 78	    armia1:[9,5,132823,1,23]	    armia2:[6,2,167292,2,17]	    armia3:[0,1,115500,3,30]	
+ Tura nr 79	    armia1:[9,6,132823,1,24]	    armia2:[5,2,167292,2,18]	    armia3:[0,0,115500,3,30]	
+ Tura nr 80	    armia1:[8,6,132823,1,24]	    armia2:[5,1,167292,2,17]	    armia3:[1,0,115500,3,31]	
+ Tura nr 81	    armia1:[8,5,132823,1,24]	    armia2:[4,1,167292,2,17]	    armia3:[0,0,115500,3,31]	
+ Tura nr 82	    armia1:[7,5,132823,1,24]	    armia2:[3,1,167292,2,17]	    armia3:[1,0,115500,3,31]	
+ Tura nr 83	    armia1:[7,4,132823,1,25]	    armia2:[3,2,167292,2,16]	    armia3:[2,0,115500,3,32]	
+ Tura nr 84	    armia1:[7,3,132823,1,26]	    armia2:[2,2,167292,2,17]	    armia3:[1,0,115500,3,31]	
+ Tura nr 85	    armia1:[7,4,132823,1,26]	    armia2:[2,1,167292,2,17]	    armia3:[2,0,115500,3,31]	
+ Tura nr 86	    armia1:[8,4,132823,1,26]	    armia2:[2,2,167292,2,16]	    armia3:[3,0,115500,3,32]	
+ Tura nr 87	    armia1:[8,5,132823,1,26]	    armia2:[1,2,167292,2,16]	    armia3:[4,0,115500,3,32]	
+ Tura nr 88	    armia1:[8,6,132823,1,26]	    armia2:[1,1,167292,2,15]	    armia3:[4,1,115500,3,33]	
+ Tura nr 89	    armia1:[8,7,132823,1,26]	    armia2:[1,2,167292,2,14]	    armia3:[3,1,115500,3,34]	
+ Tura nr 90	    armia1:[7,7,132823,1,26]	    armia2:[2,2,167292,2,14]	    armia3:[4,1,115500,3,34]	
+ Tura nr 91	    armia1:[7,6,132823,1,26]	    armia2:[1,2,167292,2,13]	    armia3:[4,2,115500,3,35]	
+ Tura nr 92	    armia1:[7,5,132823,1,26]	    armia2:[0,2,167292,2,13]	    armia3:[3,2,115500,3,35]	
+ Tura nr 93	    armia1:[7,6,132823,1,26]	    armia2:[1,2,167292,2,13]	    armia3:[4,2,115500,3,35]	
+ Tura nr 94	    armia1:[6,6,132823,1,25]	    armia2:[1,3,167292,2,14]	    armia3:[3,2,115500,3,35]	
+ Tura nr 95	    armia1:[5,6,132823,1,25]	    armia2:[1,4,167292,2,15]	    armia3:[4,2,115500,3,34]	
+ Tura nr 96	    armia1:[6,6,132823,1,24]	    armia2:[0,4,167292,2,16]	    armia3:[4,1,115500,3,34]	
+ Tura nr 97	    armia1:[7,6,132823,1,23]	    armia2:[0,3,167292,2,17]	    armia3:[4,0,115500,3,34]	
+ Tura nr 98	    armia1:[7,5,132823,1,23]	    armia2:[0,4,167292,2,16]	    armia3:[5,0,115500,3,35]	
+ Tura nr 99	    armia1:[6,5,132823,1,22]	    armia2:[0,5,167292,2,16]	    armia3:[5,1,115500,3,36]	
+ Tura nr 100	    armia1:[6,6,132823,1,22]	    armia2:[0,4,167292,2,15]	    armia3:[5,2,115500,3,37]	
+ Tura nr 101	    armia1:[6,5,132823,1,22]	    armia2:[1,4,167292,2,15]	    armia3:[5,3,115500,3,38]	
+
+=============================== armia3 zebra³a zasób - zwiêkszenie liczebnoœci o 10%
+
+
+ Tura nr 102	    armia1:[5,5,132823,1,22]	    armia2:[1,3,167292,2,15]	    armia3:[4,3,127050,3,39]	
+ Tura nr 103	    armia1:[4,5,132823,1,21]	    armia2:[1,4,167292,2,15]	    armia3:[3,3,127050,3,40]	
+ Tura nr 104	    armia1:[4,4,132823,1,22]	    armia2:[0,4,167292,2,15]	    armia3:[3,2,127050,3,40]	
+ Tura nr 105	    armia1:[3,4,132823,1,22]	    armia2:[1,4,167292,2,14]	    armia3:[2,2,127050,3,41]	
+ Tura nr 106	    armia1:[3,5,132823,1,22]	    armia2:[2,4,167292,2,15]	    armia3:[2,3,127050,3,40]	
+
+=============================== BITWA nr 1, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 20733 ¿o³nierzy
+armia3 straci³a 28491 ¿o³nierzy
+
+Procenowa strata armia2: 12.39
+Procenowa strata armia3: 22.43
+===============================
+
+ Tura nr 107	    armia1:[2,5,132823,1,22]	    armia2:[2,3,146559,2,14]	    armia3:[1,3,98559,3,41]	
+
+=============================== BITWA nr 2, pomiêdzy armia2 a armia1
+Wygra³a armia2
+armia2 straci³a 17118 ¿o³nierzy
+armia1 straci³a 27381 ¿o³nierzy
+
+Procenowa strata armia2: 11.68
+Procenowa strata armia1: 20.61
+===============================
+
+ Tura nr 108	    armia1:[2,4,105442,1,23]	    armia2:[2,4,129441,2,12]	    armia3:[1,4,98559,3,42]	
+
+=============================== BITWA nr 3, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 13830 ¿o³nierzy
+armia3 straci³a 19322 ¿o³nierzy
+
+Procenowa strata armia2: 10.68
+Procenowa strata armia3: 19.6
+===============================
+
+ Tura nr 109	    armia1:[2,5,105442,1,23]	    armia2:[1,4,115611,2,12]	    armia3:[1,3,79237,3,42]	
+
+=============================== BITWA nr 4, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 11841 ¿o³nierzy
+armia3 straci³a 17799 ¿o³nierzy
+
+Procenowa strata armia2: 10.24
+Procenowa strata armia3: 22.46
+===============================
+
+ Tura nr 110	    armia1:[3,5,105442,1,23]	    armia2:[1,3,103770,2,11]	    armia3:[1,2,61438,3,43]	
+ Tura nr 111	    armia1:[3,4,105442,1,23]	    armia2:[0,3,103770,2,11]	    armia3:[1,3,61438,3,43]	
+ Tura nr 112	    armia1:[3,5,105442,1,23]	    armia2:[0,4,103770,2,10]	    armia3:[0,3,61438,3,44]	
+
+=============================== BITWA nr 5, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 13886 ¿o³nierzy
+armia3 straci³a 19718 ¿o³nierzy
+
+Procenowa strata armia2: 13.38
+Procenowa strata armia3: 32.09
+===============================
+
+ Tura nr 113	    armia1:[4,5,105442,1,23]	    armia2:[0,3,89884,2,9]	    armia3:[0,4,41720,3,45]	
+ Tura nr 114	    armia1:[5,5,105442,1,23]	    armia2:[1,3,89884,2,9]	    armia3:[0,5,41720,3,45]	
+ Tura nr 115	    armia1:[6,5,105442,1,23]	    armia2:[1,2,89884,2,10]	    armia3:[1,5,41720,3,44]	
+ Tura nr 116	    armia1:[6,6,105442,1,23]	    armia2:[1,3,89884,2,10]	    armia3:[1,4,41720,3,44]	
+ Tura nr 117	    armia1:[6,5,105442,1,23]	    armia2:[0,3,89884,2,11]	    armia3:[1,5,41720,3,43]	
+ Tura nr 118	    armia1:[6,6,105442,1,23]	    armia2:[0,2,89884,2,11]	    armia3:[1,6,41720,3,43]	
+ Tura nr 119	    armia1:[6,7,105442,1,23]	    armia2:[0,1,89884,2,12]	    armia3:[2,6,41720,3,42]	
+ Tura nr 120	    armia1:[6,6,105442,1,23]	    armia2:[0,2,89884,2,12]	    armia3:[1,6,41720,3,42]	
+ Tura nr 121	    armia1:[7,6,105442,1,23]	    armia2:[0,1,89884,2,12]	    armia3:[1,5,41720,3,42]	
+ Tura nr 122	    armia1:[8,6,105442,1,22]	    armia2:[0,0,89884,2,13]	    armia3:[2,5,41720,3,42]	
+ Tura nr 123	    armia1:[8,5,105442,1,21]	    armia2:[0,1,89884,2,13]	    armia3:[2,4,41720,3,43]	
+ Tura nr 124	    armia1:[8,6,105442,1,21]	    armia2:[0,0,89884,2,13]	    armia3:[2,3,41720,3,43]	
+ Tura nr 125	    armia1:[8,5,105442,1,21]	    armia2:[1,0,89884,2,13]	    armia3:[1,3,41720,3,43]	
+ Tura nr 126	    armia1:[7,5,105442,1,21]	    armia2:[2,0,89884,2,13]	    armia3:[0,3,41720,3,43]	
+ Tura nr 127	    armia1:[7,6,105442,1,21]	    armia2:[2,1,89884,2,13]	    armia3:[1,3,41720,3,43]	
+ Tura nr 128	    armia1:[7,5,105442,1,21]	    armia2:[1,1,89884,2,13]	    armia3:[0,3,41720,3,43]	
+ Tura nr 129	    armia1:[7,4,105442,1,21]	    armia2:[2,1,89884,2,12]	    armia3:[0,2,41720,3,44]	
+ Tura nr 130	    armia1:[7,5,105442,1,21]	    armia2:[2,0,89884,2,11]	    armia3:[1,2,41720,3,45]	
+ Tura nr 131	    armia1:[7,4,105442,1,21]	    armia2:[2,1,89884,2,11]	    armia3:[1,3,41720,3,45]	
+ Tura nr 132	    armia1:[8,4,105442,1,21]	    armia2:[1,1,89884,2,11]	    armia3:[2,3,41720,3,45]	
+ Tura nr 133	    armia1:[9,4,105442,1,21]	    armia2:[1,2,89884,2,12]	    armia3:[2,2,41720,3,44]	
+
+=============================== BITWA nr 6, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 7990 ¿o³nierzy
+armia3 straci³a 14087 ¿o³nierzy
+
+Procenowa strata armia2: 8.889
+Procenowa strata armia3: 33.77
+===============================
+
+ Tura nr 134	    armia1:[9,5,105442,1,21]	    armia2:[2,2,81894,2,11]	    armia3:[2,1,27633,3,45]	
+ Tura nr 135	    armia1:[9,4,105442,1,21]	    armia2:[3,2,81894,2,12]	    armia3:[2,2,27633,3,44]	
+ Tura nr 136	    armia1:[9,3,105442,1,22]	    armia2:[4,2,81894,2,12]	    armia3:[3,2,27633,3,44]	
+
+=============================== BITWA nr 7, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 6399 ¿o³nierzy
+armia3 straci³a 10443 ¿o³nierzy
+
+Procenowa strata armia2: 7.814
+Procenowa strata armia3: 37.79
+===============================
+
+ Tura nr 137	    armia1:[8,3,105442,1,23]	    armia2:[3,2,75495,2,11]	    armia3:[4,2,17190,3,45]	
+ Tura nr 138	    armia1:[8,2,105442,1,24]	    armia2:[3,3,75495,2,12]	    armia3:[4,3,17190,3,44]	
+
+=============================== BITWA nr 8, pomiêdzy armia2 a armia3
+Wygra³a armia2
+armia2 straci³a 2497 ¿o³nierzy
+armia3 straci³a 12264 ¿o³nierzy
+
+Procenowa strata armia2: 3.308
+Procenowa strata armia3: 71.34
+===============================
+
+ Tura nr 139	    armia1:[8,3,105442,1,24]	    armia2:[4,3,72998,2,12]	    armia3:[5,3,4926,3,44]	
+ Tura nr 140	    armia1:[8,2,105442,1,24]	    armia2:[3,3,72998,2,12]	    armia3:[4,3,4926,3,44]	
+ Tura nr 141	    armia1:[8,1,105442,1,25]	    armia2:[3,2,72998,2,12]	    armia3:[3,3,4926,3,44]	
+ Tura nr 142	    armia1:[7,1,105442,1,26]	    armia2:[4,2,72998,2,12]	    armia3:[4,3,4926,3,43]	
+ Tura nr 143	    armia1:[6,1,105442,1,27]	    armia2:[5,2,72998,2,11]	    armia3:[4,2,4926,3,43]	
+ Tura nr 144	    armia1:[6,0,105442,1,28]	    armia2:[5,1,72998,2,12]	    armia3:[4,3,4926,3,42]	
+ Tura nr 145	    armia1:[5,0,105442,1,29]	    armia2:[4,1,72998,2,13]	    armia3:[3,3,4926,3,40]	
+ Tura nr 146	    armia1:[5,1,105442,1,30]	    armia2:[4,2,72998,2,13]	    armia3:[2,3,4926,3,39]	
+ Tura nr 147	    armia1:[6,1,105442,1,30]	    armia2:[5,2,72998,2,13]	    armia3:[2,4,4926,3,39]	
+ Tura nr 148	    armia1:[6,0,105442,1,29]	    armia2:[5,3,72998,2,14]	    armia3:[3,4,4926,3,39]	
+ Tura nr 149	    armia1:[6,1,105442,1,29]	    armia2:[5,4,72998,2,15]	    armia3:[2,4,4926,3,39]	
+ Tura nr 150	    armia1:[6,0,105442,1,28]	    armia2:[4,4,72998,2,16]	    armia3:[2,5,4926,3,39]	
+ Tura nr 151	    armia1:[7,0,105442,1,29]	    armia2:[4,3,72998,2,17]	    armia3:[1,5,4926,3,38]	
+ Tura nr 152	    armia1:[8,0,105442,1,30]	    armia2:[4,2,72998,2,17]	    armia3:[1,4,4926,3,38]	
+ Tura nr 153	    armia1:[9,0,105442,1,31]	    armia2:[5,2,72998,2,17]	    armia3:[1,5,4926,3,38]	
+ Tura nr 154	    armia1:[9,1,105442,1,31]	    armia2:[5,1,72998,2,18]	    armia3:[0,5,4926,3,38]	
+ Tura nr 155	    armia1:[8,1,105442,1,31]	    armia2:[5,2,72998,2,17]	    armia3:[0,6,4926,3,39]	
+ Tura nr 156	    armia1:[8,2,105442,1,31]	    armia2:[5,3,72998,2,16]	    armia3:[0,7,4926,3,40]	
+
+=============================== armia3 zebra³a zasób - zwiêkszenie liczebnoœci o 10%
+
+
+ Tura nr 157	    armia1:[7,2,105442,1,32]	    armia2:[5,2,72998,2,16]	    armia3:[1,7,5418,3,41]	
+ Tura nr 158	    armia1:[7,1,105442,1,32]	    armia2:[5,3,72998,2,16]	    armia3:[1,6,5418,3,41]	
+ Tura nr 159	    armia1:[7,2,105442,1,32]	    armia2:[5,2,72998,2,16]	    armia3:[2,6,5418,3,41]	
+ Tura nr 160	    armia1:[7,1,105442,1,32]	    armia2:[5,3,72998,2,16]	    armia3:[2,7,5418,3,42]	
+ Tura nr 161	    armia1:[7,2,105442,1,32]	    armia2:[4,3,72998,2,16]	    armia3:[2,6,5418,3,42]	
+ Tura nr 162	    armia1:[7,3,105442,1,32]	    armia2:[5,3,72998,2,16]	    armia3:[1,6,5418,3,42]	
+ Tura nr 163	    armia1:[7,4,105442,1,32]	    armia2:[6,3,72998,2,17]	    armia3:[1,7,5418,3,42]	
+ Tura nr 164	    armia1:[7,3,105442,1,32]	    armia2:[5,3,72998,2,17]	    armia3:[2,7,5418,3,42]	
+ Tura nr 165	    armia1:[8,3,105442,1,32]	    armia2:[5,2,72998,2,17]	    armia3:[2,8,5418,3,42]	
+ Tura nr 166	    armia1:[9,3,105442,1,32]	    armia2:[5,1,72998,2,17]	    armia3:[2,7,5418,3,42]	
+ Tura nr 167	    armia1:[8,3,105442,1,31]	    armia2:[6,1,72998,2,18]	    armia3:[3,7,5418,3,42]	
+ Tura nr 168	    armia1:[7,3,105442,1,30]	    armia2:[6,0,72998,2,19]	    armia3:[3,6,5418,3,42]	
+ Tura nr 169	    armia1:[6,3,105442,1,29]	    armia2:[7,0,72998,2,19]	    armia3:[3,5,5418,3,43]	
+ Tura nr 170	    armia1:[6,2,105442,1,29]	    armia2:[7,1,72998,2,19]	    armia3:[3,4,5418,3,43]	
+ Tura nr 171	    armia1:[5,2,105442,1,29]	    armia2:[8,1,72998,2,19]	    armia3:[2,4,5418,3,43]	
+ Tura nr 172	    armia1:[6,2,105442,1,28]	    armia2:[9,1,72998,2,20]	    armia3:[2,3,5418,3,43]	
+ Tura nr 173	    armia1:[5,2,105442,1,28]	    armia2:[9,2,72998,2,21]	    armia3:[2,2,5418,3,43]	
+ Tura nr 174	    armia1:[5,3,105442,1,28]	    armia2:[9,3,72998,2,20]	    armia3:[1,2,5418,3,44]	
+ Tura nr 175	    armia1:[4,3,105442,1,28]	    armia2:[9,4,72998,2,19]	    armia3:[1,1,5418,3,45]	
+ Tura nr 176	    armia1:[4,2,105442,1,28]	    armia2:[9,5,72998,2,18]	    armia3:[1,0,5418,3,46]	
+ Tura nr 177	    armia1:[3,2,105442,1,28]	    armia2:[8,5,72998,2,18]	    armia3:[1,1,5418,3,46]	
+ Tura nr 178	    armia1:[3,3,105442,1,28]	    armia2:[8,4,72998,2,19]	    armia3:[2,1,5418,3,45]	
+ Tura nr 179	    armia1:[2,3,105442,1,29]	    armia2:[8,5,72998,2,19]	    armia3:[1,1,5418,3,44]	
+ Tura nr 180	    armia1:[2,2,105442,1,29]	    armia2:[7,5,72998,2,20]	    armia3:[1,2,5418,3,43]	
+ Tura nr 181	    armia1:[3,2,105442,1,28]	    armia2:[6,5,72998,2,21]	    armia3:[0,2,5418,3,43]	
+ Tura nr 182	    armia1:[3,1,105442,1,29]	    armia2:[7,5,72998,2,21]	    armia3:[1,2,5418,3,42]	
+ Tura nr 183	    armia1:[3,2,105442,1,28]	    armia2:[7,6,72998,2,22]	    armia3:[1,1,5418,3,42]	
+ Tura nr 184	    armia1:[3,1,105442,1,27]	    armia2:[6,6,72998,2,22]	    armia3:[0,1,5418,3,43]	
+ Tura nr 185	    armia1:[4,1,105442,1,27]	    armia2:[5,6,72998,2,22]	    armia3:[0,2,5418,3,43]	
+ Tura nr 186	    armia1:[3,1,105442,1,27]	    armia2:[6,6,72998,2,22]	    armia3:[0,3,5418,3,43]	
+ Tura nr 187	    armia1:[4,1,105442,1,27]	    armia2:[5,6,72998,2,22]	    armia3:[0,2,5418,3,43]	
+ Tura nr 188	    armia1:[4,2,105442,1,27]	    armia2:[5,7,72998,2,23]	    armia3:[0,1,5418,3,42]	
+ Tura nr 189	    armia1:[3,2,105442,1,27]	    armia2:[5,6,72998,2,23]	    armia3:[1,1,5418,3,42]	
+ Tura nr 190	    armia1:[2,2,105442,1,27]	    armia2:[4,6,72998,2,24]	    armia3:[2,1,5418,3,41]	
+
+=============================== BITWA nr 9, pomiêdzy armia1 a armia3
+Wygra³a armia1
+armia1 straci³a 1574 ¿o³nierzy
+armia3 straci³a 5418 ¿o³nierzy
+
+Procenowa strata armia1: 1.493
+Procenowa strata armia3: 100
+===============================
+
+ Tura nr 191	    armia1:[2,1,103868,1,26]	    armia2:[3,6,72998,2,25]	    armia3:[armia wyeliminowana]	
+ Tura nr 192	    armia1:[3,1,103868,1,25]	    armia2:[3,7,72998,2,26]	    armia3:[armia wyeliminowana]	
+ Tura nr 193	    armia1:[3,2,103868,1,25]	    armia2:[2,7,72998,2,27]	    armia3:[armia wyeliminowana]	
+ Tura nr 194	    armia1:[2,2,103868,1,26]	    armia2:[1,7,72998,2,28]	    armia3:[armia wyeliminowana]	
+ Tura nr 195	    armia1:[2,1,103868,1,27]	    armia2:[1,8,72998,2,29]	    armia3:[armia wyeliminowana]	
+ Tura nr 196	    armia1:[2,2,103868,1,27]	    armia2:[0,8,72998,2,30]	    armia3:[armia wyeliminowana]	
+ Tura nr 197	    armia1:[2,1,103868,1,27]	    armia2:[1,8,72998,2,30]	    armia3:[armia wyeliminowana]	
+ Tura nr 198	    armia1:[1,1,103868,1,28]	    armia2:[2,8,72998,2,31]	    armia3:[armia wyeliminowana]	
+ Tura nr 199	    armia1:[0,1,103868,1,29]	    armia2:[1,8,72998,2,31]	    armia3:[armia wyeliminowana]	
+ Tura nr 200	    armia1:[1,1,103868,1,29]	    armia2:[2,8,72998,2,31]	    armia3:[armia wyeliminowana]	
+ Tura nr 201	    armia1:[1,0,103868,1,30]	    armia2:[2,9,72998,2,32]	    armia3:[armia wyeliminowana]	
+ Tura nr 202	    armia1:[2,0,103868,1,31]	    armia2:[2,8,72998,2,31]	    armia3:[armia wyeliminowana]	
+ Tura nr 203	    armia1:[1,0,103868,1,31]	    armia2:[3,8,72998,2,32]	    armia3:[armia wyeliminowana]	
+ Tura nr 204	    armia1:[2,0,103868,1,31]	    armia2:[4,8,72998,2,33]	    armia3:[armia wyeliminowana]	
+ Tura nr 205	    armia1:[1,0,103868,1,31]	    armia2:[3,8,72998,2,33]	    armia3:[armia wyeliminowana]	
+ Tura nr 206	    armia1:[2,0,103868,1,31]	    armia2:[2,8,72998,2,33]	    armia3:[armia wyeliminowana]	
+ Tura nr 207	    armia1:[1,0,103868,1,31]	    armia2:[2,9,72998,2,33]	    armia3:[armia wyeliminowana]	
+ Tura nr 208	    armia1:[1,1,103868,1,31]	    armia2:[3,9,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 209	    armia1:[0,1,103868,1,31]	    armia2:[4,9,72998,2,35]	    armia3:[armia wyeliminowana]	
+ Tura nr 210	    armia1:[0,0,103868,1,32]	    armia2:[4,8,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 211	    armia1:[0,1,103868,1,32]	    armia2:[4,9,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 212	    armia1:[0,0,103868,1,32]	    armia2:[4,9,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 213	    armia1:[1,0,103868,1,32]	    armia2:[4,9,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 214	    armia1:[1,1,103868,1,32]	    armia2:[4,9,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 215	    armia1:[1,2,103868,1,33]	    armia2:[4,9,72998,2,34]	    armia3:[armia wyeliminowana]	
+ Tura nr 216	    armia1:[0,2,103868,1,34]	    armia2:[5,9,72998,2,35]	    armia3:[armia wyeliminowana]	
+ Tura nr 217	    armia1:[0,1,103868,1,34]	    armia2:[6,9,72998,2,36]	    armia3:[armia wyeliminowana]	
+ Tura nr 218	    armia1:[0,0,103868,1,34]	    armia2:[6,9,72998,2,36]	    armia3:[armia wyeliminowana]	
+ Tura nr 219	    armia1:[0,1,103868,1,34]	    armia2:[7,9,72998,2,37]	    armia3:[armia wyeliminowana]	
+ Tura nr 220	    armia1:[1,1,103868,1,34]	    armia2:[6,9,72998,2,37]	    armia3:[armia wyeliminowana]	
+ Tura nr 221	    armia1:[0,1,103868,1,34]	    armia2:[6,8,72998,2,38]	    armia3:[armia wyeliminowana]	
+ Tura nr 222	    armia1:[0,0,103868,1,34]	    armia2:[6,9,72998,2,38]	    armia3:[armia wyeliminowana]	
+ Tura nr 223	    armia1:[0,1,103868,1,34]	    armia2:[7,9,72998,2,38]	    armia3:[armia wyeliminowana]	
+ Tura nr 224	    armia1:[0,0,103868,1,34]	    armia2:[8,9,72998,2,39]	    armia3:[armia wyeliminowana]	
+ Tura nr 225	    armia1:[1,0,103868,1,34]	    armia2:[8,8,72998,2,40]	    armia3:[armia wyeliminowana]	
+ Tura nr 226	    armia1:[1,1,103868,1,34]	    armia2:[7,8,72998,2,41]	    armia3:[armia wyeliminowana]	
+ Tura nr 227	    armia1:[2,1,103868,1,33]	    armia2:[7,7,72998,2,42]	    armia3:[armia wyeliminowana]	
+ Tura nr 228	    armia1:[1,1,103868,1,33]	    armia2:[7,6,72998,2,42]	    armia3:[armia wyeliminowana]	
+ Tura nr 229	    armia1:[2,1,103868,1,32]	    armia2:[8,6,72998,2,43]	    armia3:[armia wyeliminowana]	
+ Tura nr 230	    armia1:[2,0,103868,1,31]	    armia2:[9,6,72998,2,44]	    armia3:[armia wyeliminowana]	
+ Tura nr 231	    armia1:[2,1,103868,1,31]	    armia2:[9,7,72998,2,45]	    armia3:[armia wyeliminowana]	
+ Tura nr 232	    armia1:[2,0,103868,1,31]	    armia2:[9,6,72998,2,45]	    armia3:[armia wyeliminowana]	
+ Tura nr 233	    armia1:[3,0,103868,1,32]	    armia2:[9,5,72998,2,45]	    armia3:[armia wyeliminowana]	
+ Tura nr 234	    armia1:[2,0,103868,1,32]	    armia2:[9,6,72998,2,45]	    armia3:[armia wyeliminowana]	
+ Tura nr 235	    armia1:[1,0,103868,1,32]	    armia2:[9,7,72998,2,45]	    armia3:[armia wyeliminowana]	
+ Tura nr 236	    armia1:[1,1,103868,1,32]	    armia2:[9,8,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 237	    armia1:[1,2,103868,1,32]	    armia2:[9,7,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 238	    armia1:[0,2,103868,1,32]	    armia2:[9,6,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 239	    armia1:[1,2,103868,1,32]	    armia2:[8,6,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 240	    armia1:[2,2,103868,1,32]	    armia2:[7,6,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 241	    armia1:[2,1,103868,1,32]	    armia2:[7,7,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 242	    armia1:[2,2,103868,1,32]	    armia2:[7,6,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 243	    armia1:[2,1,103868,1,32]	    armia2:[8,6,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 244	    armia1:[3,1,103868,1,32]	    armia2:[8,5,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 245	    armia1:[4,1,103868,1,32]	    armia2:[7,5,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 246	    armia1:[3,1,103868,1,32]	    armia2:[7,6,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 247	    armia1:[4,1,103868,1,32]	    armia2:[7,5,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 248	    armia1:[4,2,103868,1,32]	    armia2:[8,5,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 249	    armia1:[4,1,103868,1,32]	    armia2:[8,4,72998,2,46]	    armia3:[armia wyeliminowana]	
+ Tura nr 250	    armia1:[4,2,103868,1,31]	    armia2:[8,3,72998,2,47]	    armia3:[armia wyeliminowana]	
+ Tura nr 251	    armia1:[4,1,103868,1,30]	    armia2:[8,2,72998,2,48]	    armia3:[armia wyeliminowana]	
+ Tura nr 252	    armia1:[4,0,103868,1,31]	    armia2:[8,1,72998,2,48]	    armia3:[armia wyeliminowana]	
+ Tura nr 253	    armia1:[5,0,103868,1,31]	    armia2:[7,1,72998,2,48]	    armia3:[armia wyeliminowana]	
+ Tura nr 254	    armia1:[5,1,103868,1,32]	    armia2:[6,1,72998,2,47]	    armia3:[armia wyeliminowana]	
+ Tura nr 255	    armia1:[5,0,103868,1,31]	    armia2:[5,1,72998,2,48]	    armia3:[armia wyeliminowana]	
+
+=============================== BITWA nr 10, pomiêdzy armia1 a armia2
+Wygra³a armia1
+armia1 straci³a 12528 ¿o³nierzy
+armia2 straci³a 12932 ¿o³nierzy
+
+Procenowa strata armia1: 12.06
+Procenowa strata armia2: 17.72
+===============================
+
+ Tura nr 256	    armia1:[5,1,91340,1,30]	    armia2:[5,2,60066,2,49]	    armia3:[armia wyeliminowana]	
+ Tura nr 257	    armia1:[4,1,91340,1,29]	    armia2:[4,2,60066,2,50]	    armia3:[armia wyeliminowana]	
+ Tura nr 258	    armia1:[5,1,91340,1,30]	    armia2:[3,2,60066,2,50]	    armia3:[armia wyeliminowana]	
+ Tura nr 259	    armia1:[5,0,91340,1,29]	    armia2:[3,1,60066,2,51]	    armia3:[armia wyeliminowana]	
+ Tura nr 260	    armia1:[4,0,91340,1,29]	    armia2:[3,2,60066,2,51]	    armia3:[armia wyeliminowana]	
+ Tura nr 261	    armia1:[4,1,91340,1,28]	    armia2:[3,3,60066,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 262	    armia1:[4,0,91340,1,27]	    armia2:[2,3,60066,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 263	    armia1:[5,0,91340,1,27]	    armia2:[3,3,60066,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 264	    armia1:[5,1,91340,1,26]	    armia2:[4,3,60066,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 265	    armia1:[4,1,91340,1,26]	    armia2:[3,3,60066,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 266	    armia1:[4,0,91340,1,26]	    armia2:[2,3,60066,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 267	    armia1:[3,0,91340,1,26]	    armia2:[1,3,60066,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 268	    armia1:[4,0,91340,1,26]	    armia2:[2,3,60066,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 269	    armia1:[5,0,91340,1,26]	    armia2:[1,3,60066,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 270	    armia1:[6,0,91340,1,27]	    armia2:[1,4,60066,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 271	    armia1:[5,0,91340,1,27]	    armia2:[1,5,60066,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 272	    armia1:[6,0,91340,1,27]	    armia2:[1,6,60066,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 273	    armia1:[7,0,91340,1,28]	    armia2:[1,5,60066,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 274	    armia1:[6,0,91340,1,28]	    armia2:[2,5,60066,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 275	    armia1:[6,1,91340,1,29]	    armia2:[3,5,60066,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 276	    armia1:[6,0,91340,1,29]	    armia2:[3,6,60066,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 277	    armia1:[5,0,91340,1,29]	    armia2:[4,6,60066,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 278	    armia1:[6,0,91340,1,28]	    armia2:[4,5,60066,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 279	    armia1:[6,1,91340,1,28]	    armia2:[4,4,60066,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 280	    armia1:[6,0,91340,1,28]	    armia2:[4,3,60066,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 281	    armia1:[6,1,91340,1,28]	    armia2:[3,3,60066,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 282	    armia1:[6,0,91340,1,28]	    armia2:[3,4,60066,2,59]	    armia3:[armia wyeliminowana]	
+ Tura nr 283	    armia1:[7,0,91340,1,28]	    armia2:[4,4,60066,2,59]	    armia3:[armia wyeliminowana]	
+ Tura nr 284	    armia1:[7,1,91340,1,29]	    armia2:[5,4,60066,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 285	    armia1:[6,1,91340,1,28]	    armia2:[5,3,60066,2,59]	    armia3:[armia wyeliminowana]	
+ Tura nr 286	    armia1:[5,1,91340,1,28]	    armia2:[5,4,60066,2,59]	    armia3:[armia wyeliminowana]	
+
+=============================== armia2 zebra³a zasób - zwiêkszenie liczebnoœci o 5%
+
+
+ Tura nr 287	    armia1:[5,0,91340,1,28]	    armia2:[6,4,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 288	    armia1:[6,0,91340,1,27]	    armia2:[6,3,63069,2,61]	    armia3:[armia wyeliminowana]	
+ Tura nr 289	    armia1:[7,0,91340,1,26]	    armia2:[6,2,63069,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 290	    armia1:[6,0,91340,1,25]	    armia2:[7,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 291	    armia1:[5,0,91340,1,25]	    armia2:[8,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 292	    armia1:[6,0,91340,1,25]	    armia2:[7,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 293	    armia1:[5,0,91340,1,25]	    armia2:[6,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 294	    armia1:[6,0,91340,1,24]	    armia2:[6,1,63069,2,64]	    armia3:[armia wyeliminowana]	
+ Tura nr 295	    armia1:[7,0,91340,1,23]	    armia2:[5,1,63069,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 296	    armia1:[8,0,91340,1,23]	    armia2:[6,1,63069,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 297	    armia1:[9,0,91340,1,22]	    armia2:[6,0,63069,2,66]	    armia3:[armia wyeliminowana]	
+ Tura nr 298	    armia1:[9,1,91340,1,22]	    armia2:[7,0,63069,2,66]	    armia3:[armia wyeliminowana]	
+ Tura nr 299	    armia1:[8,1,91340,1,22]	    armia2:[8,0,63069,2,66]	    armia3:[armia wyeliminowana]	
+ Tura nr 300	    armia1:[9,1,91340,1,21]	    armia2:[9,0,63069,2,67]	    armia3:[armia wyeliminowana]	
+ Tura nr 301	    armia1:[9,2,91340,1,21]	    armia2:[9,1,63069,2,67]	    armia3:[armia wyeliminowana]	
+ Tura nr 302	    armia1:[8,2,91340,1,22]	    armia2:[9,0,63069,2,66]	    armia3:[armia wyeliminowana]	
+ Tura nr 303	    armia1:[8,3,91340,1,23]	    armia2:[8,0,63069,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 304	    armia1:[7,3,91340,1,23]	    armia2:[9,0,63069,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 305	    armia1:[8,3,91340,1,23]	    armia2:[8,0,63069,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 306	    armia1:[8,4,91340,1,24]	    armia2:[9,0,63069,2,64]	    armia3:[armia wyeliminowana]	
+ Tura nr 307	    armia1:[9,4,91340,1,25]	    armia2:[8,0,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 308	    armia1:[9,5,91340,1,26]	    armia2:[9,0,63069,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 309	    armia1:[9,4,91340,1,26]	    armia2:[9,1,63069,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 310	    armia1:[8,4,91340,1,25]	    armia2:[9,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 311	    armia1:[8,5,91340,1,25]	    armia2:[8,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 312	    armia1:[8,6,91340,1,25]	    armia2:[8,1,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 313	    armia1:[8,5,91340,1,25]	    armia2:[8,2,63069,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 314	    armia1:[7,5,91340,1,26]	    armia2:[8,1,63069,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 315	    armia1:[6,5,91340,1,27]	    armia2:[8,2,63069,2,61]	    armia3:[armia wyeliminowana]	
+ Tura nr 316	    armia1:[5,5,91340,1,26]	    armia2:[8,3,63069,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 317	    armia1:[4,5,91340,1,27]	    armia2:[9,3,63069,2,61]	    armia3:[armia wyeliminowana]	
+ Tura nr 318	    armia1:[4,6,91340,1,28]	    armia2:[9,2,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 319	    armia1:[4,7,91340,1,29]	    armia2:[9,1,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 320	    armia1:[5,7,91340,1,30]	    armia2:[8,1,63069,2,59]	    armia3:[armia wyeliminowana]	
+ Tura nr 321	    armia1:[5,8,91340,1,30]	    armia2:[7,1,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 322	    armia1:[5,9,91340,1,31]	    armia2:[6,1,63069,2,59]	    armia3:[armia wyeliminowana]	
+ Tura nr 323	    armia1:[6,9,91340,1,32]	    armia2:[5,1,63069,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 324	    armia1:[6,9,91340,1,32]	    armia2:[6,1,63069,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 325	    armia1:[7,9,91340,1,33]	    armia2:[6,0,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 326	    armia1:[7,9,91340,1,33]	    armia2:[7,0,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 327	    armia1:[6,9,91340,1,33]	    armia2:[6,0,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 328	    armia1:[6,9,91340,1,32]	    armia2:[5,0,63069,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 329	    armia1:[6,8,91340,1,33]	    armia2:[5,1,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 330	    armia1:[7,8,91340,1,34]	    armia2:[5,0,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 331	    armia1:[7,9,91340,1,34]	    armia2:[6,0,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 332	    armia1:[6,9,91340,1,34]	    armia2:[7,0,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 333	    armia1:[5,9,91340,1,34]	    armia2:[7,1,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 334	    armia1:[4,9,91340,1,35]	    armia2:[7,0,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 335	    armia1:[4,9,91340,1,35]	    armia2:[8,0,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 336	    armia1:[4,9,91340,1,35]	    armia2:[9,0,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 337	    armia1:[3,9,91340,1,36]	    armia2:[9,1,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 338	    armia1:[4,9,91340,1,36]	    armia2:[9,2,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 339	    armia1:[4,9,91340,1,36]	    armia2:[9,1,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 340	    armia1:[3,9,91340,1,36]	    armia2:[9,2,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 341	    armia1:[3,8,91340,1,37]	    armia2:[8,2,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 342	    armia1:[4,8,91340,1,38]	    armia2:[9,2,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 343	    armia1:[3,8,91340,1,38]	    armia2:[8,2,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 344	    armia1:[3,9,91340,1,38]	    armia2:[9,2,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 345	    armia1:[2,9,91340,1,39]	    armia2:[9,3,63069,2,51]	    armia3:[armia wyeliminowana]	
+ Tura nr 346	    armia1:[3,9,91340,1,38]	    armia2:[9,4,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 347	    armia1:[3,9,91340,1,37]	    armia2:[9,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 348	    armia1:[3,8,91340,1,36]	    armia2:[8,5,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 349	    armia1:[3,9,91340,1,36]	    armia2:[9,5,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 350	    armia1:[3,8,91340,1,36]	    armia2:[9,6,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 351	    armia1:[2,8,91340,1,37]	    armia2:[9,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 352	    armia1:[3,8,91340,1,37]	    armia2:[9,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 353	    armia1:[2,8,91340,1,36]	    armia2:[8,6,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 354	    armia1:[1,8,91340,1,37]	    armia2:[7,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 355	    armia1:[2,8,91340,1,37]	    armia2:[6,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 356	    armia1:[2,7,91340,1,38]	    armia2:[5,6,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 357	    armia1:[3,7,91340,1,39]	    armia2:[6,6,63069,2,51]	    armia3:[armia wyeliminowana]	
+ Tura nr 358	    armia1:[4,7,91340,1,38]	    armia2:[6,5,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 359	    armia1:[4,8,91340,1,37]	    armia2:[7,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 360	    armia1:[3,8,91340,1,37]	    armia2:[7,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 361	    armia1:[3,9,91340,1,37]	    armia2:[8,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 362	    armia1:[3,9,91340,1,37]	    armia2:[8,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 363	    armia1:[4,9,91340,1,37]	    armia2:[8,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 364	    armia1:[4,9,91340,1,37]	    armia2:[9,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 365	    armia1:[5,9,91340,1,37]	    armia2:[9,7,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 366	    armia1:[6,9,91340,1,37]	    armia2:[9,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 367	    armia1:[5,9,91340,1,37]	    armia2:[9,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 368	    armia1:[4,9,91340,1,37]	    armia2:[9,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 369	    armia1:[5,9,91340,1,37]	    armia2:[9,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 370	    armia1:[6,9,91340,1,37]	    armia2:[8,5,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 371	    armia1:[6,8,91340,1,36]	    armia2:[8,4,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 372	    armia1:[7,8,91340,1,36]	    armia2:[8,3,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 373	    armia1:[8,8,91340,1,37]	    armia2:[9,3,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 374	    armia1:[8,9,91340,1,38]	    armia2:[9,4,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 375	    armia1:[7,9,91340,1,38]	    armia2:[8,4,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 376	    armia1:[7,9,91340,1,38]	    armia2:[9,4,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 377	    armia1:[6,9,91340,1,38]	    armia2:[8,4,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 378	    armia1:[6,9,91340,1,38]	    armia2:[8,5,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 379	    armia1:[6,8,91340,1,38]	    armia2:[8,6,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 380	    armia1:[5,8,91340,1,38]	    armia2:[9,6,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 381	    armia1:[5,7,91340,1,38]	    armia2:[9,5,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 382	    armia1:[4,7,91340,1,38]	    armia2:[9,4,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 383	    armia1:[4,8,91340,1,38]	    armia2:[9,5,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 384	    armia1:[4,9,91340,1,38]	    armia2:[9,6,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 385	    armia1:[4,8,91340,1,38]	    armia2:[9,5,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 386	    armia1:[5,8,91340,1,38]	    armia2:[9,6,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 387	    armia1:[6,8,91340,1,38]	    armia2:[9,5,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 388	    armia1:[6,9,91340,1,38]	    armia2:[9,6,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 389	    armia1:[7,9,91340,1,38]	    armia2:[9,7,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 390	    armia1:[8,9,91340,1,38]	    armia2:[9,8,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 391	    armia1:[8,9,91340,1,38]	    armia2:[9,7,63069,2,52]	    armia3:[armia wyeliminowana]	
+ Tura nr 392	    armia1:[7,9,91340,1,37]	    armia2:[8,7,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 393	    armia1:[6,9,91340,1,37]	    armia2:[7,7,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 394	    armia1:[6,8,91340,1,37]	    armia2:[8,7,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 395	    armia1:[6,9,91340,1,37]	    armia2:[8,6,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 396	    armia1:[7,9,91340,1,37]	    armia2:[8,7,63069,2,53]	    armia3:[armia wyeliminowana]	
+ Tura nr 397	    armia1:[6,9,91340,1,36]	    armia2:[8,8,63069,2,54]	    armia3:[armia wyeliminowana]	
+ Tura nr 398	    armia1:[6,8,91340,1,35]	    armia2:[8,9,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 399	    armia1:[5,8,91340,1,35]	    armia2:[8,8,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 400	    armia1:[5,9,91340,1,35]	    armia2:[8,9,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 401	    armia1:[5,8,91340,1,35]	    armia2:[8,9,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 402	    armia1:[5,7,91340,1,35]	    armia2:[8,9,63069,2,55]	    armia3:[armia wyeliminowana]	
+ Tura nr 403	    armia1:[4,7,91340,1,34]	    armia2:[7,9,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 404	    armia1:[4,8,91340,1,34]	    armia2:[8,9,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 405	    armia1:[3,8,91340,1,34]	    armia2:[8,9,63069,2,56]	    armia3:[armia wyeliminowana]	
+ Tura nr 406	    armia1:[4,8,91340,1,34]	    armia2:[9,9,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 407	    armia1:[4,9,91340,1,34]	    armia2:[8,9,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 408	    armia1:[4,8,91340,1,34]	    armia2:[7,9,63069,2,57]	    armia3:[armia wyeliminowana]	
+ Tura nr 409	    armia1:[4,9,91340,1,33]	    armia2:[7,8,63069,2,58]	    armia3:[armia wyeliminowana]	
+ Tura nr 410	    armia1:[4,9,91340,1,32]	    armia2:[6,8,63069,2,59]	    armia3:[armia wyeliminowana]	
+ Tura nr 411	    armia1:[4,8,91340,1,31]	    armia2:[6,9,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 412	    armia1:[3,8,91340,1,31]	    armia2:[6,8,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 413	    armia1:[3,9,91340,1,31]	    armia2:[6,9,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 414	    armia1:[3,8,91340,1,31]	    armia2:[6,8,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 415	    armia1:[3,7,91340,1,31]	    armia2:[6,9,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 416	    armia1:[3,8,91340,1,31]	    armia2:[6,8,63069,2,60]	    armia3:[armia wyeliminowana]	
+ Tura nr 417	    armia1:[3,7,91340,1,30]	    armia2:[6,7,63069,2,61]	    armia3:[armia wyeliminowana]	
+ Tura nr 418	    armia1:[4,7,91340,1,30]	    armia2:[6,8,63069,2,61]	    armia3:[armia wyeliminowana]	
+ Tura nr 419	    armia1:[5,7,91340,1,29]	    armia2:[5,8,63069,2,62]	    armia3:[armia wyeliminowana]	
+
+=============================== BITWA nr 11, pomiêdzy armia1 a armia2
+Wygra³a armia1
+armia1 straci³a 11343 ¿o³nierzy
+armia2 straci³a 10610 ¿o³nierzy
+
+Procenowa strata armia1: 12.42
+Procenowa strata armia2: 16.82
+===============================
+
+ Tura nr 420	    armia1:[5,8,79997,1,29]	    armia2:[6,8,52459,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 421	    armia1:[4,8,79997,1,29]	    armia2:[5,8,52459,2,62]	    armia3:[armia wyeliminowana]	
+ Tura nr 422	    armia1:[3,8,79997,1,28]	    armia2:[5,7,52459,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 423	    armia1:[4,8,79997,1,28]	    armia2:[5,8,52459,2,63]	    armia3:[armia wyeliminowana]	
+ Tura nr 424	    armia1:[4,7,79997,1,27]	    armia2:[4,8,52459,2,64]	    armia3:[armia wyeliminowana]	
+
+=============================== BITWA nr 12, pomiêdzy armia1 a armia2
+Wygra³a armia1
+armia1 straci³a 6098 ¿o³nierzy
+armia2 straci³a 14980 ¿o³nierzy
+
+Procenowa strata armia1: 7.623
+Procenowa strata armia2: 28.56
+===============================
+
+ Tura nr 425	    armia1:[4,8,73899,1,26]	    armia2:[4,7,37479,2,65]	    armia3:[armia wyeliminowana]	
+
+=============================== BITWA nr 13, pomiêdzy armia1 a armia2
+Wygra³a armia1
+armia1 straci³a 6480 ¿o³nierzy
+armia2 straci³a 13455 ¿o³nierzy
+
+Procenowa strata armia1: 8.769
+Procenowa strata armia2: 35.9
+===============================
+
+ Tura nr 426	    armia1:[4,7,67419,1,25]	    armia2:[3,7,24024,2,66]	    armia3:[armia wyeliminowana]	
+ Tura nr 427	    armia1:[5,7,67419,1,26]	    armia2:[3,6,24024,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 428	    armia1:[6,7,67419,1,27]	    armia2:[3,5,24024,2,64]	    armia3:[armia wyeliminowana]	
+ Tura nr 429	    armia1:[5,7,67419,1,27]	    armia2:[3,6,24024,2,64]	    armia3:[armia wyeliminowana]	
+ Tura nr 430	    armia1:[6,7,67419,1,26]	    armia2:[4,6,24024,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 431	    armia1:[6,6,67419,1,27]	    armia2:[5,6,24024,2,64]	    armia3:[armia wyeliminowana]	
+
+=============================== BITWA nr 14, pomiêdzy armia1 a armia2
+Wygra³a armia1
+armia1 straci³a 3334 ¿o³nierzy
+armia2 straci³a 14200 ¿o³nierzy
+
+Procenowa strata armia1: 4.945
+Procenowa strata armia2: 59.11
+===============================
+
+ Tura nr 432	    armia1:[5,6,64085,1,26]	    armia2:[5,5,9824,2,65]	    armia3:[armia wyeliminowana]	
+ Tura nr 433	    armia1:[6,6,64085,1,26]	    armia2:[6,5,9824,2,65]	    armia3:[armia wyeliminowana]	
+
+=============================== BITWA nr 15, pomiêdzy armia1 a armia2
+Wygra³a armia1
+armia1 straci³a 1816 ¿o³nierzy
+armia2 straci³a 9824 ¿o³nierzy
+
+Procenowa strata armia1: 2.834
+Procenowa strata armia2: 100
+===============================
+
+ Tura nr 434	    armia1:[6,5,62269,1,25]	    armia2:[armia wyeliminowana]	    armia3:[armia wyeliminowana]	
+
+
+
+==========================================WYGRALA armia1
+
+==========================Czas trwania symulacji: 3328 milisekund

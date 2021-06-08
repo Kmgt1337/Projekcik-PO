@@ -55,7 +55,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 	fstream plik;
 	if (plik.is_open()) plik.close();
 
-	plik.open("wynik/baza.txt", ios::out | ios::trunc);
+	plik.open("wynik.txt", ios::out | ios::trunc);
 	plik.clear();
 	if (plik.good())
 	{
