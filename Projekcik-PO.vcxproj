@@ -140,23 +140,37 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Armia.cpp" />
+    <ClCompile Include="Artyleria.cpp" />
+    <ClCompile Include="CiezkaJazda.cpp" />
+    <ClCompile Include="General.cpp" />
+    <ClCompile Include="Lekarz.cpp" />
+    <ClCompile Include="LekkaJazda.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mapa.cpp" />
+    <ClCompile Include="OperatorPliku.cpp" />
+    <ClCompile Include="OperatorSymulacji.cpp" />
+    <ClCompile Include="OperatorZakonczenia.cpp" />
     <ClCompile Include="Operator_bitwy.cpp" />
-    <ClCompile Include="Strona_konfliktu.cpp" />
+    <ClCompile Include="Prowincja.cpp" />
+    <ClCompile Include="Zasob.cpp" />
     <ClCompile Include="Zegar.cpp" />
     <ClCompile Include="Zwiad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armia.h" />
     <ClInclude Include="Artyleria.h" />
+    <ClInclude Include="CiezkaJazda.h" />
     <ClInclude Include="General.h" />
-    <ClInclude Include="Kawaleria.h" />
+    <ClInclude Include="Lekarz.h" />
+    <ClInclude Include="LekkaJazda.h" />
     <ClInclude Include="Mapa.h" />
     <ClInclude Include="Oddzial.h" />
+    <ClInclude Include="OperatorPliku.h" />
+    <ClInclude Include="OperatorSymulacji.h" />
+    <ClInclude Include="OperatorZakonczenia.h" />
     <ClInclude Include="Operator_bitwy.h" />
     <ClInclude Include="Prowincja.h" />
-    <ClInclude Include="Strona_konfliktu.h" />
+    <ClInclude Include="Zasob.h" />
     <ClInclude Include="Zegar.h" />
     <ClInclude Include="Zwiad.h" />
   </ItemGroup>

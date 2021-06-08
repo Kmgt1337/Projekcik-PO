@@ -13,62 +13,122 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Operatory">
+      <UniqueIdentifier>{cdd16fc1-f5c6-4416-a077-52a4e957f993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Oddziały Wojskowe">
+      <UniqueIdentifier>{0f9f860d-2e02-4d33-9f87-2cd3c9ad76fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Oddziały Wojskowe">
+      <UniqueIdentifier>{97f1ac5b-309f-44f3-bf3c-d3aa9cac99b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operatory">
+      <UniqueIdentifier>{fa65eff1-9cbc-4b2f-a781-a5619b45b902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Prowincja">
+      <UniqueIdentifier>{238eee95-6ab3-456a-b82b-24826fc41903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Prowincja">
+      <UniqueIdentifier>{08be9a0d-f5a9-44c1-abe5-1dc62144f0c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mapa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operator_bitwy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Strona_konfliktu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Zegar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Zwiad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Armia.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Armia.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Artyleria.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="General.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Lekarz.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorPliku.cpp">
+      <Filter>Source Files\Operatory</Filter>
+    </ClCompile>
+    <ClCompile Include="Operator_bitwy.cpp">
+      <Filter>Source Files\Operatory</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorSymulacji.cpp">
+      <Filter>Source Files\Operatory</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorZakonczenia.cpp">
+      <Filter>Source Files\Operatory</Filter>
+    </ClCompile>
+    <ClCompile Include="Zwiad.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="CiezkaJazda.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="LekkaJazda.cpp">
+      <Filter>Source Files\Oddziały Wojskowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Prowincja.cpp">
+      <Filter>Source Files\Prowincja</Filter>
+    </ClCompile>
+    <ClCompile Include="Zasob.cpp">
+      <Filter>Source Files\Prowincja</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Armia.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Artyleria.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Prowincja.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Strona_konfliktu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Zegar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Zwiad.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operator_bitwy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Oddzial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Mapa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Kawaleria.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Operator_bitwy.h">
+      <Filter>Header Files\Operatory</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorSymulacji.h">
+      <Filter>Header Files\Operatory</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorZakonczenia.h">
+      <Filter>Header Files\Operatory</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorPliku.h">
+      <Filter>Header Files\Operatory</Filter>
+    </ClInclude>
+    <ClInclude Include="Armia.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Artyleria.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
     </ClInclude>
     <ClInclude Include="General.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Oddzial.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Zwiad.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Lekarz.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="CiezkaJazda.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LekkaJazda.h">
+      <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Prowincja.h">
+      <Filter>Header Files\Prowincja</Filter>
+    </ClInclude>
+    <ClInclude Include="Zasob.h">
+      <Filter>Header Files\Prowincja</Filter>
+    </ClInclude>
+    <ClInclude Include="Zegar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

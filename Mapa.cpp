@@ -1,73 +1,133 @@
 #include "Mapa.h"
-#include <random>
-#include <windows.h>
-#include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-void Mapa::grafika()
+vector<vector<Prowincja>> Mapa::mapa;
+size_t Mapa::dlug;
+size_t Mapa::szer;
+
+void Mapa::clrscr() 
 {
-	HANDLE hOut;
-	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hOut, 15);
+	HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord = { 0, 0 };
+	SetConsoleCursorPosition(hCon, coord);
+	HANDLE hConsoleOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO hCCI;
+	GetConsoleCursorInfo(hConsoleOut, &hCCI);
+	hCCI.bVisible = FALSE;
+	SetConsoleCursorInfo(hConsoleOut, &hCCI);
+}
 
-	constexpr size_t dlug = 25;
-	constexpr size_t szer = 50;
+void Mapa::inicjalizuj(size_t x, size_t y)
+{
+	dlug = y;
+	szer = x;
 
-	//Wartosc 0-neutralna(szara), 1-jedna strona(czerwona), 2-druga strona(niebieska) etc.//
-	int strona[dlug][szer];
-	char mapa[dlug][szer];
+	mapa.resize(dlug);
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		mapa[i].resize(szer);
+	}
+}
 
-	for (int i = 0; i < dlug; i++)
-		for (int j = 0; j < szer; j++)
-			mapa[i][j] = ' ';
+vector<size_t> Mapa::dajLiczbeProwincjiKazdejArmii(Armia armia1, Armia armia2)
+{
+	std::vector<size_t> pom;
+	size_t larmia1 = 0;
+	size_t larmia2 = 0;
 
-	for (int i = 10; i < 15; i++)
-		for (int j = 10; j < 15; j++)
-			mapa[i][j] = 'X';
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		for (size_t j = 0; j < mapa[i].size(); j++)
+		{
+			if (mapa[i][j].dajPrzynaleznosc() == armia1.dajPrzyna())
+			{
+				larmia1++;
+			}
+			if (mapa[i][j].dajPrzynaleznosc() == armia2.dajPrzyna())
+			{
+				larmia2++;
+			}
+		}
+	}
+	pom.push_back(larmia1);
+	pom.push_back(larmia2);
+	return pom;
+}
 
-	random_device seed;
-	mt19937 gen(seed());
-	uniform_int_distribution<size_t> losuj_dlug{ 10, dlug - 1 };
-	uniform_int_distribution<size_t> losuj_szer{ 20, szer - 1 };
-	uniform_int_distribution<int> strony{ 0, 2 };
+size_t Mapa::dajLiczbeProwincjiArmii(Armia armia)
+{
+	size_t larmia = 0;
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		for (size_t j = 0; j < mapa[i].size(); j++)
+		{
+			if (mapa[i][j].dajPrzynaleznosc() == armia.dajPrzyna())
+			{
+				larmia++;
+			}
+		}
+	}
 
-	for (int i = 0; i < 5; i++)
-		mapa[losuj_dlug(gen)][losuj_szer(gen)] = '#';
+	return larmia;
+}
 
+void Mapa::reset()
+{
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		for (size_t j = 0; j < mapa.at(i).size(); j++)
+		{
+			mapa[i][j].zmienPrzynaleznosc(0);
+			mapa[i][j].zmienSymbol(' ');
+		}
+	}
+}
+
+void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
+{
 	cout << "|";
-	for (int i = 0; i < szer; i++)
+	for (size_t i = 0; i < szer; i++)
 		cout << "=";
 	cout << "|" << endl;
 
-	for (int i = 0; i < dlug; i++)
+	for (size_t i = 0; i < mapa.size(); i++)
 	{
 		cout << "|";
-		for (int j = 0; j < szer; j++)
+		for (size_t j = 0; j < mapa[i].size(); j++)
 		{
-			strona[i][j] = strony(gen);
-			switch (strona[i][j])
-			{
+			switch (mapa[i][j].dajPrzynaleznosc()) {
 			case 0:
-				SetConsoleTextAttribute(hOut, BACKGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+				SetConsoleTextAttribute(hOut, 128);
 				break;
-			case 1:
-				SetConsoleTextAttribute(hOut, BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+			case 7:
+				SetConsoleTextAttribute(hOut, 191);
 				break;
-			case 2:
-				SetConsoleTextAttribute(hOut, BACKGROUND_BLUE | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
+			case 8:
+				SetConsoleTextAttribute(hOut, 207);
 				break;
 			default:
+				SetConsoleTextAttribute(hOut, 15 + 16 * mapa[i][j].dajPrzynaleznosc());
 				break;
 			}
-			cout << mapa[i][j];
+			cout << mapa[i][j].dajSymbol();
 		}
 		SetConsoleTextAttribute(hOut, 15);
 		cout << "|" << endl;
 	}
 
+	for (size_t i = 0; i < dlug; i++)
+	{
+		for (size_t j = 0; j < szer; j++)
+		{
+			mapa[i][j].zmienSymbol(' ');
+		}
+	}
+
 	cout << "|";
-	for (int i = 0; i < szer; i++)
+	for (size_t i = 0; i < szer; i++)
 		cout << "=";
 	cout << "|";
+	clrscr();
 }
