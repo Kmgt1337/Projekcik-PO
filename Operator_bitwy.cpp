@@ -29,6 +29,8 @@ bool Operator_bitwy::wynik()
     case 2:
         return 1;
     }
+
+    return 0;
 }
 
 vector<float> Operator_bitwy::dajStratyProcentoweArmii()
@@ -68,8 +70,8 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
     maksymalneObrazeniaArmii1 += armia1.oddzial->dajModyfikator();
     maksymalneObrazeniaArmii2 += armia2.oddzial->dajModyfikator();
 
-    maksymalneObrazeniaArmii1 *= 0.2;
-    maksymalneObrazeniaArmii2 *= 0.2;
+    maksymalneObrazeniaArmii1 = static_cast<size_t>(maksymalneObrazeniaArmii1 * 0.2);
+    maksymalneObrazeniaArmii2 = static_cast<size_t>(maksymalneObrazeniaArmii2 * 0.2);
 
     random_device device;
     mt19937 gen(device());
@@ -79,8 +81,8 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
     uniform_int_distribution<size_t> losujBonusDlaArmiiPrzegranej{ 100, 200 };
     uniform_int_distribution<size_t> losujBonusProwincji{ 1, 5 };
 
-    size_t obrazeniaArmi1 = losujObrazeniaDlaArmii1(gen);
-    size_t obrazeniaArmi2 = losujObrazeniaDlaArmii2(gen);
+    size_t obrazeniaArmi1 = static_cast<size_t>(losujObrazeniaDlaArmii1(gen) * armia1.dajModyfikatorZasob());
+    size_t obrazeniaArmi2 = static_cast<size_t>(losujObrazeniaDlaArmii2(gen) * armia2.dajModyfikatorZasob());
     size_t bonusArmiiZwyceskiej = losujBousDlaArmiiZwycieskiej(gen);
     size_t bonusArmiiPokonanej = losujBonusDlaArmiiPrzegranej(gen);
 
@@ -124,8 +126,8 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
             procentowaStrataArmii1 = static_cast<float>(strataArmiiZwycieskiej) / static_cast<float>(armia1.dajLiczebnosc());
             procentowaStrataArmii2 = 1.0f;
 
-            armia1.liczebnosc -= strataArmiiZwycieskiej;
-            armia2.liczebnosc = 0;
+            armia1.zmienLiczebnosc(armia1.dajLiczebnosc() - strataArmiiZwycieskiej);
+            armia2.zmienLiczebnosc(0);
 
             pom.push_back(strataArmiiZwycieskiej);
             pom.push_back(strataArmiiZwycieskiej);
@@ -134,28 +136,28 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
             return pom;
         }
 
-        if (strataArmiiZwycieskiej >= armia1.dajLiczebnosc())
+        if (strataArmiiZwycieskiej >= static_cast<size_t>(armia1.dajLiczebnosc()))
         {
             procentowaStrataArmii1 = 1.0f;
             strataArmiiZwycieskiej = armia1.dajLiczebnosc();
-            armia1.liczebnosc = 0;
+            armia1.zmienLiczebnosc(0);
         }
         else
         {
             procentowaStrataArmii1 = static_cast<float>(strataArmiiZwycieskiej) / static_cast<float>(armia1.dajLiczebnosc());
-            armia1.liczebnosc -= strataArmiiZwycieskiej;
+            armia1.zmienLiczebnosc(armia1.dajLiczebnosc() - strataArmiiZwycieskiej);
         }
         
-        if (strataArmiiPokonanej >= armia2.dajLiczebnosc())
+        if (strataArmiiPokonanej >= static_cast<size_t>(armia2.dajLiczebnosc()))
         {
             procentowaStrataArmii2 = 1.0f;
             strataArmiiPokonanej = armia2.dajLiczebnosc();
-            armia2.liczebnosc = 0;
+            armia2.zmienLiczebnosc(0);
         }
         else
         {
             procentowaStrataArmii2 = static_cast<float>(strataArmiiPokonanej) / static_cast<float>(armia2.dajLiczebnosc());
-            armia2.liczebnosc -= strataArmiiPokonanej;
+            armia2.zmienLiczebnosc(armia2.dajLiczebnosc() - strataArmiiPokonanej);
         }
 
         pom.push_back(strataArmiiZwycieskiej);
@@ -190,8 +192,8 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
             procentowaStrataArmii2 = static_cast<float>(strataArmiiZwycieskiej) / static_cast<float>(armia1.dajLiczebnosc());
             procentowaStrataArmii1 = 1.0f;
 
-            armia2.liczebnosc -= strataArmiiZwycieskiej;
-            armia1.liczebnosc = 0;
+            armia2.zmienLiczebnosc(armia2.dajLiczebnosc() - strataArmiiZwycieskiej);
+            armia1.zmienLiczebnosc(0);
 
             pom.push_back(strataArmiiPokonanej);
             pom.push_back(strataArmiiZwycieskiej);
@@ -200,28 +202,28 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
             return pom;
         }
 
-        if (strataArmiiZwycieskiej >= armia2.dajLiczebnosc())
+        if (strataArmiiZwycieskiej >= static_cast<size_t>(armia2.dajLiczebnosc()))
         {
             procentowaStrataArmii2 = 1.0f;
             strataArmiiZwycieskiej = armia2.dajLiczebnosc();
-            armia2.liczebnosc = 0;
+            armia2.zmienLiczebnosc(0);
         }
         else
         {
             procentowaStrataArmii2 = static_cast<float>(strataArmiiZwycieskiej) / static_cast<float>(armia2.dajLiczebnosc());
-            armia2.liczebnosc -= strataArmiiZwycieskiej;
+            armia2.zmienLiczebnosc(armia2.dajLiczebnosc() - strataArmiiZwycieskiej);
         }
 
-        if (strataArmiiPokonanej >= armia1.dajLiczebnosc())
+        if (strataArmiiPokonanej >= static_cast<size_t>(armia1.dajLiczebnosc()))
         {
             procentowaStrataArmii1 = 1.0f;
             strataArmiiPokonanej = armia1.dajLiczebnosc();
-            armia1.liczebnosc = 0;
+            armia1.zmienLiczebnosc(0);
         }
         else
         {
             procentowaStrataArmii1 = static_cast<float>(strataArmiiPokonanej) / static_cast<float>(armia1.dajLiczebnosc());
-            armia1.liczebnosc -= strataArmiiPokonanej;
+            armia1.zmienLiczebnosc(armia1.dajLiczebnosc() - strataArmiiPokonanej);
         }
 
         pom.push_back(strataArmiiPokonanej);

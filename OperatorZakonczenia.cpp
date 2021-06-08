@@ -84,4 +84,7 @@ Armia OperatorZakonczenia::pokazArmieZwycieska(const vector<Armia>& armie)
 			return armia;
 		}
 	}
+
+	Armia armiaPom;
+	return armiaPom;
 }

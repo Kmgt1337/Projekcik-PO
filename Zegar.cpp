@@ -1,9 +1,8 @@
 #include "Zegar.h"
-#include <chrono>
 
 size_t Zegar::tura = 0;
-DWORD Zegar::czasStartu;
-DWORD Zegar::czasKonca;
+ULONGLONG Zegar::czasStartu;
+ULONGLONG Zegar::czasKonca;
 
 void Zegar::start()
 {
@@ -22,11 +21,11 @@ size_t Zegar::dajObecnaTure()
 
 void Zegar::zacznijOdmierzacCzas()
 {
-	czasStartu = GetTickCount();
+	czasStartu = GetTickCount64();
 }
 
-DWORD Zegar::dajCzasWykonaniaSymulacjiMiliSekundy()
+ULONGLONG Zegar::dajCzasWykonaniaSymulacjiMiliSekundy()
 {
-	czasKonca = GetTickCount();
+	czasKonca = GetTickCount64();
 	return (czasKonca - czasStartu);
 }

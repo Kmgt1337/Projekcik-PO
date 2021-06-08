@@ -13,14 +13,9 @@ Armia::Armia()
 
 Armia::Armia(int id, size_t x, size_t y, char symbol, int przynaleznosc, std::string nazwa, size_t liczebnosc)
 {
-	random_device device;
-	mt19937 gen(device());
-	uniform_int_distribution<size_t> losujLiczebnoscArmii{ 10000, 12000 };
-	uniform_int_distribution<size_t> losujPrzejmowanieS{ 0, 5 };
 	aktywna = 1;
 
 	this->liczebnosc = liczebnosc;
-	//przejmowanieS = losujPrzejmowanieS(gen);
 	this->przynaleznosc = przynaleznosc;
 	szybkosc = 1;
 	this->id = id;
@@ -53,7 +48,7 @@ int Armia::ruch()
 	uniform_int_distribution<size_t> kierunek{ 1, 4 };
 	size_t pom = kierunek(gen);
 
-	Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = 0;
+	Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(0);
 
 	switch (pom)
 	{
@@ -91,20 +86,54 @@ int Armia::ruch()
 	}
 
 	zwiad.raport();
-	Mapa::mapa[pozycjaX][pozycjaY].symbol = symbol;
 
-	if (Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji != 0)
+	Mapa::mapa[pozycjaX][pozycjaY].zmienSymbol(symbol);
+
+	if (Mapa::mapa[pozycjaX][pozycjaY].dajArmieWProwincji() != 0)
 	{
-		int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji;
-		Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
+		int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY].dajArmieWProwincji();
+		Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(id);
 		return armia_do_kasacji;
 	}
 
-	Mapa::mapa[pozycjaX][pozycjaY].armia_w_prowincji = id;
+	Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(id);
 
-	if (Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc != przynaleznosc)
+	if (Mapa::mapa[pozycjaX][pozycjaY].dajPrzynaleznosc() != przynaleznosc)
 	{
-		Mapa::mapa[pozycjaX][pozycjaY].przynaleznosc = przynaleznosc;
+		Mapa::mapa[pozycjaX][pozycjaY].zmienPrzynaleznosc(przynaleznosc);
 	}
 	return 0;
+}
+
+void Armia::zbierzZasob(rodzajeZasobu zasob)
+{
+	switch (zasob)
+	{
+	case rodzajeZasobu::LICZEBNOSC5:
+		liczebnosc = static_cast<int>(liczebnosc * 1.05);
+		break;
+
+	case rodzajeZasobu::LICZEBNOSC10:
+		liczebnosc = static_cast<int>(liczebnosc * 1.1);
+		break;
+
+	case rodzajeZasobu::LICZEBNOSC15:
+		liczebnosc = static_cast<int>(liczebnosc * 1.15);
+		break;
+
+	case rodzajeZasobu::OBRAZENIA5:
+		modyfikatorObrazenZasob += 0.05f;
+		break;
+
+	case rodzajeZasobu::OBRAZENIA10:
+		modyfikatorObrazenZasob += 0.1f;
+		break;
+
+	case rodzajeZasobu::OBRAZENIA15:
+		modyfikatorObrazenZasob += 0.15f;
+		break;
+
+	case rodzajeZasobu::BRAK:
+		break;
+	}
 }

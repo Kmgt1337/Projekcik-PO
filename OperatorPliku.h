@@ -23,10 +23,13 @@ public:
 	static bool zapisBitwy(Armia, Armia, std::vector<size_t>, std::vector<float>);
 
 	// statyczna funkcja sk³adowa klasy zapisuj¹ca koñcowe parametry symulacji (w sytuacji gdy armia wygra poprzez militarne zwyciêstwo)
-	static bool ostatniZapis(Armia, DWORD);
+	static bool ostatniZapis(Armia, ULONGLONG);
 
 	// statyczna funkcja sk³adowa klasy zapisuj¹ca koñcowe parametry symulacji (w sytuacji gdy osi¹gniêty zostanie limit tur)
-	static bool ostatniZapisTury(const std::vector<Armia>&, Armia, DWORD);
+	static bool ostatniZapisTury(const std::vector<Armia>&, Armia, ULONGLONG);
+
+	// statyczna funkcja sk³adowa klasy zapisuj¹ca parametry zebranego zasobu przez armiê
+	static bool zapisZasobu(Armia, rodzajeZasobu);
 };
 
 #endif

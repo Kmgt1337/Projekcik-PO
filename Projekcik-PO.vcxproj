@@ -151,6 +151,8 @@
     <ClCompile Include="OperatorSymulacji.cpp" />
     <ClCompile Include="OperatorZakonczenia.cpp" />
     <ClCompile Include="Operator_bitwy.cpp" />
+    <ClCompile Include="Prowincja.cpp" />
+    <ClCompile Include="Zasob.cpp" />
     <ClCompile Include="Zegar.cpp" />
     <ClCompile Include="Zwiad.cpp" />
   </ItemGroup>
@@ -168,6 +170,7 @@
     <ClInclude Include="OperatorZakonczenia.h" />
     <ClInclude Include="Operator_bitwy.h" />
     <ClInclude Include="Prowincja.h" />
+    <ClInclude Include="Zasob.h" />
     <ClInclude Include="Zegar.h" />
     <ClInclude Include="Zwiad.h" />
   </ItemGroup>

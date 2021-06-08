@@ -1,4 +1,6 @@
-#include <conio.h>
+// projekt na przedmiot programowanie obiektowe, Wydzia³ Elektroniki Politechniki Wroc³awskiej, teleinformatyka, semestr letni 2021
+// autorzy: Kamil Gawlik, Sebastian Dorabia³a
+
 #include "OperatorSymulacji.h"
 
 int main()

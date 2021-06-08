@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Operatory">
       <UniqueIdentifier>{fa65eff1-9cbc-4b2f-a781-a5619b45b902}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Prowincja">
+      <UniqueIdentifier>{238eee95-6ab3-456a-b82b-24826fc41903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Prowincja">
+      <UniqueIdentifier>{08be9a0d-f5a9-44c1-abe5-1dc62144f0c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mapa.cpp">
@@ -69,14 +75,14 @@
     <ClCompile Include="LekkaJazda.cpp">
       <Filter>Source Files\Oddziały Wojskowe</Filter>
     </ClCompile>
+    <ClCompile Include="Prowincja.cpp">
+      <Filter>Source Files\Prowincja</Filter>
+    </ClCompile>
+    <ClCompile Include="Zasob.cpp">
+      <Filter>Source Files\Prowincja</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Prowincja.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Zegar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Mapa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -115,6 +121,15 @@
     </ClInclude>
     <ClInclude Include="LekkaJazda.h">
       <Filter>Header Files\Oddziały Wojskowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Prowincja.h">
+      <Filter>Header Files\Prowincja</Filter>
+    </ClInclude>
+    <ClInclude Include="Zasob.h">
+      <Filter>Header Files\Prowincja</Filter>
+    </ClInclude>
+    <ClInclude Include="Zegar.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

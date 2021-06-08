@@ -5,6 +5,11 @@
 #include "Zegar.h"
 #include <vector>
 
+// istniej¹ dwa mo¿liwe zakoñczenia symulacji:
+// 1. zwyciêstwo militarne - w przypadku gdy na polu walki zostanie tylko jedna armia - wygrywa ona symulacjê
+// 2. zakoñczenie przez osi¹gniêcie limtu tur - w przypadku gdy w symulacji zostanie osi¹gniêty ustalony limit tur a co najmniej dwie armie
+// ¿yj¹ - wygrywa armia, która przejê³a wiêcej prowincji
+
 // klasa odpowiadaj¹ca za sprawdzenie czy wyst¹pi³y warunki zakoñczenia symulacji
 class OperatorZakonczenia
 {

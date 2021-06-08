@@ -174,30 +174,50 @@ int OperatorSymulacji::prowadzSymulacje()
 		for (auto& armia : armie)
 		{
 			int id2 = armia.ruch();
+
+			if (armia.dajLiczebnosc() > 0)
+			{
+				if (Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu() == rodzajeZasobu::LICZEBNOSC5 ||
+					Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu() == rodzajeZasobu::LICZEBNOSC10 ||
+					Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu() == rodzajeZasobu::LICZEBNOSC15 ||
+					Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu() == rodzajeZasobu::OBRAZENIA5 ||
+					Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu() == rodzajeZasobu::OBRAZENIA10 ||
+					Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu() == rodzajeZasobu::OBRAZENIA15)
+				{
+					if (Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajAktywnoscZasobu() == true)
+					{
+						armia.zbierzZasob(Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu());
+						OperatorPliku::zapisZasobu(armia, Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.dajRodzajZasobu());
+
+						Mapa::mapa[armia.dajPozycjeX()][armia.dajPozycjeY()].zasobProwincji.zmienAktywnoscZasobuNa(false);
+					}
+				}
+			}
+
 			if (id2 != 0)
 			{
 				if (armia.dajLiczebnosc() == 0)
 				{
-					armia.aktywna = 0;
+					armia.zmienAktywnosc(0);
 					for (size_t i = 0; i < Mapa::dlug; i++)
 					{
 						for (size_t j = 0; j < Mapa::szer; j++)
-							if (Mapa::mapa[i][j].przynaleznosc == armia.dajPrzyna())
+							if (Mapa::mapa[i][j].dajPrzynaleznosc() == armia.dajPrzyna())
 							{
-								Mapa::mapa[i][j].przynaleznosc = 0;
+								Mapa::mapa[i][j].zmienPrzynaleznosc(0);
 							}
 					}
 				}
 				if (armie[id2 - 1].dajLiczebnosc() == 0)
 				{
 					// armia.aktywna = 0; <--- zle, powodowalo blad ktory uniemozliwial zakonczenie symulacji
-					armie[id2 - 1].aktywna = 0; // ma byc tak
+					armie[id2 - 1].zmienAktywnosc(0); // ma byc tak
 					for (size_t i = 0; i < Mapa::dlug; i++)
 					{
 						for (size_t j = 0; j < Mapa::szer; j++)
-							if (Mapa::mapa[i][j].przynaleznosc == armie[id2 - 1].dajPrzyna())
+							if (Mapa::mapa[i][j].dajPrzynaleznosc() == armie[id2 - 1].dajPrzyna())
 							{
-								Mapa::mapa[i][j].przynaleznosc = 0;
+								Mapa::mapa[i][j].zmienPrzynaleznosc(0);
 							}
 					}
 				}

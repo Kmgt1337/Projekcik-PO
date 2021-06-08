@@ -8,6 +8,11 @@
 #include <Windows.h>
 #include <random>
 
+// Mapa wygl¹da w nastêpuj¹cy sposób:
+// 1. ka¿de pole na mapie to unikalna prowincja, kolor szary oznacza ¿e prowincja jest niczyja, jeœli prowincja ma kolor inny ni¿ szary - jest ona przejêta przez dan¹ armiê
+// 2. armie reprezentowane s¹ przez znaki 'X', armie poruszaj¹ siê po mapie w sposób ca³kowicie losowy przy okazji zajmuj¹c prowincje 
+// 3. ka¿da prowincja zawiera jakiœ zasób, najczêœciej jest to zasób "BRAK" czyli zasób nie daj¹cy ¿adnych korzyœci. Oko³o 10% prowincji posiada wartoœciowy zasób
+
 // klasa odpowiadaj¹ca za mapê i jej rysowanie na ekranie konsoli
 class Mapa
 {

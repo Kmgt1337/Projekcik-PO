@@ -78,7 +78,7 @@ bool OperatorPliku::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmiana
 	return true;
 }
 
-bool OperatorPliku::ostatniZapis(Armia armia, DWORD czas)
+bool OperatorPliku::ostatniZapis(Armia armia, ULONGLONG czas)
 {
 	fstream plik;
 	plik.open("baza.txt", ios::app);
@@ -130,7 +130,7 @@ bool OperatorPliku::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 	return true;
 }
 
-bool OperatorPliku::ostatniZapisTury(const std::vector<Armia>& armie, Armia armiaZwycieska, DWORD czas)
+bool OperatorPliku::ostatniZapisTury(const std::vector<Armia>& armie, Armia armiaZwycieska, ULONGLONG czas)
 {
 	fstream plik;
 	plik.open("baza.txt", ios::app);
@@ -148,6 +148,47 @@ bool OperatorPliku::ostatniZapisTury(const std::vector<Armia>& armie, Armia armi
 	plik << "Armia zwyciêska: " << armiaZwycieska.dajNazwe() << ", jej liczba prowincji: " << Mapa::dajLiczbeProwincjiArmii(armiaZwycieska) << endl;
 	plik << setw(50) << setfill('=') << endl;
 	plik << "Czas trwania symulacji: " << czas << " milisekund" << endl;
+	plik.close();
+	return true;
+}
+
+bool OperatorPliku::zapisZasobu(Armia armia, rodzajeZasobu zasob)
+{
+	fstream plik;
+	plik.open("baza.txt", ios::app);
+	if (plik.fail()) return false;
+
+	plik << endl;
+	plik << "=============================== ";
+	plik << armia.dajNazwe() << " zebra³a zasób";
+	switch (zasob)
+	{
+	case rodzajeZasobu::LICZEBNOSC5:
+		plik << " - zwiêkszenie liczebnoœci o 5%" << endl;
+		break;
+
+	case rodzajeZasobu::LICZEBNOSC10:
+		plik << " - zwiêkszenie liczebnoœci o 10%" << endl;
+		break;
+
+	case rodzajeZasobu::LICZEBNOSC15:
+		plik << " - zwiêkszenie liczebnoœci o 15%" << endl;
+		break;
+
+	case rodzajeZasobu::OBRAZENIA5:
+		plik << " - zwiêkszenie obra¿eñ o 5%" << endl;
+		break;
+
+	case rodzajeZasobu::OBRAZENIA10:
+		plik << " - zwiêkszenie obra¿eñ o 10%" << endl;
+		break;
+
+	case rodzajeZasobu::OBRAZENIA15:
+		plik << " - zwiêkszenie obra¿eñ o 15%" << endl;
+		break;
+	}
+
+	plik << endl << endl;
 	plik.close();
 	return true;
 }

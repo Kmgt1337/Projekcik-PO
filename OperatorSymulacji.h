@@ -11,6 +11,16 @@
 #include <vector>
 #include <conio.h>
 
+// UWAGA:
+// przy wyborze maksymalnych wartoœci symulacja mo¿e trwaæ nawet kilkanaœcie minut oraz generowaæ
+// plik tekstowy rozmiaru paru mb
+
+// u¿ytkownik podaje z klawiatury nastêpuj¹ce dane pocz¹tkowe:
+// - maksymalny limit tur
+// - rozmiar mapy
+// - parametry ka¿dej z armii: pozycja pocz¹tkowa x, pozycja pocz¹tkowa y, liczebnoœæ, nazwa
+// - minimalnie s¹ 2 armie, u¿ytkownik mo¿e dodaæ ich maksymalnie 10
+
 // klasa odpowiadaj¹ca za przeprowadzenie symulacji
 class OperatorSymulacji
 {
@@ -35,20 +45,20 @@ private:
 	Armia armiaZwycieska;
 	
 	// sk³adnik klasy przechowuj¹cy czas trwania symulacji
-	DWORD czasTrwaniaSymulacji;
+	ULONGLONG czasTrwaniaSymulacji{};
 
 	// sk³adnik klasy przechowuj¹cy czas trwania przerwy podczas symulacji
-	DWORD czasTrwaniaPrzerwy;
+	ULONGLONG czasTrwaniaPrzerwy{};
 
 	// sk³adnik klasy - uchwyt na wyjœcie konsoli
 	HANDLE hOut;
 
 	// sk³adnik klasy przechowuj¹cy minimalny dozwolony rozmiar mapy
-	const size_t minimum = 10;
+	const size_t minimum{ 10 };
 
 	// sk³adniki klasy przechowuj¹ce maksymalne dozwolone rozmiary mapy
-	const size_t maksimumX = 40;
-	const size_t maksimumY = 40;
+	const size_t maksimumX{ 40 };
+	const size_t maksimumY{ 40 };
 };
 
 #endif

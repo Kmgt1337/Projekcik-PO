@@ -5,6 +5,8 @@
 #include <Windows.h>
 #include <ctime>
 
+// zliczanie czasu rzeczywistego odbywa siê za pomoc¹ funkcji GetTickCount64() z biblioteki Windows.h
+
 // klasa odpowiedzialna za mierzenie up³ywu czasu i tur
 class Zegar
 {
@@ -22,14 +24,14 @@ public:
 	static void zacznijOdmierzacCzas();
 
 	// statyczna funkcja sk³adowa klasy, która zwraca czas pomiêdzy jej wywo³aniem a wywo³aniem funkcji zacznijOdmierzacCzas()
-	static DWORD dajCzasWykonaniaSymulacjiMiliSekundy();
+	static ULONGLONG dajCzasWykonaniaSymulacjiMiliSekundy();
 
 private:
 	// statyczny sk³adnik klasy przechowuj¹cy liczbê tur
 	static size_t tura;
 
 	// statyczne sk³adniki klasy przechowuj¹ce czas startu symulacji i czas jej zakoñczenia
-	static DWORD czasStartu, czasKonca;
+	static ULONGLONG czasStartu, czasKonca;
 };
 
 #endif

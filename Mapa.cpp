@@ -41,11 +41,11 @@ vector<size_t> Mapa::dajLiczbeProwincjiKazdejArmii(Armia armia1, Armia armia2)
 	{
 		for (size_t j = 0; j < mapa[i].size(); j++)
 		{
-			if (mapa[i][j].przynaleznosc == armia1.dajPrzyna())
+			if (mapa[i][j].dajPrzynaleznosc() == armia1.dajPrzyna())
 			{
 				larmia1++;
 			}
-			if (mapa[i][j].przynaleznosc == armia2.dajPrzyna())
+			if (mapa[i][j].dajPrzynaleznosc() == armia2.dajPrzyna())
 			{
 				larmia2++;
 			}
@@ -63,7 +63,7 @@ size_t Mapa::dajLiczbeProwincjiArmii(Armia armia)
 	{
 		for (size_t j = 0; j < mapa[i].size(); j++)
 		{
-			if (mapa[i][j].przynaleznosc == armia.dajPrzyna())
+			if (mapa[i][j].dajPrzynaleznosc() == armia.dajPrzyna())
 			{
 				larmia++;
 			}
@@ -79,26 +79,14 @@ void Mapa::reset()
 	{
 		for (size_t j = 0; j < mapa.at(i).size(); j++)
 		{
-			mapa[i][j].przynaleznosc = 0;
-			mapa[i][j].symbol = ' ';
+			mapa[i][j].zmienPrzynaleznosc(0);
+			mapa[i][j].zmienSymbol(' ');
 		}
 	}
 }
 
 void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 {
-
-	cout << "|";
-	for (size_t i = 0; i < szer; i++)
-		cout << "=";
-	cout << "|" << endl;
-
-	cout << "|";
-	cout << "r - reset" << setw(szer - 8) << "|" << endl;
-
-	cout << "|";
-	cout << "p - pauza" << setw(szer - 8) << "|" << endl;
-
 	cout << "|";
 	for (size_t i = 0; i < szer; i++)
 		cout << "=";
@@ -109,7 +97,7 @@ void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 		cout << "|";
 		for (size_t j = 0; j < mapa[i].size(); j++)
 		{
-			switch (mapa[i][j].przynaleznosc) {
+			switch (mapa[i][j].dajPrzynaleznosc()) {
 			case 0:
 				SetConsoleTextAttribute(hOut, 128);
 				break;
@@ -120,10 +108,10 @@ void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 				SetConsoleTextAttribute(hOut, 207);
 				break;
 			default:
-				SetConsoleTextAttribute(hOut, 15 + 16 * mapa[i][j].przynaleznosc);
+				SetConsoleTextAttribute(hOut, 15 + 16 * mapa[i][j].dajPrzynaleznosc());
 				break;
 			}
-			cout << mapa[i][j].symbol;
+			cout << mapa[i][j].dajSymbol();
 		}
 		SetConsoleTextAttribute(hOut, 15);
 		cout << "|" << endl;
@@ -133,7 +121,7 @@ void Mapa::rysuj(const vector<Armia>& armie, HANDLE hOut)
 	{
 		for (size_t j = 0; j < szer; j++)
 		{
-			mapa[i][j].symbol = ' ';
+			mapa[i][j].zmienSymbol(' ');
 		}
 	}
 

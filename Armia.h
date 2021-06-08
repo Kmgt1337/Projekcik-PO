@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+#include "Zasob.h"
 #include "General.h"
 #include "Artyleria.h"
 #include "Oddzial.h"
@@ -24,26 +25,25 @@ public:
 
 	// funkcja sk³adowa klasy przeprowadzaj¹ca ruch armii, sprawdzaj¹ca te¿ czy armia wesz³a na prowincje gdzie jest inna armia
 	int ruch();
-	
-	// sk³adnik klasy okreœlaj¹cy czy armia jest aktywna 
-	bool aktywna;
 
-	// sk³adnik klasy okreœlaj¹cy symbol armii, który zostanie wypisany na ekran konsoli na mapie
-	char symbol;
-	
-	// sk³adnik klasy okreœlaj¹cy ID armii
-	int id;
-
-	// sk³adnik klasy okreœlaj¹cy liczbê ¿o³nierzy w armii
-	int liczebnosc;
-
-	// funkcje sk³adowek lasy zwracaj¹ce dane parametry
-	size_t dajPozycjeX() { return pozycjaY; }
-	size_t dajPozycjeY() { return pozycjaX; }
+	// funkcje sk³adowe klasy zwracaj¹ce dane parametry
+	size_t dajPozycjeX() { return pozycjaX; }
+	size_t dajPozycjeY() { return pozycjaY; }
 	int dajPrzyna() { return przynaleznosc; }
 	char dajSymbol() { return symbol; }
 	std::string dajNazwe() { return nazwaArmii; }
+	float dajModyfikatorZasob() { return modyfikatorObrazenZasob; }
+	bool czyArmiaAktywna() { return aktywna; }
 	int dajLiczebnosc() { return liczebnosc; }
+	int dajID() { return id; }
+
+	// funkcje sk³adowe klasy zmieniaj¹ce dane parametry
+	void zmienLiczebnosc(int a) { liczebnosc = a; }
+	void zmienSymbol(char a) { symbol = a; }
+	void zmienAktywnosc(bool a) { aktywna = a; }
+
+	// funkcja sk³adowa klasy odpowiedzialna za zbieranie zasobu z prowincji
+	void zbierzZasob(rodzajeZasobu);
 
 	// statyczna funkcja sk³adowa klasy inicjalizuj¹ca granicê mapy (potrzebne do tegy aby armia nie wysz³a poza mapê)
 	static void inicjalizuj(size_t, size_t);
@@ -58,6 +58,18 @@ public:
 	LekkaJazda lekkaJazda;
 
 private:
+	// sk³adnik klasy okreœlaj¹cy czy armia jest aktywna 
+	bool aktywna;
+
+	// sk³adnik klasy okreœlaj¹cy symbol armii, który zostanie wypisany na ekran konsoli na mapie
+	char symbol;
+
+	// sk³adnik klasy okreœlaj¹cy ID armii
+	int id;
+
+	// sk³adnik klasy okreœlaj¹cy liczbê ¿o³nierzy w armii
+	int liczebnosc;
+
 	// sk³adnik klasy okreœlaj¹cy przynale¿nosæ danej armii
 	int przynaleznosc;
 
@@ -73,6 +85,9 @@ private:
 
 	// statyczne sk³adniki klasy identyczne dla ka¿dej armii (potrzebne do tegy aby armia nie wysz³a poza mapê)
 	static size_t x, y;
+
+	// sk³adnik klasy okreœlaj¹cy o ile procent armia ma zwiêkszone zadane obra¿enia, np. 1.1 oznacza obra¿enia wiêksze o 10%
+	float modyfikatorObrazenZasob{ 1.0 };
 };
 
 #endif

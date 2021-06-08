@@ -14,7 +14,7 @@ void Zwiad::raport()
 	{
 		for (size_t j = 0; j < Mapa::szer; j++)
 		{
-			if (this->przynaleznosc == Mapa::mapa[i][j].przynaleznosc)
+			if (this->przynaleznosc == Mapa::mapa[i][j].dajPrzynaleznosc())
 			{
 				modLiczebnosc++;
 			}
