@@ -1,1 +1,1 @@
-Projekt na przedmiot programowanie obiektowe, Politechnika Wrocławska semestr letni 2021.
+Projekt na przedmiot programowanie obiektowe, Wydział Elektroniki Politechniki Wrocławskiej, teleinformatyka, semestr letni 2021.
