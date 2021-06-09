@@ -16,11 +16,15 @@ public:
 	int dajPrzynaleznosc() { return przynaleznosc; }
 	char dajSymbol() { return symbol; }
 	int dajArmieWProwincji() { return armia_w_prowincji; }
+	int dajwspolrzednax() { return wspolrzednax; }
+	int dajwspolrzednay() { return wspolrzednay; }
 
 	// funkcje sk³adowe klasy zmieniaj¹ce dany sk³adnik klasy
 	void zmienPrzynaleznosc(int a) { przynaleznosc = a; }
 	void zmienSymbol(char a) { symbol = a; }
 	void zmienArmieWProwincji(int a) { armia_w_prowincji = a; }
+	void zmienwspolrzednax(int a) { wspolrzednax = a; }
+	void zmienwspolrzednay(int a) { wspolrzednay = a; }
 
 	// sk³adnik klasy - zasób który posiada prowincja
 	Zasob zasobProwincji;
@@ -31,6 +35,9 @@ private:
 
 	// sk³adnik klasy przechowuj¹cy symbol wyœwietlany na ekranie konsoli
 	char symbol{};
+
+	int wspolrzednax;
+	int wspolrzednay;
 
 	// TODO
 	int armia_w_prowincji{};

@@ -171,6 +171,7 @@ int OperatorSymulacji::prowadzSymulacje()
 		}
 
 		Zegar::nowaTura();
+		Mapa::rysuj(armie, hOut);
 		for (auto& armia : armie)
 		{
 			int id2 = armia.ruch();
@@ -231,7 +232,6 @@ int OperatorSymulacji::prowadzSymulacje()
 			}
 			id2 = 0;
 		}
-		Mapa::rysuj(armie, hOut);
 		if (!OperatorPliku::zapis(armie)) return -3;
 	}
 

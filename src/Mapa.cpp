@@ -29,6 +29,14 @@ void Mapa::inicjalizuj(size_t x, size_t y)
 	{
 		mapa[i].resize(szer);
 	}
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		for (size_t j = 0; j < mapa[i].size(); j++)
+		{
+			mapa[i][j].zmienwspolrzednax(i);
+			mapa[i][j].zmienwspolrzednay(j);
+		}
+	}
 }
 
 vector<size_t> Mapa::dajLiczbeProwincjiKazdejArmii(Armia armia1, Armia armia2)

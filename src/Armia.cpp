@@ -50,59 +50,72 @@ int Armia::ruch()
 
 	Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(0);
 
-	switch (pom)
+	vector<Prowincja> prowincje_do_wyboru;
+	int cele = 0;
+	vector<Prowincja> cel;
+
+	if (pozycjaX != 0)
 	{
-		// ruch w gore
-	case 1:
-		if (pozycjaX != 0)
-		{
-			--pozycjaX;
-			break;
-		}
+		prowincje_do_wyboru.push_back(Mapa::mapa[pozycjaX-1][pozycjaY]);
+	}
+	if (pozycjaY != 0)
+	{
+		prowincje_do_wyboru.push_back(Mapa::mapa[pozycjaX][pozycjaY - 1]);
+	}
+	if (pozycjaX != x - 1)
+	{
+		prowincje_do_wyboru.push_back(Mapa::mapa[pozycjaX + 1][pozycjaY]);
+	}
+	if (pozycjaY != y - 1)
+	{
+		prowincje_do_wyboru.push_back(Mapa::mapa[pozycjaX][pozycjaY + 1]);
+	}
 
-		//ruch w lewo
-	case 2:
-		if (pozycjaY != 0)
-		{
-			--pozycjaY;
-			break;
-		}
+	int armia_do_kasacji = 0;
 
-		//ruch w dol
-	case 3:
-		if (pozycjaX != x - 1)
+	for (int i = 0; i < prowincje_do_wyboru.size(); i++)
+	{
+		if (prowincje_do_wyboru[i].dajArmieWProwincji() != 0 && prowincje_do_wyboru[i].dajArmieWProwincji() != id)
 		{
-			++pozycjaX;
-			break;
-		}
+			zwiad.raport();
+			armia_do_kasacji = prowincje_do_wyboru[i].dajArmieWProwincji();
+			pozycjaX = prowincje_do_wyboru[i].dajwspolrzednax();
+			pozycjaY = prowincje_do_wyboru[i].dajwspolrzednay();
+			goto przejscie;
 
-		//ruch w prawo
-	case 4:
-		if (pozycjaY != y - 1)
+		}
+		else if (prowincje_do_wyboru[i].dajPrzynaleznosc() != przynaleznosc)
 		{
-			++pozycjaY;
-			break;
+			cel.push_back(prowincje_do_wyboru[i]);
+			cele++;
 		}
 	}
 
-	zwiad.raport();
+	if (cele != 0)
+	{
+		uniform_int_distribution<size_t> kierunek{ 0, cel.size() - 1 };
+		pom = kierunek(gen);
+		pozycjaX = cel[pom].dajwspolrzednax();
+		pozycjaY = cel[pom].dajwspolrzednay();
+	}
+	else
+	{
+		uniform_int_distribution<size_t> kierunek{ 0, prowincje_do_wyboru.size() - 1 };
+		pom = kierunek(gen);
+		pozycjaX = prowincje_do_wyboru[pom].dajwspolrzednax();
+		pozycjaY = prowincje_do_wyboru[pom].dajwspolrzednay();
+	}
+
+przejscie:
 
 	Mapa::mapa[pozycjaX][pozycjaY].zmienSymbol(symbol);
-
-	if (Mapa::mapa[pozycjaX][pozycjaY].dajArmieWProwincji() != 0)
-	{
-		int armia_do_kasacji = Mapa::mapa[pozycjaX][pozycjaY].dajArmieWProwincji();
-		Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(id);
-		return armia_do_kasacji;
-	}
-
 	Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(id);
 
 	if (Mapa::mapa[pozycjaX][pozycjaY].dajPrzynaleznosc() != przynaleznosc)
 	{
 		Mapa::mapa[pozycjaX][pozycjaY].zmienPrzynaleznosc(przynaleznosc);
 	}
-	return 0;
+	return armia_do_kasacji;
 }
 
 void Armia::zbierzZasob(rodzajeZasobu zasob)
