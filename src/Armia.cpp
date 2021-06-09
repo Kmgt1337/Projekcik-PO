@@ -81,7 +81,9 @@ int Armia::ruch()
 			armia_do_kasacji = prowincje_do_wyboru[i].dajArmieWProwincji();
 			pozycjaX = prowincje_do_wyboru[i].dajwspolrzednax();
 			pozycjaY = prowincje_do_wyboru[i].dajwspolrzednay();
-			goto przejscie;
+			cel.clear();
+			cel.push_back(prowincje_do_wyboru[i]);
+			break;
 
 		}
 		else if (prowincje_do_wyboru[i].dajPrzynaleznosc() != przynaleznosc)
@@ -105,8 +107,6 @@ int Armia::ruch()
 		pozycjaX = prowincje_do_wyboru[pom].dajwspolrzednax();
 		pozycjaY = prowincje_do_wyboru[pom].dajwspolrzednay();
 	}
-
-przejscie:
 
 	Mapa::mapa[pozycjaX][pozycjaY].zmienSymbol(symbol);
 	Mapa::mapa[pozycjaX][pozycjaY].zmienArmieWProwincji(id);
