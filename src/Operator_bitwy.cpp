@@ -105,6 +105,9 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         strataArmiiZwycieskiej = obrazeniaArmi2 + bonusArmiiZwyceskiej + (bonusProwincjiArmia1 * losujBonusProwincji(gen)) + armia1.oddzial->dajModyfikator();
         strataArmiiPokonanej = obrazeniaArmi1 + bonusArmiiPokonanej + (bonusProwincjiArmia2 * losujBonusProwincji(gen)) + armia2.oddzial->dajModyfikator();
 
+        armia1.zwiad.raport();
+        armia2.zwiad.raport();
+
         armia1.oddzial = &armia1.zwiad;
         armia2.oddzial = &armia2.zwiad;
 
@@ -171,6 +174,9 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         strataArmiiZwycieskiej = obrazeniaArmi1 + bonusArmiiZwyceskiej + (bonusProwincjiArmia2 * losujBonusProwincji(gen)) + armia2.oddzial->dajModyfikator();
         strataArmiiPokonanej = obrazeniaArmi2 + bonusArmiiPokonanej + (bonusProwincjiArmia1 * losujBonusProwincji(gen)) + armia1.oddzial->dajModyfikator();
 
+        armia1.zwiad.raport();
+        armia2.zwiad.raport();
+
         armia1.oddzial = &armia1.zwiad;
         armia2.oddzial = &armia2.zwiad;
 
@@ -183,13 +189,13 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         strataArmiiZwycieskiej += armia2.oddzial->dajModyfikator();
         strataArmiiPokonanej += armia1.oddzial->dajModyfikator();
 
-        if (armia1.dajLiczebnosc() - strataArmiiZwycieskiej == 0 && armia2.dajLiczebnosc() - strataArmiiPokonanej == 0)
+        if (armia2.dajLiczebnosc() - strataArmiiZwycieskiej == 0 && armia1.dajLiczebnosc() - strataArmiiPokonanej == 0)
         {
             uniform_int_distribution<size_t> losujNowaStrate{ static_cast<size_t>(armia2.dajLiczebnosc() * 0.2), static_cast<size_t>(armia2.dajLiczebnosc() * 0.8) };
             strataArmiiZwycieskiej = losujNowaStrate(gen);
             strataArmiiPokonanej = armia1.dajLiczebnosc();
 
-            procentowaStrataArmii2 = static_cast<float>(strataArmiiZwycieskiej) / static_cast<float>(armia1.dajLiczebnosc());
+            procentowaStrataArmii2 = static_cast<float>(strataArmiiZwycieskiej) / static_cast<float>(armia2.dajLiczebnosc());
             procentowaStrataArmii1 = 1.0f;
 
             armia2.zmienLiczebnosc(armia2.dajLiczebnosc() - strataArmiiZwycieskiej);

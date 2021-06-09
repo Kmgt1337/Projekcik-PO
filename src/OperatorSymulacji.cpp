@@ -27,7 +27,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 		cin >> maxtura;
 	}
 	OperatorZakonczenia::ustawMaksymalnyLimitTur(maxtura);
-	
+
 	size_t x, y;
 	cout << "Podaj rozmiar x mapy [minimum " << minimum << ", maksymalnie " << maksimumX << "]: ";
 	cin >> x;
@@ -131,7 +131,7 @@ int OperatorSymulacji::prowadzSymulacje()
 	size_t pom = 0;
 	bool operZakonczenia = false;
 
-	if(!OperatorPliku::zapisPrzedSymulacja(armie)) return -3;
+	if (!OperatorPliku::zapisPrzedSymulacja(armie)) return -3;
 	Zegar::zacznijOdmierzacCzas();
 
 	while (czySymulacjaJestAktywna)
@@ -171,6 +171,7 @@ int OperatorSymulacji::prowadzSymulacje()
 		}
 
 		Zegar::nowaTura();
+		Mapa::rysuj(armie, hOut);
 		for (auto& armia : armie)
 		{
 			int id2 = armia.ruch();
@@ -221,7 +222,7 @@ int OperatorSymulacji::prowadzSymulacje()
 							}
 					}
 				}
-				
+
 				if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
 				{
 					if (!OperatorPliku::zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
@@ -231,7 +232,6 @@ int OperatorSymulacji::prowadzSymulacje()
 			}
 			id2 = 0;
 		}
-		Mapa::rysuj(armie, hOut);
 		if (!OperatorPliku::zapis(armie)) return -3;
 	}
 
@@ -260,4 +260,3 @@ int OperatorSymulacji::prowadzSymulacje()
 
 	return 0;
 }
-

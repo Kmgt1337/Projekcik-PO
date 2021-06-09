@@ -1,40 +1,46 @@
-#ifndef PROWINCJA_H
+Ôªø#ifndef PROWINCJA_H
 #define PROWINCJA_H
 
 #include <string>
 #include "Armia.h"
 #include "Zasob.h"
 
-// klasa odopowiadajπca za prowincje
+// klasa odopowiadajƒÖca za prowincje
 class Prowincja
 {
 public:
-	// konstruktor klasy ustawiajπcy poczπtkowe wartoúci opisujπce prowincje
+	// konstruktor klasy ustawiajƒÖcy poczƒÖtkowe warto≈õci opisujƒÖce prowincje
 	Prowincja();
 
-	// funkcje sk≥adowe klasy zwracajπce dane sk≥adniki klasy
+	// funkcje sk≈Çadowe klasy zwracajƒÖce dane sk≈Çadniki klasy
 	int dajPrzynaleznosc() { return przynaleznosc; }
 	char dajSymbol() { return symbol; }
 	int dajArmieWProwincji() { return armia_w_prowincji; }
+	int dajwspolrzednax() { return wspolrzednax; }
+	int dajwspolrzednay() { return wspolrzednay; }
 
-	// funkcje sk≥adowe klasy zmieniajπce dany sk≥adnik klasy
+	// funkcje sk≈Çadowe klasy zmieniajƒÖce dany sk≈Çadnik klasy
 	void zmienPrzynaleznosc(int a) { przynaleznosc = a; }
 	void zmienSymbol(char a) { symbol = a; }
 	void zmienArmieWProwincji(int a) { armia_w_prowincji = a; }
+	void zmienwspolrzednax(int a) { wspolrzednax = a; }
+	void zmienwspolrzednay(int a) { wspolrzednay = a; }
 
-	// sk≥adnik klasy - zasÛb ktÛry posiada prowincja
+	// sk≈Çadnik klasy - zas√≥b kt√≥ry posiada prowincja
 	Zasob zasobProwincji;
 
 private:
-	// sk≥adnik klasy oznaczajπcy do jakiej armii naleøy dana prowincja
+	// sk≈Çadnik klasy oznaczajƒÖcy do jakiej armii nale≈ºy dana prowincja
 	int przynaleznosc{};
 
-	// sk≥adnik klasy przechowujπcy symbol wyúwietlany na ekranie konsoli
+	// sk≈Çadnik klasy przechowujƒÖcy symbol wy≈õwietlany na ekranie konsoli
 	char symbol{};
+
+	int wspolrzednax;
+	int wspolrzednay;
 
 	// TODO
 	int armia_w_prowincji{};
 };
 
 #endif
-
