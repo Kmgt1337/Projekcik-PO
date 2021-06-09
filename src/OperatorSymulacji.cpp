@@ -94,9 +94,9 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 			cin >> pomY;
 		}
 
-		cout << "Podaj liczbe zolnierzy w armii [minimalne 1000, maksymalnie 100000]: ";
+		cout << "Podaj liczbe zolnierzy w armii [minimalne 10000, maksymalnie 100000]: ";
 		cin >> liczebnosc;
-		while (cin.fail() || liczebnosc < 1000 || liczebnosc > 100000)
+		while (cin.fail() || liczebnosc < 10000 || liczebnosc > 100000)
 		{
 			cin.clear();
 			cin.ignore(INT_MAX, '\n');

@@ -102,8 +102,8 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         armia1.oddzial = &armia1.lekarz;
         armia2.oddzial = &armia2.lekarz;
 
-        strataArmiiZwycieskiej = obrazeniaArmi2 + bonusArmiiZwyceskiej + (bonusProwincjiArmia1 * losujBonusProwincji(gen)) + armia1.oddzial->dajModyfikator();
-        strataArmiiPokonanej = obrazeniaArmi1 + bonusArmiiPokonanej + (bonusProwincjiArmia2 * losujBonusProwincji(gen)) + armia2.oddzial->dajModyfikator();
+        strataArmiiZwycieskiej = obrazeniaArmi2 + bonusArmiiPokonanej + (bonusProwincjiArmia2 * losujBonusProwincji(gen)) - armia1.oddzial->dajModyfikator();
+        strataArmiiPokonanej = obrazeniaArmi1 + bonusArmiiZwyceskiej + (bonusProwincjiArmia1 * losujBonusProwincji(gen)) - armia2.oddzial->dajModyfikator();
 
         armia1.zwiad.raport();
         armia2.zwiad.raport();
@@ -117,10 +117,10 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         armia1.oddzial = &armia1.lekkaJazda;
         armia2.oddzial = &armia2.lekkaJazda;
 
-        strataArmiiZwycieskiej += armia1.oddzial->dajModyfikator();
-        strataArmiiPokonanej += armia2.oddzial->dajModyfikator();
+        strataArmiiZwycieskiej += armia2.oddzial->dajModyfikator();
+        strataArmiiPokonanej += armia1.oddzial->dajModyfikator();
 
-        if (armia1.dajLiczebnosc() - strataArmiiZwycieskiej == 0 && armia2.dajLiczebnosc() - strataArmiiPokonanej == 0)
+        if ((armia1.dajLiczebnosc() - static_cast<int>(strataArmiiZwycieskiej) <= 0) && (armia2.dajLiczebnosc() - static_cast<int>(strataArmiiPokonanej <= 0)))
         {
             uniform_int_distribution<size_t> losujNowaStrate{ static_cast<size_t>(armia1.dajLiczebnosc() * 0.2), static_cast<size_t>(armia1.dajLiczebnosc() * 0.8) };
             strataArmiiZwycieskiej = losujNowaStrate(gen);
@@ -133,7 +133,7 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
             armia2.zmienLiczebnosc(0);
 
             pom.push_back(strataArmiiZwycieskiej);
-            pom.push_back(strataArmiiZwycieskiej);
+            pom.push_back(strataArmiiPokonanej);
             pom.push_back(1);
 
             return pom;
@@ -171,8 +171,8 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         armia1.oddzial = &armia1.lekarz;
         armia2.oddzial = &armia2.lekarz;
 
-        strataArmiiZwycieskiej = obrazeniaArmi1 + bonusArmiiZwyceskiej + (bonusProwincjiArmia2 * losujBonusProwincji(gen)) + armia2.oddzial->dajModyfikator();
-        strataArmiiPokonanej = obrazeniaArmi2 + bonusArmiiPokonanej + (bonusProwincjiArmia1 * losujBonusProwincji(gen)) + armia1.oddzial->dajModyfikator();
+        strataArmiiZwycieskiej = obrazeniaArmi1 + bonusArmiiPokonanej + (bonusProwincjiArmia1 * losujBonusProwincji(gen)) - armia2.oddzial->dajModyfikator();
+        strataArmiiPokonanej = obrazeniaArmi2 + bonusArmiiZwyceskiej + (bonusProwincjiArmia2 * losujBonusProwincji(gen)) - armia1.oddzial->dajModyfikator();
 
         armia1.zwiad.raport();
         armia2.zwiad.raport();
@@ -186,10 +186,10 @@ vector<size_t> Operator_bitwy::bitwa(Armia& armia1, Armia& armia2)
         armia1.oddzial = &armia1.lekkaJazda;
         armia2.oddzial = &armia2.lekkaJazda;
 
-        strataArmiiZwycieskiej += armia2.oddzial->dajModyfikator();
-        strataArmiiPokonanej += armia1.oddzial->dajModyfikator();
+        strataArmiiZwycieskiej += armia1.oddzial->dajModyfikator();
+        strataArmiiPokonanej += armia2.oddzial->dajModyfikator();
 
-        if (armia2.dajLiczebnosc() - strataArmiiZwycieskiej == 0 && armia1.dajLiczebnosc() - strataArmiiPokonanej == 0)
+        if ((armia2.dajLiczebnosc() - static_cast<int>(strataArmiiZwycieskiej) <= 0) && (armia1.dajLiczebnosc() - static_cast<int>(strataArmiiPokonanej <= 0)))
         {
             uniform_int_distribution<size_t> losujNowaStrate{ static_cast<size_t>(armia2.dajLiczebnosc() * 0.2), static_cast<size_t>(armia2.dajLiczebnosc() * 0.8) };
             strataArmiiZwycieskiej = losujNowaStrate(gen);
