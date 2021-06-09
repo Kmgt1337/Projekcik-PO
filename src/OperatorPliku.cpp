@@ -109,6 +109,8 @@ bool OperatorPliku::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 	ctime_s(buffer, sizeof(buffer), &czasUruchomieniaSymulacji);
 
 	plik << "Data i czas uruchomienia symulacji: " << buffer << endl;
+
+	plik << "Maksymalny limit tur:[" << OperatorZakonczenia::dajMaxTure() << "]" << endl;
 	
 	plik << "Rozmiar mapy:[" << Mapa::szer << " x " << Mapa::dlug << "]" << endl << endl;
 	
