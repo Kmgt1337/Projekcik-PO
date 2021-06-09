@@ -13,7 +13,7 @@ using namespace std;
 bool OperatorPliku::zapis(const std::vector<Armia>& armie)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	plik << " Tura nr " << Zegar::dajObecnaTure() << "\t";
@@ -44,7 +44,7 @@ bool OperatorPliku::zapis(const std::vector<Armia>& armie)
 bool OperatorPliku::zapisPrzedBitwa(Armia armia1, Armia armia2)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	plik << endl;
@@ -57,7 +57,7 @@ bool OperatorPliku::zapisPrzedBitwa(Armia armia1, Armia armia2)
 bool OperatorPliku::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmianaHP, vector<float> procentoweStraty)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	if (zmianaHP.at(2) == 1)
@@ -81,7 +81,7 @@ bool OperatorPliku::zapisBitwy(Armia armia1, Armia armia2, vector<size_t> zmiana
 bool OperatorPliku::ostatniZapis(Armia armia, ULONGLONG czas)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	plik << endl << endl;
@@ -96,7 +96,7 @@ bool OperatorPliku::ostatniZapis(Armia armia, ULONGLONG czas)
 bool OperatorPliku::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	plik << "=====PROGRAM SYMULACYJNY: WOJNY====" << endl;
@@ -109,6 +109,8 @@ bool OperatorPliku::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 	ctime_s(buffer, sizeof(buffer), &czasUruchomieniaSymulacji);
 
 	plik << "Data i czas uruchomienia symulacji: " << buffer << endl;
+
+	plik << "Maksymalny limit tur:[" << OperatorZakonczenia::dajMaxTure() << "]" << endl;
 	
 	plik << "Rozmiar mapy:[" << Mapa::szer << " x " << Mapa::dlug << "]" << endl << endl;
 	
@@ -133,7 +135,7 @@ bool OperatorPliku::zapisPrzedSymulacja(const std::vector<Armia>& armie)
 bool OperatorPliku::ostatniZapisTury(const std::vector<Armia>& armie, Armia armiaZwycieska, ULONGLONG czas)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	plik << endl << endl;
@@ -155,7 +157,7 @@ bool OperatorPliku::ostatniZapisTury(const std::vector<Armia>& armie, Armia armi
 bool OperatorPliku::zapisZasobu(Armia armia, rodzajeZasobu zasob)
 {
 	fstream plik;
-	plik.open("baza.txt", ios::app);
+	plik.open("wynik.txt", ios::app);
 	if (plik.fail()) return false;
 
 	plik << endl;

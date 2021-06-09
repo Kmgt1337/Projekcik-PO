@@ -11,10 +11,6 @@
 #include <vector>
 #include <conio.h>
 
-// UWAGA:
-// przy wyborze maksymalnych wartoœci symulacja mo¿e trwaæ nawet kilkanaœcie minut oraz generowaæ
-// plik tekstowy rozmiaru paru mb
-
 // u¿ytkownik podaje z klawiatury nastêpuj¹ce dane pocz¹tkowe:
 // - maksymalny limit tur
 // - rozmiar mapy

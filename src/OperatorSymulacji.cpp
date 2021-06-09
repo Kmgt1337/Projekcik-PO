@@ -17,9 +17,9 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 	SetConsoleTextAttribute(hOut, 15);
 
 	size_t maxtura;
-	cout << "Podaj maksymalna liczbe tur w symulacji [minimum 1000, maksimum 10000]: ";
+	cout << "Podaj maksymalna liczbe tur w symulacji [minimum 100, maksimum 10000]: ";
 	cin >> maxtura;
-	while (cin.fail() || maxtura < 1000 || maxtura > 10000)
+	while (cin.fail() || maxtura < 100 || maxtura > 10000)
 	{
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
@@ -27,7 +27,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 		cin >> maxtura;
 	}
 	OperatorZakonczenia::ustawMaksymalnyLimitTur(maxtura);
-	
+
 	size_t x, y;
 	cout << "Podaj rozmiar x mapy [minimum " << minimum << ", maksymalnie " << maksimumX << "]: ";
 	cin >> x;
@@ -55,7 +55,7 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 	fstream plik;
 	if (plik.is_open()) plik.close();
 
-	plik.open("baza.txt", ios::out | ios::trunc);
+	plik.open("wynik.txt", ios::out | ios::trunc);
 	plik.clear();
 	if (plik.good())
 	{
@@ -94,9 +94,9 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 			cin >> pomY;
 		}
 
-		cout << "Podaj liczbe zolnierzy w armii [minimalne 1000, maksymalnie 100000]: ";
+		cout << "Podaj liczbe zolnierzy w armii [minimalne 10000, maksymalnie 100000]: ";
 		cin >> liczebnosc;
-		while (cin.fail() || liczebnosc < 1000 || liczebnosc > 100000)
+		while (cin.fail() || liczebnosc < 10000 || liczebnosc > 100000)
 		{
 			cin.clear();
 			cin.ignore(INT_MAX, '\n');
@@ -131,7 +131,7 @@ int OperatorSymulacji::prowadzSymulacje()
 	size_t pom = 0;
 	bool operZakonczenia = false;
 
-	if(!OperatorPliku::zapisPrzedSymulacja(armie)) return -3;
+	if (!OperatorPliku::zapisPrzedSymulacja(armie)) return -3;
 	Zegar::zacznijOdmierzacCzas();
 
 	while (czySymulacjaJestAktywna)
@@ -171,6 +171,7 @@ int OperatorSymulacji::prowadzSymulacje()
 		}
 
 		Zegar::nowaTura();
+		Mapa::rysuj(armie, hOut);
 		for (auto& armia : armie)
 		{
 			int id2 = armia.ruch();
@@ -221,7 +222,7 @@ int OperatorSymulacji::prowadzSymulacje()
 							}
 					}
 				}
-				
+
 				if (armia.dajLiczebnosc() > 0 && armie[id2 - 1].dajLiczebnosc() > 0)
 				{
 					if (!OperatorPliku::zapisPrzedBitwa(armia, armie[id2 - 1])) return -3;
@@ -231,7 +232,6 @@ int OperatorSymulacji::prowadzSymulacje()
 			}
 			id2 = 0;
 		}
-		Mapa::rysuj(armie, hOut);
 		if (!OperatorPliku::zapis(armie)) return -3;
 	}
 
@@ -260,4 +260,3 @@ int OperatorSymulacji::prowadzSymulacje()
 
 	return 0;
 }
-

@@ -7,7 +7,7 @@ vector<vector<Prowincja>> Mapa::mapa;
 size_t Mapa::dlug;
 size_t Mapa::szer;
 
-void Mapa::clrscr() 
+void Mapa::clrscr()
 {
 	HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord = { 0, 0 };
@@ -28,6 +28,14 @@ void Mapa::inicjalizuj(size_t x, size_t y)
 	for (size_t i = 0; i < mapa.size(); i++)
 	{
 		mapa[i].resize(szer);
+	}
+	for (size_t i = 0; i < mapa.size(); i++)
+	{
+		for (size_t j = 0; j < mapa[i].size(); j++)
+		{
+			mapa[i][j].zmienwspolrzednax(i);
+			mapa[i][j].zmienwspolrzednay(j);
+		}
 	}
 }
 
