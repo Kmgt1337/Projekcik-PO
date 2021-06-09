@@ -17,9 +17,9 @@ bool OperatorSymulacji::zainicjalizujSymulacje()
 	SetConsoleTextAttribute(hOut, 15);
 
 	size_t maxtura;
-	cout << "Podaj maksymalna liczbe tur w symulacji [minimum 1000, maksimum 10000]: ";
+	cout << "Podaj maksymalna liczbe tur w symulacji [minimum 100, maksimum 10000]: ";
 	cin >> maxtura;
-	while (cin.fail() || maxtura < 1000 || maxtura > 10000)
+	while (cin.fail() || maxtura < 100 || maxtura > 10000)
 	{
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
