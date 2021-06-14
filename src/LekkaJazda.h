@@ -3,19 +3,21 @@
 
 #include "Oddzial.h"
 
-// klasa opisuj¹ca lekk¹ jazdê, jeden z rodzajów oddzia³ów wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do defensywy
-// dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+/*!
+klasa opisujaca lekka jazde, jeden z rodzajow oddzialow wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do defensywy.
+dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+*/
 class LekkaJazda : public Oddzial
 {
 public:
-	// konstruktor klasy losuj¹cy wartoœæ zmiennej modDefensywa
+	//! konstruktor klasy losujacy wartosc zmiennej modDefensywa
 	LekkaJazda();
 
-	// funkcja sk³adowa klasy zwracaj¹ca modDefensywa
+	//! funkcja skladowa klasy zwracajaca modDefensywa
 	virtual size_t dajModyfikator() { return modDefensywa; }
 
 private:
-	// sk³adnik klasy przechowuj¹cy modyfikator do defensywy armii podczas bitwy
+	//! skladnik klasy przechowujacy modyfikator do defensywy armii podczas bitwy
 	size_t modDefensywa;
 };
 

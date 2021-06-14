@@ -8,40 +8,42 @@
 #include <Windows.h>
 #include <random>
 
-// Mapa wygl¹da w nastêpuj¹cy sposób:
-// 1. ka¿de pole na mapie to unikalna prowincja, kolor szary oznacza ¿e prowincja jest niczyja, jeœli prowincja ma kolor inny ni¿ szary - jest ona przejêta przez dan¹ armiê
-// 2. armie reprezentowane s¹ przez znaki 'X', armie poruszaj¹ siê po mapie w sposób ca³kowicie losowy przy okazji zajmuj¹c prowincje 
-// 3. ka¿da prowincja zawiera jakiœ zasób, najczêœciej jest to zasób "BRAK" czyli zasób nie daj¹cy ¿adnych korzyœci. Oko³o 10% prowincji posiada wartoœciowy zasób
+/*!
+Mapa wyglada w nastepujacy sposob:
+1. kazde pole na mapie to unikalna prowincja, kolor szary oznacza ze prowincja jest niczyja, jesli prowincja ma kolor inny niz szary - jest ona przejeta przez dana armie
+2. armie reprezentowane sa przez znaki 'X', armie poruszaja sie po mapie w sposob calkowicie losowy przy okazji zajmujac prowincje 
+3. kaada prowincja zawiera jakis zasob, najczesciej jest to zasob "BRAK" czyli zasob nie dajacy zadnych korzysci. Okolo 10% prowincji posiada wartosciowy zasob
 
-// klasa odpowiadaj¹ca za mapê i jej rysowanie na ekranie konsoli
+klasa odpowiadajaca za mape i jej rysowanie na ekranie konsoli
+*/
 class Mapa
 {
 public:
-	// statyczny sk³adnik klasy - tablica dwuwymiarowa prowincji, ka¿de pole w tej tablicy to unikalna prowincja
+	//! statyczny skladnik klasy - tablica dwuwymiarowa prowincji, kazde pole w tej tablicy to unikalna prowincja
 	static  std::vector<std::vector<Prowincja>> mapa;
 
-	// statyczny sk³adnik klasy przechowuj¹cy wielkoœæ y mapy
+	//! statyczny skladnik klasy przechowujacy wielkosc y mapy
 	static  size_t dlug;
 
-	// statyczny sk³adnik klasy przechowuj¹cy wielkoœæ x mapy
+	//! statyczny skladnik klasy przechowujacy wielkosc x mapy
 	static  size_t szer;
 
-	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê prowincji przejêtych dla dwóch armii
+	//! statyczna funkcja skladowa klasy zwracajaca liczbe prowincji przejetych dla dwoch armii
 	static std::vector<size_t> dajLiczbeProwincjiKazdejArmii(Armia, Armia);
 
-	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê prowincji jednej armii
+	//! statyczna funkcja skladowa klasy zwracajaca liczbe prowincji jednej armii
 	static size_t dajLiczbeProwincjiArmii(Armia);
 
-	// statyczna funkcja sk³adowa klasy odpowiedzialna za wyœwietlenie prowincji oraz armii w konsoli
+	//! statyczna funkcja skladowa klasy odpowiedzialna za wyswietlenie prowincji oraz armii w konsoli
 	static void rysuj(const std::vector<Armia>& armie, HANDLE hOut);
 
-	// statyczna funkcja sk³adowa klasy, która ustawia po¿¹dany rozmiar tablicy dwywymiarowej
+	//! statyczna funkcja skladowa klasy, ktora ustawia pozadany rozmiar tablicy dwywymiarowej
 	static void inicjalizuj(size_t, size_t);
 
-	// statyczna funkcja sk³adowa klasy, która resetuje wszystkie prowincje w tablicy dwuwymiarowej
+	//! statyczna funkcja skladowa klasy, ktora resetuje wszystkie prowincje w tablicy dwuwymiarowej
 	static void reset();
 
-	// statyzcna funkcja sk³adowa klasy, która czyœci ekran konsoli po ka¿dej turze
+	//! statyzcna funkcja skladowa klasy, ktora czysci ekran konsoli po kazdej turze
 	static void clrscr();
 };
 

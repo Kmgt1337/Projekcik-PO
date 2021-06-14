@@ -5,33 +5,37 @@
 #include <Windows.h>
 #include <ctime>
 
-// zliczanie czasu rzeczywistego odbywa siê za pomoc¹ funkcji GetTickCount64() z biblioteki Windows.h
-
-// klasa odpowiedzialna za mierzenie up³ywu czasu i tur
+/*!
+zliczanie czasu rzeczywistego odbywa sie za pomoca funkcji GetTickCount64() z biblioteki Windows.h
+klasa odpowiedzialna za mierzenie uplywu czasu i tur
+*/
 class Zegar
 {
 public:
-	// statyczna funkcja sk³adowa klasy ustawiaj¹ca turê na 0
+	//! statyczna funkcja skladowa klasy ustawiajaca ture na 0
 	static void start();
 
-	// statyczna funkcja sk³adowa klasy zwiêkszaj¹ca turê o 1
+	//! statyczna funkcja skladowa klasy zwiekszajaca ture o 1
 	static void nowaTura();
 
-	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê tur
+	//! statyczna funkcja skladowa klasy zwracajaca liczbe tur
 	static size_t dajObecnaTure();
 
-	// statyczna funkcja sk³adowa klasy zaczynaj¹ca mierzyæ czas rzeczywisty
+	//! statyczna funkcja skladowa klasy zaczynajaca mierzyc czas rzeczywisty
 	static void zacznijOdmierzacCzas();
 
-	// statyczna funkcja sk³adowa klasy, która zwraca czas pomiêdzy jej wywo³aniem a wywo³aniem funkcji zacznijOdmierzacCzas()
+	//! statyczna funkcja skladowa klasy, ktora zwraca czas pomiedzy jej wywolaniem a wywolaniem funkcji zacznijOdmierzacCzas()
 	static ULONGLONG dajCzasWykonaniaSymulacjiMiliSekundy();
 
 private:
-	// statyczny sk³adnik klasy przechowuj¹cy liczbê tur
+	//! statyczny skladnik klasy przechowujacy liczbe tur
 	static size_t tura;
 
-	// statyczne sk³adniki klasy przechowuj¹ce czas startu symulacji i czas jej zakoñczenia
-	static ULONGLONG czasStartu, czasKonca;
+	//! statyczny skladnik klasy przechowujacy czas startu symulacji 
+	static ULONGLONG czasStartu;
+
+	//! statyczny skladnik klasy przechowujacy czas startu symulacji 
+	static ULONGLONG czasKonca;
 };
 
 #endif

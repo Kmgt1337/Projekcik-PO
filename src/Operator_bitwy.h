@@ -4,30 +4,30 @@
 #include "Armia.h"
 #include <vector>
 
-// klasa odpowiadaj¹ca za przeprowadzanie bitw pomiêdzy armiami
+//! klasa odpowiadajaca za przeprowadzanie bitw pomiedzy armiami
 class Operator_bitwy
 {
 public:
-	// statyczna funkcja sk³adowa klasy zwracaj¹ca liczbê przeprowadzonych bitw
+	//! statyczna funkcja skladowa klasy zwracajaca liczbe przeprowadzonych bitw
 	static size_t dajLiczbeBitw();
 
-	// statyczna funkcja sk³adowa klasy losuj¹ca która armia bêdzie mia³a status wygranej podczas danej bitwy (straty armii mog¹ jednak¿e zmieniæ ten status)
+	//! statyczna funkcja skladowa klasy losujaca ktora armia bedzie miala status wygranej podczas danej bitwy (straty armii moga jednakze zmienic ten status)
 	static bool wynik();
 
-	// statyczna funkcja sk³adowa klasy zwracaj¹ca procentowe straty poniesione przez dwie armie podczas bitwy
+	//! statyczna funkcja skladowa klasy zwracajaca procentowe straty poniesione przez dwie armie podczas bitwy
 	static std::vector<float> dajStratyProcentoweArmii();
 
-	// statyczna funckcja sk³adowa klasy przeprowadzaj¹ca bitwê pomiêdzy dwoma armiami 
+	//! statyczna funckcja skladowa klasy przeprowadzajaca bitwe pomiedzy dwiema armiami 
 	static std::vector<size_t> bitwa(Armia&, Armia&);
 
 private:
-	// statyczny sk³adnik klasy przechowuj¹cy liczbê przeprowadzonych bitw
+	//! statyczny skladnik klasy przechowujacy liczbe przeprowadzonych bitw
 	static size_t licznikBitw;
 
-	// statyczny sk³adnik klasy przechowuj¹cy procentow¹ stratê armii pierwszej podczas bitwy
+	//! statyczny skladnik klasy przechowujacy procentowa strate armii pierwszej podczas bitwy
 	static float procentowaStrataArmii1;
 
-	// statyczny sk³adnik klasy przechowuj¹cy procentow¹ stratê armii drugiej podczas bitwy
+	//! statyczny skladnik klasy przechowujacy procentowa strate armii drugiej podczas bitwy
 	static float procentowaStrataArmii2;
 };
 #endif
