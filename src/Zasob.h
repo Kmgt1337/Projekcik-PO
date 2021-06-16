@@ -7,7 +7,7 @@ enum class rodzajeZasobu { BRAK, LICZEBNOSC5, LICZEBNOSC10, LICZEBNOSC15, OBRAZE
 /*!
 klasa odpowiedzialna za zasoby ktore armia moze zbierac podczas poruszania sie po mapie. Kazda prowincja posiada swoj zasob,
 glownie jest to zasob "BRAK" ktory nic nie robi. Prowincja moze jednak zawierac wartosciowe zasoby wymienione w enum class rodzajeZasobu.
-Po zebraniu zasobu przez armie staje siêeon nieaktywny i juz nigdy nie bedzie zebrany
+Po zebraniu zasobu przez armie staje sie on nieaktywny i juz nigdy nie bedzie zebrany
 */
 class Zasob
 {
