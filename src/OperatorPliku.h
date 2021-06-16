@@ -10,7 +10,7 @@
 class OperatorPliku
 {
 public:
-	//! podstawowa statyczna funkcja skladowa klasy zapisujaca parametry do pliku, zapisuje parametry wszystkich armii na kazda turê
+	//! podstawowa statyczna funkcja skladowa klasy zapisujaca parametry do pliku, zapisuje parametry wszystkich armii na kazda ture
 	static bool zapis(const std::vector<Armia>& armie);
 
 	//! statyczna funkcja skladowa klasy zapisujaca do pliku parametry przed rozpoczeciem symulacji
@@ -25,7 +25,7 @@ public:
 	//! statyczna funkcja skladowa klasy zapisujaca koncowe parametry symulacji (w sytuacji gdy armia wygra poprzez militarne zwyciestwo)
 	static bool ostatniZapis(Armia, ULONGLONG);
 
-	//! statyczna funkcja skladowa klasy zapisujaca koncowe parametry symulacji (w sytuacji gdy osi¹gniety zostanie limit tur)
+	//! statyczna funkcja skladowa klasy zapisujaca koncowe parametry symulacji (w sytuacji gdy osiagniety zostanie limit tur)
 	static bool ostatniZapisTury(const std::vector<Armia>&, Armia, ULONGLONG);
 
 	//! statyczna funkcja skladowa klasy zapisujaca parametry zebranego zasobu przez armie
