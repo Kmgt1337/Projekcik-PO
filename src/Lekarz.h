@@ -3,19 +3,21 @@
 
 #include "Oddzial.h"
 
-// klasa opisuj¹ca lekarzy, jeden z rodzajów oddzia³ów wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do liczebnosci armii
-// dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+/*! 
+klasa opisujaca lekarzy, jeden z rodzajow oddzialow wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do liczebnosci armii.
+dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+*/
 class Lekarz : public Oddzial
 {
 public:
-	// konstruktor klasy losuj¹cy wartoœæ zmiennej modLiczebnosc
+	//! konstruktor klasy losujacy wartosc zmiennej modLiczebnosc
 	Lekarz();
 
-	// funkcja sk³adowa klasy zwracaj¹ca modLiczebnosc
+	//! funkcja skladowa klasy zwracajaca modLiczebnosc
 	virtual size_t dajModyfikator() { return modLiczebnosc; }
 
 private:
-	// sk³adnik klasy przechowuj¹cy modyfikator do liczebnoœci armii podczas bitwy
+	//! skladnik klasy przechowujacy modyfikator do liczebnosci armii podczas bitwy
 	size_t modLiczebnosc;
 };
 

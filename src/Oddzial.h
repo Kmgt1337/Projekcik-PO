@@ -1,11 +1,11 @@
 #ifndef ODDZIAL_H
 #define ODDZIAL_H
 
-// Klasa abstrakcyjna
+//! Klasa abstrakcyjna
 class Oddzial
 {
 public:
-	// funkcja czysto wirtualna, zwraca modyfikator z obiektu na który aktualnie jest ustawiony wskaŸnik do klasy abstrakcyjnej
+	//! funkcja czysto wirtualna, zwraca modyfikator z obiektu na ktory aktualnie jest ustawiony wskaznik do klasy abstrakcyjnej
 	virtual size_t dajModyfikator() = 0;
 };
 

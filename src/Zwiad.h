@@ -3,27 +3,29 @@
 
 #include "Oddzial.h"
 
-// klasa opisuj¹ca zwiad, jeden z rodzajów oddzia³ów wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do liczebnoœci 
-// na podstawie iloœci zdobytych prowincji przez armiê
+/*!
+klasa opisujaca zwiad, jeden z rodzajow oddzialow wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do liczebnosci 
+na podstawie ilosci zdobytych prowincji przez armie
 
-// dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+*/
 class Zwiad : public Oddzial
 {
 public:
-	// konstruktor klasy przypisuj¹cy zwiadowi przypisuj¹cy zwiadowi przynale¿noœæ tak¹ sam¹ jak armii
+	//! konstruktor klasy przypisujacy zwiadowi przynaleznosc taka sama jak armii
 	Zwiad(int);
 
-	// funkcja s³adowa klasy, która zlicza liczbê zdobytych prowincji przez armiê
+	//! funkcja skladowa klasy, ktora zlicza liczbe zdobytych prowincji przez armie
 	void raport();
 
-	// funkcja s³adowa klasy zwracaj¹ca modLiczebnosc
+	//! funkcja skladowa klasy zwracajaca modLiczebnosc
 	virtual size_t dajModyfikator() { return modLiczebnosc; }
 
 private:
-	// sk³adnik klasy przechowuj¹cy modyfikator do liczebnoœci armii podczas bitwy, jest on równy iloœci zdobytych prowincji przez armiê
+	//! skladnik klasy przechowujacy modyfikator do liczebnosci armii podczas bitwy, jest on rowny ilosci zdobytych prowincji przez armie
 	size_t modLiczebnosc;
 
-	// sk³adnik klasy przechowuj¹cy przynale¿noœæ zwiadu
+	//! skladnik klasy przechowujacy przynaleznosc zwiadu
 	int przynaleznosc;
 };
 

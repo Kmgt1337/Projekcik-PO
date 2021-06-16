@@ -6,29 +6,29 @@
 #include <vector>
 #include <ctime>
 
-// Klasa odpowiadaj¹ca za zapis parametrów symulacji do pliku tekstowego
+//! klasa odpowiadajaca za zapis parametrow symulacji do pliku tekstowego
 class OperatorPliku
 {
 public:
-	// podstawowa statyczna funkcja sk³adowa klasy zapisuj¹ca parametry do pliku, zapisuje parametry wszystkich armii na ka¿d¹ turê
+	//! podstawowa statyczna funkcja skladowa klasy zapisujaca parametry do pliku, zapisuje parametry wszystkich armii na kazda ture
 	static bool zapis(const std::vector<Armia>& armie);
 
-	// statyczna funkcja sk³adowa klasy zapisuj¹ca do pliku parametry przed rozpoczêciem symulacji
+	//! statyczna funkcja skladowa klasy zapisujaca do pliku parametry przed rozpoczeciem symulacji
 	static bool zapisPrzedSymulacja(const std::vector<Armia>&);
 
-	// statyczna funkcja sk³adowa klasy zapisuj¹ca do pliku parametry przed rozpoczêciem bitwy
+	//! statyczna funkcja skladowa klasy zapisujaca do pliku parametry przed rozpoczeciem bitwy
 	static bool zapisPrzedBitwa(Armia, Armia);
 
-	// statyczna funkcja sk³adowa klasy zapisuj¹ca do pliku przebieg bitwy pomiêdzy dwoma armiami
+	//! statyczna funkcja skladowa klasy zapisujaca do pliku przebieg bitwy pomiedzy dwoma armiami
 	static bool zapisBitwy(Armia, Armia, std::vector<size_t>, std::vector<float>);
 
-	// statyczna funkcja sk³adowa klasy zapisuj¹ca koñcowe parametry symulacji (w sytuacji gdy armia wygra poprzez militarne zwyciêstwo)
+	//! statyczna funkcja skladowa klasy zapisujaca koncowe parametry symulacji (w sytuacji gdy armia wygra poprzez militarne zwyciestwo)
 	static bool ostatniZapis(Armia, ULONGLONG);
 
-	// statyczna funkcja sk³adowa klasy zapisuj¹ca koñcowe parametry symulacji (w sytuacji gdy osi¹gniêty zostanie limit tur)
+	//! statyczna funkcja skladowa klasy zapisujaca koncowe parametry symulacji (w sytuacji gdy osiagniety zostanie limit tur)
 	static bool ostatniZapisTury(const std::vector<Armia>&, Armia, ULONGLONG);
 
-	// statyczna funkcja sk³adowa klasy zapisuj¹ca parametry zebranego zasobu przez armiê
+	//! statyczna funkcja skladowa klasy zapisujaca parametry zebranego zasobu przez armie
 	static bool zapisZasobu(Armia, rodzajeZasobu);
 };
 

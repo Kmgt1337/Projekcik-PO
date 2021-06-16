@@ -5,35 +5,37 @@
 #include "Zegar.h"
 #include <vector>
 
-// istniej¹ dwa mo¿liwe zakoñczenia symulacji:
-// 1. zwyciêstwo militarne - w przypadku gdy na polu walki zostanie tylko jedna armia - wygrywa ona symulacjê
-// 2. zakoñczenie przez osi¹gniêcie limtu tur - w przypadku gdy w symulacji zostanie osi¹gniêty ustalony limit tur a co najmniej dwie armie
-// ¿yj¹ - wygrywa armia, która przejê³a wiêcej prowincji
+/*!
+istnieja dwa mozliwe zakonczenia symulacji:
+1. zwyciestwo militarne - w przypadku gdy na polu walki zostanie tylko jedna armia - wygrywa ona symulacje
+2. zakonczenie przez osiagniecie limtu tur - w przypadku gdy w symulacji zostanie osiagniety ustalony limit tur a co najmniej dwie armie
+zyja - wygrywa armia, ktora przejela wiecej prowincji
 
-// klasa odpowiadaj¹ca za sprawdzenie czy wyst¹pi³y warunki zakoñczenia symulacji
+klasa odpowiadajaca za sprawdzenie czy wystapily warunki zakonczenia symulacji
+*/
 class OperatorZakonczenia
 {
 public:
-	// statyczna funkcja sk³adowa klasy ustawiaj¹ca maksymalny limit tur
+	//! statyczna funkcja skladowa klasy ustawiajaca maksymalny limit tur
 	static void ustawMaksymalnyLimitTur(size_t);
 
-	// statyczna funkcja sk³adowa klasy sprawdzaj¹ca czy symulacja zakoñczy³a siê zwyciêstwem militarnym którejœ z armii
+	//! statyczna funkcja skladowa klasy sprawdzajaca czy symulacja zakonczyla sie zwyciestwem militarnym ktorejs z armii
 	static bool sprawdzCzySymulacjaSieZakonczylaArmie(const std::vector<Armia>&);
 
-	// statyczna funkcja sk³adowa klasy sprawdzaj¹ca czy symulacji zakoñczy³a siê przez osi¹gniêcie limitu tur
+	//! statyczna funkcja skladowa klasy sprawdzajaca czy symulacja zakonczyla sie przez osiagniecie limitu tur
 	static bool sprawdzCzySymulacjaSieZakonczylaTury();
 
-	// statyczna funkcja sk³adowa klasy zliczaj¹ca ile ka¿da armia posiada przejêtych prowincji
+	//! statyczna funkcja skladowa klasy zliczajaca ile kazda armia posiada przejetych prowincji
 	static std::vector<size_t> podajLiczbeProwincjiArmii(const std::vector<Armia>&);
 
-	// statyczna funkcja sk³adowa klasy wyznaczaj¹ca wygran¹ armiê
+	//! statyczna funkcja skladowa klasy wyznaczajaca wygrana armie
 	static Armia pokazArmieZwycieska(const std::vector<Armia>&);
 
-	// statyczna funkcja sk³adowa klasy zwracaj¹ca maksymaln¹ liczbê tur
+	//! statyczna funkcja skladowa klasy zwracajaca maksymalna liczbe tur
 	static size_t dajMaxTure();
 
 private:
-	// sk³adnik klasy przechowuj¹cy maksymaln¹ liczbê tur
+	//! skladnik klasy przechowujacy maksymalna liczbe tur
 	static size_t maxTura;
 };
 

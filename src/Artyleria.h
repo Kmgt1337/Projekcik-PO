@@ -3,19 +3,21 @@
 
 #include "Oddzial.h"
 
-// klasa opisuj¹ca artyleriê, jeden z rodzajów oddzia³ów wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do ofensywy
-// dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+/*! 
+klasa opisujaca artylerie, jeden z rodzajow oddzialow wojskowych. Obiekt tej klasy dodaje podczas bitwy modyfikator do ofensywy.
+dziedziczenie publiczne po klasie abstrakcyjnej "Oddzial"
+ */
 class Artyleria : public Oddzial
 {
 public:
-	// konstruktor klasy losuj¹cy wartoœæ zmiennej modDefensywa
+	//! konstruktor klasy losujacy wartosc zmiennej modDefensywa
 	Artyleria();
 
-	// funkcja sk³adowa klasy zwracaj¹ca modOfensywa
+	//! funkcja skladowa klasy zwracajaca modOfensywa
 	virtual size_t dajModyfikator() { return modOfensywa; }
 
 private:
-	// sk³adnik klasy przechowuj¹cy modyfikator do ofensywy armii podczas bitwy
+	//! skladnik klasy przechowujacy modyfikator do ofensywy armii podczas bitwy
 	size_t modOfensywa;
 };
 

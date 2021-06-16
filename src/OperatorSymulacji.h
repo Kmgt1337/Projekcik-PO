@@ -11,49 +11,53 @@
 #include <vector>
 #include <conio.h>
 
-// u¿ytkownik podaje z klawiatury nastêpuj¹ce dane pocz¹tkowe:
-// - maksymalny limit tur
-// - rozmiar mapy
-// - parametry ka¿dej z armii: pozycja pocz¹tkowa x, pozycja pocz¹tkowa y, liczebnoœæ, nazwa
-// - minimalnie s¹ 2 armie, u¿ytkownik mo¿e dodaæ ich maksymalnie 10
+/*!
+uzytkownik podaje z klawiatury nastepujace dane poczatkowe:
+- maksymalny limit tur
+- rozmiar mapy
+- parametry kazdej z armii: pozycja poczatkowa x, pozycja poczatkowa y, liczebnosc, nazwa
+- minimalnie sa 2 armie, uzytkownik moze dodac ich maksymalnie 10
 
-// klasa odpowiadaj¹ca za przeprowadzenie symulacji
+klasa odpowiadajaca za przeprowadzenie symulacji
+*/
 class OperatorSymulacji
 {
 public:
-	// funkcja sk³adowa klasy inicjalizuj¹ca symulacjê wstêpnymi parametrami, w niej u¿ytkownik wpisuje pocz¹tkowe wartoœci
+	//! funkcja skladowa klasy inicjalizujaca symulacje wstepnymi parametrami, w niej uzytkownik wpisuje poczatkowe wartosci
 	bool zainicjalizujSymulacje();
 
-	// funkcja sk³adowa klasy, w której znajduje siê g³ówna pêtla symulacji
+	//! funkcja skladowa klasy, w ktorej znajduje sie glowna petla symulacji
 	int prowadzSymulacje();
 
 private:
-	// sk³adnik klasy przechowuj¹cy stan symulacji
+	//! skladnik klasy przechowujacy stan symulacji
 	bool czySymulacjaJestAktywna;
 
-	// sk³adnik klasy - tablica przechowuj¹ca armie
+	//! skladnik klasy - tablica przechowujaca armie
 	std::vector<Armia> armie;
 
-	// sk³adnik klasy - tablica przechowuj¹ca zmiany liczebnoœci armii po bitwie
+	//! skladnik klasy - tablica przechowujaca zmiany liczebnosci armii po bitwie
 	std::vector<size_t> zmianaLiczebnosci;
 
-	// sk³adnik klasy - obiekt do którego zostaje wpisana armia, która wygra³a (w przypadku zwyciêstwa militarnego)
+	//! skladnik klasy - obiekt do ktorego zostaje wpisana armia, ktora wygrala (w przypadku zwyciestwa militarnego)
 	Armia armiaZwycieska;
 	
-	// sk³adnik klasy przechowuj¹cy czas trwania symulacji
+	//! skladnik klasy przechowujacy czas trwania symulacji
 	ULONGLONG czasTrwaniaSymulacji{};
 
-	// sk³adnik klasy przechowuj¹cy czas trwania przerwy podczas symulacji
+	//! skladnik klasy przechowujacy czas trwania przerwy podczas symulacji
 	ULONGLONG czasTrwaniaPrzerwy{};
 
-	// sk³adnik klasy - uchwyt na wyjœcie konsoli
+	//! skladnik klasy - uchwyt na wyjscie konsoli
 	HANDLE hOut;
 
-	// sk³adnik klasy przechowuj¹cy minimalny dozwolony rozmiar mapy
+	//! skladnik klasy przechowujacy minimalny dozwolony rozmiar mapy
 	const size_t minimum{ 10 };
 
-	// sk³adniki klasy przechowuj¹ce maksymalne dozwolone rozmiary mapy
+	//! skladnik klasy przechowujacy maksymalne dozwolone rozmiary mapy x
 	const size_t maksimumX{ 40 };
+
+	//! skladnik klasy przechowujacy maksymalne dozwolone rozmiary mapy y
 	const size_t maksimumY{ 40 };
 };
 
